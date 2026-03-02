@@ -325,9 +325,49 @@ li{margin-bottom:10px;}
 
 /* Moved lower line */
 .framework-synthesis{
-  margin-top:42px;          /* <- drops it lower */
+  margin-top:42px; /* <- drops it lower */
   max-width:70ch;
   color:var(--muted);
+}
+
+/* FULL-WIDTH IMAGE SECTION (after the model) */
+.full-image{
+  padding:0;                 /* override section padding */
+  border-top:1px solid var(--line);
+  background:transparent;
+}
+
+.full-image .image-wrap{
+  position:relative;
+  height:520px;
+  background-image:url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=2400&q=80');
+  background-size:cover;
+  background-position:center;
+}
+
+.full-image .image-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.16);
+}
+
+.full-image .image-caption{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:42px;
+  max-width:820px;
+  width:calc(100% - 48px);
+  text-align:center;
+  color:rgba(255,255,255,0.92);
+  font-size:16px;
+  line-height:1.45;
+  padding:0 12px;
+}
+
+.full-image .image-caption strong{
+  color:white;
+  font-weight:600;
 }
 
 /* Contact */
@@ -363,6 +403,7 @@ footer{
 /* Responsive */
 @media (max-width:720px){
   .top{ flex-direction:column; }
+  .full-image .image-wrap{ height:440px; }
 }
 
 @media (max-width: 860px){
@@ -484,11 +525,20 @@ footer{
         </div>
       </div>
 
-      <!-- moved lower -->
       <p class="framework-synthesis">
         We help leadership teams strengthen core conditions, align the operating system,
         and calibrate field signals — so culture doesn’t depend on personality or memory.
       </p>
+    </div>
+  </div>
+</section>
+
+<!-- NEW: Full-width image AFTER the model section -->
+<section class="full-image" aria-label="Aligned teams image">
+  <div class="image-wrap">
+    <div class="image-overlay"></div>
+    <div class="image-caption">
+      <strong>Alignment becomes visible</strong> in how people listen, decide, and move together.
     </div>
   </div>
 </section>
