@@ -49,19 +49,27 @@ a:hover{text-decoration:underline;}
   flex-direction:column;
 }
 
+.logo-lockup{
+  display:inline-block; /* keeps the lockup tight */
+}
+
 .logo-line1{
   font-family:var(--serif);
   font-size:24px;
   font-weight:500;
   letter-spacing:0.2px;
+  line-height:1.05; /* tighten */
+  margin:0;
 }
 
 .logo-line2{
   font-size:11px;
-  letter-spacing:0.38em;
+  letter-spacing:0.32em;
   text-transform:uppercase;
   color:var(--muted);
-  margin-top:6px;
+  line-height:1.0;      /* tighten */
+  margin-top:3px;       /* raise it */
+  transform: translateX(2px); /* optical nudge (adjust 1–3px if needed) */
 }
 
 .tagline{
@@ -84,6 +92,10 @@ a:hover{text-decoration:underline;}
   border-radius:999px;
   font-size:15px;
   border:1px solid var(--ink);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:transparent;
 }
 
 .btn.primary{
@@ -186,6 +198,7 @@ h2{
 .step{
   margin-bottom:28px;
   max-width:60ch;
+  color:var(--muted);
 }
 
 .step strong{
@@ -193,6 +206,7 @@ h2{
   font-family:var(--serif);
   font-weight:600;
   margin-bottom:6px;
+  color:var(--ink);
 }
 
 ul{
@@ -202,6 +216,24 @@ ul{
 }
 
 li{margin-bottom:10px;}
+
+form{
+  margin-top:20px;
+  max-width:700px;
+  display:grid;
+  gap:14px;
+}
+
+input, textarea{
+  padding:12px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:var(--paper);
+  font:inherit;
+  color:var(--ink);
+}
+
+textarea{min-height:130px;}
 
 footer{
   padding:60px 24px;
@@ -216,9 +248,7 @@ footer{
 }
 
 @media(max-width:720px){
-  .top{
-    flex-direction:column;
-  }
+  .top{ flex-direction:column; }
 }
 </style>
 </head>
@@ -227,9 +257,11 @@ footer{
 
 <div class="top">
   <div class="brand">
-    <div class="logo-line1">Desk &amp; Margin</div>
-    <div class="logo-line2">Outfitters</div>
-    <div class="tagline">Partner-led advisory for leadership teams building intentional culture.</div>
+    <div class="logo-lockup">
+      <div class="logo-line1">Desk &amp; Margin</div>
+      <div class="logo-line2">Outfitters</div>
+    </div>
+    <div class="tagline">Partner-led advisory helping leadership teams build intentional culture.</div>
   </div>
 
   <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
