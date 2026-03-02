@@ -14,6 +14,11 @@
   --muted:#4a4a4a;
   --line:rgba(17,17,17,0.10);
 
+  /* subtle ring fills */
+  --ring1:rgba(17,17,17,0.03); /* outer */
+  --ring2:rgba(17,17,17,0.05); /* middle */
+  --ring3:rgba(17,17,17,0.07); /* core */
+
   --serif:Georgia,"Times New Roman",serif;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
 
@@ -45,14 +50,9 @@ a:hover{text-decoration:underline;}
   gap:20px;
 }
 
-.brand{
-  display:flex;
-  flex-direction:column;
-}
+.brand{ display:flex; flex-direction:column; }
 
-.logo-lockup{
-  display:inline-block;
-}
+.logo-lockup{ display:inline-block; }
 
 .logo-line1{
   font-family:var(--serif);
@@ -70,7 +70,7 @@ a:hover{text-decoration:underline;}
   color:var(--muted);
   line-height:1.0;
   margin-top:3px;
-  transform: translateX(2px); /* optical nudge */
+  transform: translateX(2px);
 }
 
 .tagline{
@@ -109,7 +109,6 @@ a:hover{text-decoration:underline;}
 /* Hero */
 .hero{
   position:relative;
-  /* Replace later with a local asset (e.g., 'assets/hero.jpg') */
   background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2000&q=80');
   background-size:cover;
   background-position:center;
@@ -164,9 +163,7 @@ h1{
   border-color:white;
 }
 
-.hero-cta{
-  margin-top:36px;
-}
+.hero-cta{ margin-top:36px; }
 
 /* Sections */
 section{
@@ -224,49 +221,60 @@ ul{
 
 li{margin-bottom:10px;}
 
-/* Cohesion Model (fixed: no overlap) */
-.model-block{
-  margin:60px 0 18px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:14px;
+/* --- Framework block (improved translation) --- */
+.framework{
+  margin:56px 0 8px;
 }
 
-.model-caption{
-  font-size:12px;
-  letter-spacing:0.12em;
-  text-transform:uppercase;
-  color:var(--muted);
-  text-align:center;
-}
-
-.model{
-  position:relative;
-  width:420px;
-  height:420px;
-}
-
-.circle{
-  position:absolute;
-  border:1px solid var(--line);
-  border-radius:50%;
-}
-
-.circle.outer{ width:420px; height:420px; }
-.circle.middle{ width:280px; height:280px; top:70px; left:70px; }
-.circle.inner{ width:150px; height:150px; top:135px; left:135px; }
-
-.center-text{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  text-align:center;
+.framework-title{
   font-family:var(--serif);
-  font-size:20px;
-  line-height:1.35;
+  font-size:18px;
+  font-weight:500;
+  margin:0 0 14px;
   color:var(--ink);
+}
+
+.model-wrap{
+  display:flex;
+  justify-content:center;
+  margin:18px 0 18px;
+}
+
+svg.model{
+  width:520px;
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
+.legend{
+  margin-top:18px;
+  max-width:70ch;
+  display:grid;
+  gap:10px;
+}
+
+.legend-row{
+  display:grid;
+  grid-template-columns:14px 1fr;
+  gap:12px;
+  align-items:start;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.55;
+}
+
+.swatch{
+  width:14px;
+  height:14px;
+  border:1px solid var(--line);
+  border-radius:3px;
+  margin-top:3px;
+}
+
+.legend strong{
+  color:var(--ink);
+  font-weight:600;
 }
 
 .layer-description{
@@ -309,13 +317,6 @@ footer{
 /* Responsive */
 @media (max-width:720px){
   .top{ flex-direction:column; }
-}
-@media (max-width:600px){
-  .model{ width:300px; height:300px; }
-  .circle.outer{ width:300px; height:300px; }
-  .circle.middle{ width:200px; height:200px; top:50px; left:50px; }
-  .circle.inner{ width:110px; height:110px; top:95px; left:95px; }
-  .center-text{ font-size:18px; }
 }
 </style>
 </head>
@@ -379,30 +380,63 @@ footer{
       built through clarity, cadence, and trust.
     </p>
 
-    <!-- FIXED framework visual (no label overlap) -->
-    <div class="model-block" aria-label="Cohesion Model framework">
-      <div class="model-caption">Artifacts • Rituals • Leader Behavior</div>
+    <!-- Framework (now it translates) -->
+    <div class="framework" aria-label="Cohesion Model framework">
+      <div class="framework-title">The Cohesion Model</div>
 
-      <div class="model">
-        <div class="circle outer"></div>
-        <div class="circle middle"></div>
-        <div class="circle inner"></div>
+      <div class="model-wrap">
+        <svg class="model" viewBox="0 0 520 520" role="img" aria-label="Three concentric layers: outer visible layer, middle system layer, inner core.">
+          <!-- Outer ring -->
+          <circle cx="260" cy="260" r="220" fill="var(--ring1)" stroke="var(--line)" stroke-width="1"/>
+          <!-- Middle ring -->
+          <circle cx="260" cy="260" r="150" fill="var(--ring2)" stroke="var(--line)" stroke-width="1"/>
+          <!-- Core -->
+          <circle cx="260" cy="260" r="80"  fill="var(--ring3)" stroke="var(--line)" stroke-width="1"/>
 
-        <div class="center-text">
-          Trust<br>
-          Clarity<br>
-          Cohesion
+          <!-- Center text -->
+          <text x="260" y="238" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="var(--ink)">Trust</text>
+          <text x="260" y="272" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="var(--ink)">Clarity</text>
+          <text x="260" y="306" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="var(--ink)">Cohesion</text>
+
+          <!-- Layer labels inside rings (subtle, not in the center) -->
+          <text x="260" y="78" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Arial,sans-serif"
+                font-size="12" letter-spacing="3" fill="var(--muted)">VISIBLE LAYER</text>
+
+          <text x="260" y="120" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Arial,sans-serif"
+                font-size="12" letter-spacing="2" fill="var(--muted)">Artifacts • Rituals • Leader Behavior</text>
+
+          <text x="260" y="430" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Arial,sans-serif"
+                font-size="12" letter-spacing="3" fill="var(--muted)">SYSTEM LAYER</text>
+
+          <text x="260" y="472" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Arial,sans-serif"
+                font-size="12" letter-spacing="2" fill="var(--muted)">Narrative • Operating Rhythm • Decision Signals</text>
+
+          <text x="260" y="195" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Arial,sans-serif"
+                font-size="11" letter-spacing="3" fill="var(--muted)">CORE</text>
+        </svg>
+      </div>
+
+      <!-- Legend makes it unmistakable -->
+      <div class="legend">
+        <div class="legend-row">
+          <div class="swatch" style="background:var(--ring1);"></div>
+          <div><strong>Visible layer:</strong> What people repeatedly experience — artifacts, rituals, and leader behavior.</div>
+        </div>
+        <div class="legend-row">
+          <div class="swatch" style="background:var(--ring2);"></div>
+          <div><strong>System layer:</strong> The reinforcement mechanisms — narrative, operating rhythm, and decision signals.</div>
+        </div>
+        <div class="legend-row">
+          <div class="swatch" style="background:var(--ring3);"></div>
+          <div><strong>Core:</strong> The conditions that hold — trust, clarity, and cohesion.</div>
         </div>
       </div>
 
-      <div class="model-caption">Narrative • Operating Rhythm • Decision Signals</div>
+      <p class="layer-description">
+        When layers align, culture strengthens. When they fracture, drift begins.
+        The work is to make reinforcement visible — and durable enough to survive pressure.
+      </p>
     </div>
-
-    <p class="layer-description">
-      Cohesion sits at the center. Around it, reinforcing systems make culture visible.
-      The outer layer — artifacts, rituals, and leader behavior — determines what people actually experience.
-      When layers align, culture strengthens. When they fracture, drift begins.
-    </p>
   </div>
 </section>
 
