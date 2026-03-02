@@ -34,14 +34,7 @@
     a{text-decoration:none;color:inherit;}
     a:hover{text-decoration:underline;}
 
-    .wrap{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:60px 20px 80px;
-    }
-
     /* Top Bar */
-
     .top{
       display:flex;
       justify-content:space-between;
@@ -75,10 +68,14 @@
     }
 
     .btn{
-      padding:10px 18px;
+      padding:12px 22px;            /* ↑ slightly larger for hierarchy */
       border-radius:999px;
       border:1px solid var(--line);
-      font-size:14px;
+      font-size:15px;               /* ↑ slightly larger */
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
     }
 
     .btn.primary{
@@ -88,9 +85,9 @@
     }
 
     /* Hero */
-
     .hero{
       position:relative;
+      /* Replace this URL with your own hosted file later (e.g., 'hero.jpg' or 'assets/hero.jpg') */
       background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2000&q=80');
       background-size:cover;
       background-position:center;
@@ -101,7 +98,12 @@
     .hero-overlay{
       position:absolute;
       inset:0;
-      background:rgba(0,0,0,0.35);
+      /* ↑ stronger overlay to keep CTA visible */
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.60),
+        rgba(0,0,0,0.50)
+      );
     }
 
     .hero-inner{
@@ -114,7 +116,7 @@
       text-transform:uppercase;
       letter-spacing:0.15em;
       font-size:12px;
-      color:rgba(255,255,255,0.75);
+      color:rgba(255,255,255,0.78);
       margin-bottom:18px;
     }
 
@@ -135,18 +137,29 @@
     .hero-note{
       font-size:14px;
       margin-top:20px;
-      color:rgba(255,255,255,0.75);
+      color:rgba(255,255,255,0.78);
+      max-width:75ch;
     }
 
     .hero-cta{
       margin-top:32px;
     }
 
-    /* Sections */
+    /* Make primary CTA WHITE in hero so it never gets lost */
+    .hero .btn.primary{
+      background:white;
+      color:black;
+      border-color:white;
+    }
+    .hero .btn.primary:hover{
+      background:#f1f1f1;
+    }
 
+    /* Sections */
     section{
       padding:80px 0;
       border-top:1px solid var(--line);
+      background:transparent;
     }
 
     .section-inner{
@@ -159,18 +172,21 @@
       font-weight:700;
       margin-bottom:16px;
       font-size:18px;
+      color:var(--ink);
+      max-width:75ch;
     }
 
     p{
       max-width:70ch;
       color:var(--muted);
-      margin-bottom:16px;
+      margin:0 0 16px;
     }
 
     ul{
       max-width:70ch;
       padding-left:20px;
       color:var(--muted);
+      margin:0 0 12px;
     }
 
     li{margin-bottom:8px;}
@@ -178,21 +194,24 @@
     h2{
       font-family:var(--serif);
       font-size:26px;
-      margin-bottom:16px;
+      margin:0 0 16px;
+      color:var(--ink);
     }
 
     .step{
-      margin-bottom:22px;
+      margin:0 0 22px;
+      max-width:70ch;
+      color:var(--muted);
     }
 
     .step strong{
       display:block;
       font-weight:800;
       margin-bottom:6px;
+      color:var(--ink);
     }
 
     /* Contact */
-
     form{
       margin-top:20px;
       max-width:700px;
@@ -204,13 +223,14 @@
       padding:12px;
       border-radius:10px;
       border:1px solid var(--line);
+      background:var(--paper);
       font:inherit;
+      color:var(--ink);
     }
 
     textarea{min-height:130px;}
 
     footer{
-      margin-top:80px;
       padding:40px 20px;
       border-top:1px solid var(--line);
       font-size:12px;
@@ -219,6 +239,7 @@
       justify-content:space-between;
       flex-wrap:wrap;
       gap:12px;
+      background:transparent;
     }
   </style>
 </head>
@@ -230,7 +251,7 @@
       <div class="name">Desk & Margin Outfitters</div>
       <div class="tag">Partner-led advisory for leadership teams building intentional culture.</div>
     </div>
-    <div style="display:flex;gap:12px;align-items:center;">
+    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:flex-end;">
       <span class="pill">Confidential • Limited engagements</span>
       <a href="#contact" class="btn primary">Request a private introduction</a>
     </div>
@@ -242,7 +263,7 @@
       <div class="kicker">Leadership advisory • Culture architecture • Organizational durability</div>
       <h1>Build culture on purpose. Protect it when it’s tested.</h1>
       <div class="lead">
-        Desk & Margin helps leadership teams design and sustain cultural cohesion — through deliberate systems of communication,
+        Desk &amp; Margin helps leadership teams design and sustain cultural cohesion — through deliberate systems of communication,
         recognition, and trust. In moments of transition, that architecture becomes the difference between momentum and drift.
       </div>
       <div class="hero-note">
@@ -278,6 +299,9 @@
         <li>Operating model shifts</li>
         <li>Rapid growth or contraction</li>
       </ul>
+      <p>
+        In these moments, clarity compounds — or confusion multiplies. Intentional culture architecture determines which one wins.
+      </p>
     </div>
   </section>
 
@@ -285,7 +309,7 @@
     <div class="section-inner">
       <h2>How it works</h2>
       <p>
-        Engagements begin with <strong>Desk & Margin Discovery</strong> — a structured diagnostic focused on narrative clarity,
+        Engagements begin with <strong>Desk &amp; Margin Discovery</strong> — a structured diagnostic focused on narrative clarity,
         engagement friction, and leadership alignment.
       </p>
 
@@ -304,7 +328,7 @@
         Leader enablement and cultural durability mechanisms.
       </div>
 
-      <p style="font-size:13px;color:var(--muted);margin-top:24px;">
+      <p style="font-size:13px;color:var(--muted);margin-top:24px;max-width:70ch;">
         Boutique model. Partner-led. Limited concurrent engagements.
       </p>
     </div>
@@ -324,11 +348,15 @@
         <textarea name="message" placeholder="What are you building or navigating?" required></textarea>
         <button class="btn primary" type="submit">Send</button>
       </form>
+
+      <p style="font-size:12px;color:var(--muted);margin-top:12px;max-width:70ch;">
+        This form is a placeholder until connected to a form handler (Formspree recommended for GitHub Pages).
+      </p>
     </div>
   </section>
 
   <footer>
-    <div>© <span id="y"></span> Desk & Margin Outfitters</div>
+    <div>© <span id="y"></span> Desk &amp; Margin Outfitters</div>
     <div>Confidential advisory • Culture built with intention</div>
   </footer>
 
