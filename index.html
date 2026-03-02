@@ -330,7 +330,7 @@ li{margin-bottom:10px;}
   color:var(--muted);
 }
 
-/* NEW: Full-width image (shorter + no overlay text) */
+/* Full-width image (short + no overlay text) */
 .full-image{
   padding:0;                 /* override section padding */
   background:transparent;
@@ -343,6 +343,11 @@ li{margin-bottom:10px;}
   width:100%;
   height:320px;
   object-fit:cover;
+}
+
+/* Virtual image can be slightly shorter if you want it subtler */
+.full-image.virtual img{
+  height:280px;
 }
 
 /* Contact */
@@ -379,6 +384,7 @@ footer{
 @media (max-width:720px){
   .top{ flex-direction:column; }
   .full-image img{ height:240px; }
+  .full-image.virtual img{ height:220px; }
 }
 
 @media (max-width: 860px){
@@ -508,7 +514,7 @@ footer{
   </div>
 </section>
 
-<!-- Full-width image (short + no overlay text) -->
+<!-- Full-width image 1: in-person / human proof (short + no overlay text) -->
 <section class="full-image" aria-label="Aligned teams image">
   <img
     src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=2400&q=80"
@@ -526,6 +532,13 @@ footer{
       <li>Rapid growth or contraction</li>
     </ul>
   </div>
+</section>
+
+<!-- Full-width image 2: virtual / distributed work (short + no overlay text) -->
+<section class="full-image virtual" aria-label="Distributed and virtual work image">
+  <img
+    src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?auto=format&fit=crop&w=2400&q=80"
+    alt="Virtual meeting on a laptop in a calm workspace">
 </section>
 
 <section>
