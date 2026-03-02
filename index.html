@@ -280,7 +280,6 @@ footer{
   background:var(--paper);
 }
 
-/* Responsive */
 @media (max-width:720px){
   .top{ flex-direction:column; }
 }
@@ -350,59 +349,57 @@ footer{
       <div class="framework-title">The Cohesion Model</div>
 
       <div class="model-wrap">
-        <svg class="model" viewBox="0 0 560 560" role="img" aria-label="A layered culture model with curved labels on the rings.">
+        <svg class="model" viewBox="0 0 560 560" role="img" aria-label="A layered culture model with curved labels on the correct rings.">
           <defs>
-            <!-- IMPORTANT:
-                 - All paths run LEFT -> RIGHT
-                 - Top arcs use sweep=0 (go over the top)
-                 - Bottom arcs use sweep=1 (go under the bottom)
-            -->
+            <!-- Center -->
+            <!-- Outer ring radii: 200 (outer stroke), we place text INSIDE it around ~184 and ~170 -->
+            <!-- Middle ring radius: 140 (stroke), we place text INSIDE it around ~132 and ~118 -->
 
-            <!-- Outer ring (top arcs) -->
-            <path id="outerTopA" d="M 80 280 A 200 200 0 0 0 480 280" />
-            <path id="outerTopB" d="M 96 280 A 184 184 0 0 0 464 280" />
+            <!-- TOP of middle ring (left -> right, sweep=0) -->
+            <path id="midTopOuter" d="M 148 280 A 132 132 0 0 0 412 280" />
+            <path id="midTopInner" d="M 162 280 A 118 118 0 0 0 398 280" />
 
-            <!-- Middle ring (bottom arcs) -->
-            <path id="midBottomA" d="M 150 280 A 130 130 0 0 1 410 280" />
-            <path id="midBottomB" d="M 165 280 A 115 115 0 0 1 395 280" />
+            <!-- BOTTOM of outer ring (RIGHT -> LEFT so it stays upright everywhere) -->
+            <path id="outerBottomOuter" d="M 480 280 A 200 200 0 0 1 80 280" />
+            <path id="outerBottomInner" d="M 464 280 A 184 184 0 0 1 96 280" />
           </defs>
 
-          <!-- Onion fills -->
+          <!-- Onion circles -->
           <circle cx="280" cy="280" r="200" fill="var(--ring1)" stroke="var(--line)" stroke-width="1"/>
           <circle cx="280" cy="280" r="140" fill="var(--ring2)" stroke="var(--line)" stroke-width="1"/>
           <circle cx="280" cy="280" r="76"  fill="var(--ring3)" stroke="var(--line)" stroke-width="1"/>
 
-          <!-- Curved OUTER label (upright) -->
+          <!-- SYSTEM LAYER (TOP of middle ring) -->
           <text font-family="var(--sans)" font-size="12" letter-spacing="4" fill="var(--muted)">
-            <textPath href="#outerTopA" xlink:href="#outerTopA" startOffset="50%" text-anchor="middle">
-              VISIBLE LAYER
-            </textPath>
-          </text>
-
-          <text font-family="var(--sans)" font-size="12" letter-spacing="2.5" fill="var(--muted)">
-            <textPath href="#outerTopB" xlink:href="#outerTopB" startOffset="50%" text-anchor="middle">
-              Artifacts • Rituals • Leader Behavior
-            </textPath>
-          </text>
-
-          <!-- Curved MIDDLE label (upright on bottom) -->
-          <text font-family="var(--sans)" font-size="12" letter-spacing="4" fill="var(--muted)">
-            <textPath href="#midBottomB" xlink:href="#midBottomB" startOffset="50%" text-anchor="middle">
+            <textPath href="#midTopInner" xlink:href="#midTopInner" startOffset="50%" text-anchor="middle">
               SYSTEM LAYER
             </textPath>
           </text>
 
-          <text font-family="var(--sans)" font-size="12" letter-spacing="2.5" fill="var(--muted)">
-            <textPath href="#midBottomA" xlink:href="#midBottomA" startOffset="50%" text-anchor="middle">
+          <text font-family="var(--sans)" font-size="12" letter-spacing="2.2" fill="var(--muted)">
+            <textPath href="#midTopOuter" xlink:href="#midTopOuter" startOffset="50%" text-anchor="middle">
               Narrative • Operating Rhythm • Decision Signals
             </textPath>
           </text>
 
-          <!-- Core label -->
+          <!-- VISIBLE LAYER (BOTTOM of outer ring) -->
+          <text font-family="var(--sans)" font-size="12" letter-spacing="2.2" fill="var(--muted)">
+            <textPath href="#outerBottomInner" xlink:href="#outerBottomInner" startOffset="50%" text-anchor="middle">
+              Artifacts • Rituals • Leader Behavior
+            </textPath>
+          </text>
+
+          <text font-family="var(--sans)" font-size="12" letter-spacing="4" fill="var(--muted)">
+            <textPath href="#outerBottomOuter" xlink:href="#outerBottomOuter" startOffset="50%" text-anchor="middle">
+              VISIBLE LAYER
+            </textPath>
+          </text>
+
+          <!-- CORE label -->
           <text x="280" y="225" text-anchor="middle" font-family="var(--sans)"
                 font-size="11" letter-spacing="4" fill="var(--muted)">CORE</text>
 
-          <!-- Center text -->
+          <!-- Center words -->
           <text x="280" y="272" text-anchor="middle" font-family="var(--serif)" font-size="28" fill="var(--ink)">Trust</text>
           <text x="280" y="308" text-anchor="middle" font-family="var(--serif)" font-size="28" fill="var(--ink)">Clarity</text>
           <text x="280" y="344" text-anchor="middle" font-family="var(--serif)" font-size="28" fill="var(--ink)">Cohesion</text>
