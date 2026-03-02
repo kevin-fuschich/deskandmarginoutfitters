@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <title>Desk & Margin Outfitters</title>
+  <meta name="description" content="Desk & Margin helps leadership teams protect trust, clarity, and cultural continuity during high-stakes transitions." />
+
+  <style>
+    :root{
+      --bg: #f6f4ef;
+      --paper: #fffdf8;
+      --ink: #121212;
+      --muted: #3d3d3d;
+      --line: #c9c2b8;
+      --soft: #ece7df;
+      --focus: #2b2b2b;
+
+      --serif: Georgia, "Times New Roman", Times, serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a{ color: inherit; text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
+
+    /* Header */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      padding: 10px 0 22px;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap: 2px;
+    }
+    .brand .name{
+      font-family: var(--serif);
+      letter-spacing: 0.2px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .brand .tag{
+      color: var(--muted);
+      font-size: 13px;
+    }
+    nav{
+      display:flex;
+      gap: 14px;
+      align-items:center;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    .btn:hover{
+      border-color: var(--focus);
+      text-decoration:none;
+    }
+    .btn.primary{
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+    .btn.primary:hover{
+      filter: brightness(1.05);
+    }
+
+    /* Hero */
+    .hero{
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 34px 28px;
+    }
+    .kicker{
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0 0 10px;
+    }
+    h1{
+      font-family: var(--serif);
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height: 1.1;
+      margin: 0 0 12px;
+      letter-spacing: 0.2px;
+    }
+    .subhead{
+      font-size: 17px;
+      color: var(--muted);
+      margin: 0 0 18px;
+      max-width: 70ch;
+    }
+    .hero-actions{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    /* Sections */
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 18px;
+    }
+    @media (min-width: 900px){
+      .grid{
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items:start;
+      }
+    }
+    .card{
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px 22px;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+    }
+    .card h2{
+      font-family: var(--serif);
+      font-size: 20px;
+      margin: 0 0 10px;
+    }
+    .card p{
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+    .list{
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+    }
+    .list li{
+      padding-left: 14px;
+      position: relative;
+      color: var(--muted);
+    }
+    .list li::before{
+      content:"—";
+      position:absolute;
+      left:0;
+      color: var(--ink);
+      opacity: 0.65;
+    }
+
+    .steps{
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .step{
+      border: 1px solid var(--soft);
+      border-radius: 12px;
+      padding: 12px 12px;
+      background: #ffffff;
+    }
+    .step strong{
+      display:block;
+      margin-bottom: 4px;
+      color: var(--ink);
+    }
+    .step span{
+      color: var(--muted);
+    }
+
+    /* Contact */
+    .contact{
+      margin-top: 16px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px 22px;
+      box-shadow: var(--shadow);
+    }
+    .contact h2{
+      font-family: var(--serif);
+      margin: 0 0 8px;
+      font-size: 22px;
+    }
+    form{
+      margin-top: 14px;
+      display:grid;
+      gap: 12px;
+      max-width: 640px;
+    }
+    .row{
+      display:grid;
+      gap: 10px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 700px){
+      .row{ grid-template-columns: 1fr 1fr; }
+    }
+    label{
+      font-size: 13px;
+      color: var(--muted);
+      display:block;
+      margin-bottom: 6px;
+    }
+    input, textarea{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+    }
+    input:focus, textarea:focus{
+      outline: 2px solid rgba(0,0,0,0.15);
+      outline-offset: 2px;
+      border-color: var(--focus);
+    }
+    textarea{ min-height: 120px; resize: vertical; }
+    .fineprint{
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    /* Footer */
+    footer{
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      justify-content:space-between;
+      align-items:center;
+      padding: 6px 2px;
+    }
+    .footer-links{
+      display:flex;
+      gap: 12px;
+      align-items:center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="name">Desk &amp; Margin Outfitters</div>
+        <div class="tag">Culture stability during high-stakes transitions.</div>
+      </div>
+      <nav>
+        <a href="#approach">Approach</a>
+        <a href="#engagement">Engagement</a>
+        <a href="#contact" class="btn primary">Start a Conversation</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-label="Intro">
+        <p class="kicker">Advisory • Systems • Activation</p>
+        <h1>Culture stability during high-stakes transitions.</h1>
+        <p class="subhead">
+          Organizations don’t lose momentum during change. They lose cohesion.
+          Desk &amp; Margin helps leadership teams protect trust, clarity, and cultural continuity
+          during moments of significant transition.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#contact">Start a conversation</a>
+          <a class="btn" href="#engagement">How engagements work</a>
+        </div>
+      </section>
+
+      <section class="grid" id="approach">
+        <div class="card">
+          <h2>The problem</h2>
+          <p>
+            Growth, acquisition, leadership turnover, restructuring, remote shifts — these moments create noise.
+            Without intentional communication architecture:
+          </p>
+          <ul class="list">
+            <li>Alignment fractures.</li>
+            <li>Informal narratives take over.</li>
+            <li>High performers disengage.</li>
+            <li>Trust erodes quietly.</li>
+          </ul>
+          <p style="margin-top:12px;">
+            Most organizations focus on operational integration. Few protect cultural integration.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>What we do</h2>
+          <p>
+            Desk &amp; Margin partners with executive teams to design structured, human-centered communication systems
+            that stabilize organizations during change.
+          </p>
+          <ul class="list">
+            <li>Executive narrative clarity</li>
+            <li>Transition communication architecture</li>
+            <li>Engagement rhythm design</li>
+            <li>Recognition system alignment</li>
+            <li>Post-survey activation strategy</li>
+          </ul>
+          <p style="margin-top:12px; color: var(--ink);">
+            We do not create noise. We create coherence.
+          </p>
+        </div>
+      </section>
+
+      <section class="grid" id="engagement">
+        <div class="card">
+          <h2>Engagement model</h2>
+          <p>
+            Every partnership begins with <strong>Desk &amp; Margin Discovery</strong> — a structured assessment
+            designed to surface friction, risk points, and opportunity areas during transition.
+          </p>
+
+          <div class="steps">
+            <div class="step">
+              <strong>1. Strategic Advisory</strong>
+              <span>Executive alignment and narrative design.</span>
+            </div>
+            <div class="step">
+              <strong>2. Systems Build</strong>
+              <span>Communication cadence, rituals, and engagement frameworks.</span>
+            </div>
+            <div class="step">
+              <strong>3. Activation Support</strong>
+              <span>Rollout, reinforcement, and leader enablement.</span>
+            </div>
+          </div>
+
+          <p style="margin-top:12px;">
+            High-touch. Limited engagements. Focused scope.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Who we work with</h2>
+          <ul class="list">
+            <li>Mid-to-large organizations undergoing transition</li>
+            <li>Private equity-backed firms navigating integration</li>
+            <li>Enterprise teams recalibrating after growth or restructuring</li>
+            <li>Leadership groups seeking cultural durability</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" aria-label="Contact">
+        <h2>Start a conversation</h2>
+        <p class="subhead" style="margin-bottom:0;">
+          Desk &amp; Margin works with a small number of organizations each quarter.
+          If you’re navigating change and want to protect what makes your organization strong, let’s talk.
+        </p>
+
+        <!--
+          IMPORTANT:
+          Replace action="#" with your form handler.
+          Options:
+          - Formspree: https://formspree.io/
+          - Netlify Forms (if hosting on Netlify)
+          - Your own endpoint
+        -->
+        <form action="#" method="post">
+          <div class="row">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" autocomplete="name" required />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+          </div>
+
+          <div>
+            <label for="org">Organization (optional)</label>
+            <input id="org" name="org" autocomplete="organization" />
+          </div>
+
+          <div>
+            <label for="msg">What are you navigating?</label>
+            <textarea id="msg" name="message" required></textarea>
+          </div>
+
+          <div class="hero-actions">
+            <button class="btn primary" type="submit">Send</button>
+            <!-- Replace with your actual email once ready -->
+            <a class="btn" href="mailto:hello@deskandmarginoutfitters.com">Or email: hello@deskandmarginoutfitters.com</a>
+          </div>
+
+          <div class="fineprint">
+            Note: This form is a placeholder until you connect a form handler. If you want, tell me where you’re hosting
+            (GitHub Pages / Netlify / Squarespace / etc.) and I’ll give you the exact plug-in instructions.
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="y"></span> Desk &amp; Margin Outfitters</div>
+      <div class="footer-links">
+        <a href="#approach">Approach</a>
+        <a href="#engagement">Engagement</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
