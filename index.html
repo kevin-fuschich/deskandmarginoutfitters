@@ -14,10 +14,9 @@
   --muted:#4a4a4a;
   --line:rgba(17,17,17,0.12);
 
-  /* Layer tones */
-  --tone-field: rgba(17,17,17,0.025);   /* Field Signals (outer / lightest) */
-  --tone-os: rgba(17,17,17,0.050);      /* Operating System (middle) */
-  --tone-core: rgba(17,17,17,0.085);    /* Core Conditions (inner / strongest) */
+  --tone-field: rgba(17,17,17,0.025);
+  --tone-os: rgba(17,17,17,0.050);
+  --tone-core: rgba(17,17,17,0.085);
 
   --serif:Georgia,"Times New Roman",serif;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
@@ -51,7 +50,6 @@ a:hover{text-decoration:underline;}
 }
 
 .brand{ display:flex; flex-direction:column; }
-.logo-lockup{ display:inline-block; }
 
 .logo-line1{
   font-family:var(--serif);
@@ -59,7 +57,6 @@ a:hover{text-decoration:underline;}
   font-weight:500;
   letter-spacing:0.2px;
   line-height:1.05;
-  margin:0;
 }
 
 .logo-line2{
@@ -67,9 +64,7 @@ a:hover{text-decoration:underline;}
   letter-spacing:0.32em;
   text-transform:uppercase;
   color:var(--muted);
-  line-height:1.0;
   margin-top:3px;
-  transform: translateX(2px);
 }
 
 .tagline{
@@ -85,7 +80,6 @@ a:hover{text-decoration:underline;}
   border:1px solid var(--line);
   border-radius:999px;
   color:var(--muted);
-  white-space:nowrap;
 }
 
 .btn{
@@ -96,7 +90,6 @@ a:hover{text-decoration:underline;}
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  background:transparent;
   cursor:pointer;
 }
 
@@ -113,7 +106,6 @@ a:hover{text-decoration:underline;}
   background-position:center;
   padding:160px 24px;
   color:white;
-  border-top:none;
 }
 
 .hero-overlay{
@@ -141,26 +133,18 @@ h1{
   font-weight:500;
   font-size:clamp(42px,4.8vw,64px);
   line-height:1.08;
-  margin:0 0 28px;
-  max-width:22ch;
+  margin-bottom:28px;
 }
 
 .lead{
   font-size:21px;
   max-width:62ch;
-  color:rgba(255,255,255,0.92);
 }
 
 .hero-note{
   margin-top:22px;
   font-size:16px;
-  color:rgba(255,255,255,0.86);
   max-width:70ch;
-}
-
-.hero-note strong{
-  font-weight:600;
-  color:white;
 }
 
 .hero .btn.primary{
@@ -169,9 +153,6 @@ h1{
   border-color:white;
 }
 
-.hero-cta{ margin-top:34px; }
-
-/* Sections */
 section{
   padding:110px 24px;
   border-top:1px solid var(--line);
@@ -183,83 +164,28 @@ section{
   margin:0 auto;
 }
 
-.section-inner p{
-  max-width:65ch;
-  color:var(--muted);
-  margin:0 0 22px;
-}
-
 .strongline{
   font-family:var(--serif);
   font-size:22px;
-  font-weight:500;
-  margin:0 0 26px;
-  max-width:60ch;
-}
-
-h2{
-  font-family:var(--serif);
-  font-size:28px;
-  font-weight:500;
-  margin:0 0 30px;
-}
-
-.step{
-  margin:0 0 28px;
-  max-width:66ch;
-  color:var(--muted);
-}
-
-.step strong{
-  display:block;
-  font-family:var(--serif);
-  font-weight:600;
-  margin-bottom:6px;
-  color:var(--ink);
+  margin-bottom:26px;
 }
 
 ul{
   max-width:60ch;
-  color:var(--muted);
   padding-left:22px;
-  margin:0 0 12px;
 }
-li{margin-bottom:10px;}
 
-/* Framework */
 .framework{
   margin-top:54px;
 }
 
-.framework-title{
-  font-family:var(--serif);
-  font-size:22px;
-  font-weight:500;
-  margin:0 0 10px;
-  color:var(--ink);
-}
-
-.framework-sub{
-  margin:0 0 16px;
-  max-width:70ch;
-  color:var(--muted);
-}
-
-.framework-declare{
-  margin:0 0 26px;
-  max-width:70ch;
-  color:var(--ink);
-  font-size:16px;
-}
-
 .cohesion-compact{
   display:grid;
-  grid-template-columns: 360px 1fr;
+  grid-template-columns:360px 1fr;
   gap:34px;
   align-items:center;
 }
 
-/* Diagram */
 .cohesion-mark{
   position:relative;
   width:360px;
@@ -285,89 +211,28 @@ li{margin-bottom:10px;}
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  text-align:center;
   font-family:var(--serif);
   font-size:30px;
-  line-height:1.22;
-  color:var(--ink);
 }
 
-/* Key */
-.cohesion-key{
-  display:grid;
-  gap:12px;
-  max-width:68ch;
-}
-
-.key-row{
-  padding:14px 16px;
-  border:1px solid var(--line);
-  border-radius:14px;
-  background:rgba(255,255,255,0.18);
-}
-
-.key-row.core{ background:var(--tone-core); }
-.key-row.os{ background:var(--tone-os); }
-.key-row.field{ background:var(--tone-field); }
-
-.key-label{
-  font-size:11px;
-  letter-spacing:0.22em;
-  text-transform:uppercase;
-  color:rgba(0,0,0,0.60);
-  margin-bottom:6px;
-}
-
-.key-text{
-  font-size:15px;
-  color:var(--ink);
-}
-
-/* Lower synthesis line */
-.framework-synthesis{
-  margin-top:42px;
-  max-width:70ch;
-  color:var(--muted);
-}
-
-/* Full-width images */
 .full-image{
   padding:0;
-  background:transparent;
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
 }
 
 .full-image img{
-  display:block;
   width:100%;
   height:320px;
   object-fit:cover;
+  display:block;
 }
 
 .full-image.virtual img{
   height:280px;
 }
 
-/* Forms */
-form{
-  margin-top:20px;
-  max-width:700px;
-  display:grid;
-  gap:14px;
-}
-
-input, textarea{
-  padding:12px;
-  border-radius:10px;
-  border:1px solid var(--line);
-  background:var(--paper);
-  font:inherit;
-  color:var(--ink);
-}
-textarea{min-height:130px;}
-
-/* Dark contact section */
+/* Dark contact */
 .contact-dark{
   background:#1a1a1a;
   color:#f4f1eb;
@@ -375,60 +240,42 @@ textarea{min-height:130px;}
   border-top:none;
 }
 
-.contact-dark .section-inner p{
-  color:rgba(244,241,235,0.85);
-}
-
-.contact-dark h2{
-  color:#f4f1eb;
-}
-
 .contact-dark input,
 .contact-dark textarea{
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(244,241,235,0.22);
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.25);
   color:#f4f1eb;
+  padding:12px;
+  border-radius:10px;
+  width:100%;
 }
 
-.contact-dark input::placeholder,
-.contact-dark textarea::placeholder{
-  color:rgba(244,241,235,0.55);
+.contact-dark form{
+  display:grid;
+  gap:14px;
+  max-width:700px;
+  margin-top:32px;
 }
 
 .contact-dark .btn.primary{
   background:#f4f1eb;
-  color:#111111;
+  color:#111;
   border-color:#f4f1eb;
 }
 
-/* Footer */
+/* Footer matches dark */
 footer{
-  padding:60px 24px;
-  border-top:1px solid var(--line);
-  font-size:12px;
-  color:var(--muted);
+  background:#111111;
+  color:rgba(244,241,235,0.65);
+  padding:50px 24px;
+}
+
+footer .inner{
+  max-width:920px;
+  margin:0 auto;
   display:flex;
   justify-content:space-between;
   flex-wrap:wrap;
-  gap:12px;
-  background:var(--paper);
-}
-
-/* Responsive */
-@media (max-width:720px){
-  .top{ flex-direction:column; }
-  .full-image img{ height:240px; }
-  .full-image.virtual img{ height:220px; }
-  .contact-dark{ padding:120px 24px; }
-}
-
-@media (max-width: 860px){
-  .cohesion-compact{ grid-template-columns:1fr; }
-  .cohesion-mark{
-    width:min(360px, 100%);
-    height:auto;
-    aspect-ratio:1/1;
-  }
 }
 </style>
 </head>
@@ -437,16 +284,12 @@ footer{
 
 <div class="top">
   <div class="brand">
-    <div class="logo-lockup">
-      <div class="logo-line1">Desk &amp; Margin</div>
-      <div class="logo-line2">Outfitters</div>
-    </div>
+    <div class="logo-line1">Desk &amp; Margin</div>
+    <div class="logo-line2">Outfitters</div>
     <div class="tagline">Partner-led advisory aligning people and priorities across the enterprise.</div>
   </div>
-
-  <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+  <div>
     <span class="pill">Confidential • Limited engagements</span>
-    <a href="#contact" class="btn primary">Request a private introduction</a>
   </div>
 </div>
 
@@ -454,105 +297,49 @@ footer{
   <div class="hero-overlay"></div>
   <div class="hero-inner">
     <div class="kicker">Leadership advisory • Enterprise alignment • Culture architecture</div>
-
     <h1>Align the enterprise — culturally and strategically.</h1>
-
     <div class="lead">
-      Desk &amp; Margin helps leadership teams align people and priorities across the enterprise — culturally and strategically —
-      through deliberate systems of communication, recognition, and trust.
+      Desk &amp; Margin helps leadership teams align people and priorities across the enterprise — culturally and strategically — through deliberate systems of communication, recognition, and trust.
     </div>
-
     <div class="hero-note">
       <strong>We align leadership intent with enterprise reality — so strategy and culture move together.</strong>
     </div>
-
-    <div class="hero-cta">
-      <a href="#contact" class="btn primary">Request a private introduction</a>
-    </div>
   </div>
 </section>
 
 <section>
   <div class="section-inner">
-    <div class="strongline">Culture rarely breaks loudly. It erodes quietly — especially when systems aren’t intentional.</div>
-    <p>
-      Organizations often assume culture will “hold” on its own. Without structure, clarity, and reinforcement,
-      even strong cultures drift under pressure.
-    </p>
-    <p>
-      The work is not about slogans or campaigns. It is about architecture — the rhythms, narratives,
-      and leader behaviors that create alignment at scale.
-    </p>
+    <div class="strongline">Culture rarely breaks loudly. It erodes quietly.</div>
+    <p>The work is not about slogans. It is about structure — rhythms, narratives, and leader behavior that create alignment at scale.</p>
   </div>
 </section>
 
 <section>
   <div class="section-inner">
-    <div class="strongline">Culture is usually ignored until it’s in trouble.</div>
-    <p>
-      When cohesion starts to slip, leaders often respond with language, campaigns, or pressure.
-      That kind of forcing doesn’t strengthen culture — it makes it performative and brittle.
-    </p>
-    <p>
-      Culture isn’t installed. It’s reinforced. We treat it as an operating system —
-      built through clarity, cadence, and trust.
-    </p>
-
-    <div class="framework" aria-label="Cohesion Model framework">
-      <div class="framework-title">Cohesion has three conditions.</div>
-
-      <p class="framework-sub">
-        Alignment is not a messaging exercise. It is the disciplined coordination of narrative, operating rhythm,
-        and leader behavior across levels.
-      </p>
-
-      <p class="framework-declare">
-        We align leadership intent with enterprise reality — so strategy and culture move together.
-      </p>
-
+    <div class="framework">
       <div class="cohesion-compact">
-        <div class="cohesion-mark" role="img" aria-label="Three concentric rings with Trust, Clarity, Cohesion at the center.">
+        <div class="cohesion-mark">
           <div class="ring outer"></div>
           <div class="ring middle"></div>
           <div class="ring core"></div>
-
           <div class="center-words">
             <div>Trust</div>
             <div>Clarity</div>
             <div>Cohesion</div>
           </div>
         </div>
-
-        <div class="cohesion-key" aria-label="Model key">
-          <div class="key-row core">
-            <div class="key-label">Core Conditions</div>
-            <div class="key-text">Trust • Clarity • Cohesion</div>
-          </div>
-
-          <div class="key-row os">
-            <div class="key-label">Operating System</div>
-            <div class="key-text">Narrative • Operating rhythm • Decision signals</div>
-          </div>
-
-          <div class="key-row field">
-            <div class="key-label">Field Signals</div>
-            <div class="key-text">Artifacts • Rituals • Leader behavior</div>
-          </div>
+        <div>
+          <p><strong>Core Conditions</strong><br>Trust • Clarity • Cohesion</p>
+          <p><strong>Operating System</strong><br>Narrative • Operating rhythm • Decision signals</p>
+          <p><strong>Field Signals</strong><br>Artifacts • Rituals • Leader behavior</p>
         </div>
       </div>
-
-      <p class="framework-synthesis">
-        We help leadership teams strengthen core conditions, align the operating system,
-        and calibrate field signals — so culture doesn’t depend on personality or memory.
-      </p>
     </div>
   </div>
 </section>
 
-<section class="full-image" aria-label="Aligned teams image">
-  <img
-    src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=2400&q=80"
-    alt="Leadership team in discussion">
+<section class="full-image">
+  <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=2400&q=80" alt="">
 </section>
 
 <section>
@@ -570,72 +357,34 @@ footer{
   </div>
 </section>
 
-<section class="full-image virtual" aria-label="Distributed and virtual work image">
-  <img
-    src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?auto=format&fit=crop&w=2400&q=80"
-    alt="Virtual meeting on a laptop in a calm workspace">
-</section>
-
-<section>
-  <div class="section-inner">
-    <h2>How it works</h2>
-    <p>
-      Engagements begin with <strong>Desk &amp; Margin Discovery</strong> — a structured diagnostic focused on narrative clarity,
-      engagement friction, and leadership alignment.
-    </p>
-
-    <div class="step">
-      <strong>1) Advisory</strong>
-      Strategic alignment and executive narrative clarity — the story leadership must consistently carry.
-    </div>
-
-    <div class="step">
-      <strong>2) Architecture</strong>
-      Communication systems, operating rhythms, and cultural artifacts that make decisions visible and durable —
-      including practical tools and physical touchpoints when they serve the moment.
-    </div>
-
-    <div class="step">
-      <strong>3) Reinforcement</strong>
-      Leader enablement, ritual design, and symbolic artifacts that prevent drift and sustain trust over time.
-    </div>
-
-    <p style="font-size:13px;color:var(--muted);margin-top:24px;max-width:70ch;">
-      Boutique model. Partner-led. Limited concurrent engagements.
-    </p>
-  </div>
+<section class="full-image virtual">
+  <img src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?auto=format&fit=crop&w=2400&q=80" alt="">
 </section>
 
 <section id="contact" class="contact-dark">
   <div class="section-inner">
     <h2>Request a private introduction</h2>
+    <p>If you are aligning teams at scale — or preparing the enterprise for what’s ahead — let’s begin a confidential conversation.</p>
 
-    <p>
-      If you are aligning teams at scale — or preparing the enterprise for what’s ahead —
-      let’s begin a confidential conversation.
-    </p>
-
-    <form action="#" method="post" style="margin-top:32px;">
-      <input type="text" name="name" placeholder="Name" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <input type="text" name="organization" placeholder="Organization (optional)" />
-      <textarea name="message" placeholder="What are you building or navigating?" required></textarea>
-      <button class="btn primary" type="submit">Send</button>
+    <form>
+      <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="text" placeholder="Organization (optional)">
+      <textarea placeholder="What are you building or navigating?" required></textarea>
+      <button class="btn primary">Send</button>
     </form>
-
-    <p style="font-size:12px;color:rgba(244,241,235,0.6);margin-top:18px;max-width:70ch;">
-      Boutique model. Partner-led. Limited concurrent engagements.
-    </p>
   </div>
 </section>
 
 <footer>
-  <div>© <span id="y"></span> Desk &amp; Margin Outfitters</div>
-  <div>Culture built with intention.</div>
+  <div class="inner">
+    <div>© <span id="y"></span> Desk &amp; Margin Outfitters</div>
+    <div>Partner-led. Enterprise-focused. Confidential.</div>
+  </div>
 </footer>
 
 <script>
-  document.getElementById("y").textContent = new Date().getFullYear();
+document.getElementById("y").textContent = new Date().getFullYear();
 </script>
 
 </body>
