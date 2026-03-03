@@ -4,7 +4,6 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Desk & Margin | Enterprise Culture Advisory</title>
-<meta name="description" content="Partner-led advisory aligning people and priorities across the enterprise — culturally and strategically." />
 <link rel="icon" type="image/png" href="favicon.png">
 
 <style>
@@ -45,6 +44,8 @@ header{
   font-size:22px;
 }
 
+/* HERO */
+
 .hero{
   padding:140px 0 110px;
   color:#fff;
@@ -67,6 +68,8 @@ header{
   max-width:70ch;
   font-size:20px;
 }
+
+/* SECTIONS */
 
 .section{
   padding:90px 0;
@@ -102,21 +105,33 @@ ul{
   display:block;
 }
 
-/* EXEC BRIEF */
+/* EXEC BRIEF — FIXED HIERARCHY */
+
+.brief-header{
+  margin-bottom:24px;
+}
+
+.brief-label{
+  font-size:12px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:rgba(0,0,0,0.55);
+  margin-bottom:6px;
+}
+
+.brief-title{
+  font-family:var(--serif);
+  font-size:26px;
+  font-weight:600;
+  margin:0;
+}
 
 .brief-wrap{
   display:grid;
   grid-template-columns:1fr 320px;
   gap:50px;
   align-items:center;
-  margin-top:30px;
-}
-
-.brief-title{
-  font-family:var(--serif);
-  font-size:22px;
-  font-weight:600;
-  margin:0 0 14px;
+  margin-top:24px;
 }
 
 .brief-link{
@@ -124,7 +139,7 @@ ul{
   font-weight:600;
   border-bottom:1px solid #000;
   padding-bottom:2px;
-  margin-top:8px;
+  margin-top:10px;
 }
 
 .brief-thumb{
@@ -234,18 +249,17 @@ footer{
   </div>
 </section>
 
-<section class="full-image">
-  <img src="images/leadership.jpg" alt="Leadership team">
-</section>
-
 <section class="section">
   <div class="wrap">
-    <div class="h2">Executive Brief</div>
+
+    <div class="brief-header">
+      <div class="brief-label">Executive Brief</div>
+      <div class="brief-title">Alignment Under Strain</div>
+    </div>
 
     <div class="brief-wrap">
 
       <div>
-        <div class="brief-title">Alignment Under Strain</div>
         <p class="p">
           A focused examination of how enterprise cohesion weakens under structural pressure —
           and how reinforcement architecture stabilizes it.
