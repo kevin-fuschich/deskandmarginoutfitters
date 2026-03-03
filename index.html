@@ -36,6 +36,7 @@ body{
 header{
   padding:28px 0;
   border-bottom:1px solid var(--line);
+  background:rgba(255,255,255,0.25);
 }
 
 .brand{
@@ -44,12 +45,11 @@ header{
 }
 
 /* HERO */
-
 .hero{
   padding:140px 0 110px;
   color:#fff;
   background:
-    linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.55)),
+    linear-gradient(to bottom, rgba(0,0,0,0.68), rgba(0,0,0,0.58)),
     url('leader-meeting.png');
   background-size:cover;
   background-position:center;
@@ -66,10 +66,10 @@ header{
 .hero p{
   max-width:70ch;
   font-size:20px;
+  color:rgba(255,255,255,0.92);
 }
 
 /* SECTIONS */
-
 .section{
   padding:90px 0;
   border-bottom:1px solid var(--line);
@@ -88,7 +88,7 @@ header{
 .p{
   max-width:70ch;
   margin:0 0 16px;
-  color:rgba(0,0,0,0.7);
+  color:rgba(0,0,0,0.72);
 }
 
 ul{
@@ -104,62 +104,122 @@ ul{
   display:block;
 }
 
-/* EXEC BRIEF */
-
-.brief-header{
-  margin-bottom:20px;
+/* EXEC BRIEF — tightened */
+.exec{
+  padding-top:78px;   /* slightly tighter than other sections */
+  padding-bottom:78px;
 }
 
-.brief-label{
+.exec-top{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  margin-bottom:18px;
+}
+
+.exec-label{
   font-size:12px;
   letter-spacing:0.18em;
   text-transform:uppercase;
-  color:rgba(0,0,0,0.55);
-  margin-bottom:6px;
+  color:rgba(0,0,0,0.52);
 }
 
-.brief-title{
+.exec-title{
   font-family:var(--serif);
-  font-size:26px;
+  font-size:28px;
   font-weight:600;
+  line-height:1.18;
   margin:0;
 }
 
-.brief-wrap{
+.exec-grid{
   display:grid;
-  grid-template-columns:1fr 320px;
-  gap:50px;
+  grid-template-columns: 1fr 300px;
+  gap:34px;
+  align-items:start;
+}
+
+.exec-card{
+  border:1px solid rgba(17,17,17,0.10);
+  background:rgba(255,255,255,0.45);
+  border-radius:14px;
+  padding:22px 22px 20px;
+}
+
+.exec-intro{
+  margin:0;
+  color:rgba(0,0,0,0.72);
+  font-size:16px;
+  line-height:1.7;
+}
+
+.exec-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
   align-items:center;
-  margin-top:24px;
+  margin-top:16px;
 }
 
-.brief-link{
-  display:inline-block;
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 16px;
+  border-radius:999px;
+  border:1px solid rgba(17,17,17,0.88);
   font-weight:600;
-  border-bottom:1px solid #000;
-  padding-bottom:2px;
-  margin-top:10px;
+  text-decoration:none;
+  white-space:nowrap;
 }
 
-.brief-thumb{
-  border:1px solid var(--line);
-  box-shadow:0 12px 40px rgba(0,0,0,0.08);
-  border-radius:6px;
+.btn.primary{
+  background:#111;
+  color:#fff;
+  border-color:#111;
+}
+
+.btn.ghost{
+  background:transparent;
+  color:#111;
+  border-color:rgba(17,17,17,0.25);
+}
+
+.exec-meta{
+  margin-top:12px;
+  font-size:13px;
+  color:rgba(0,0,0,0.55);
+}
+
+.exec-thumb{
+  display:block;
+  border:1px solid rgba(17,17,17,0.10);
+  border-radius:10px;
   overflow:hidden;
-  transition:transform .2s ease;
+  box-shadow:0 14px 42px rgba(0,0,0,0.08);
+  transition:transform .2s ease, box-shadow .2s ease;
 }
 
-.brief-thumb:hover{
+.exec-thumb:hover{
   transform:translateY(-4px);
+  box-shadow:0 18px 54px rgba(0,0,0,0.10);
 }
 
-.brief-thumb img{
+.exec-thumb img{
   width:100%;
+  height:auto;
   display:block;
 }
 
-/* CONTACT */
+.exec-thumb-cap{
+  padding:10px 12px;
+  background:rgba(255,255,255,0.55);
+  border-top:1px solid rgba(17,17,17,0.08);
+  font-size:12px;
+  color:rgba(0,0,0,0.55);
+}
 
+/* CONTACT */
 .contact{
   background:#111;
   color:#f4f1eb;
@@ -171,10 +231,11 @@ ul{
   width:100%;
   padding:12px;
   margin-bottom:12px;
-  border-radius:8px;
-  border:1px solid rgba(255,255,255,0.2);
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.20);
   background:rgba(255,255,255,0.05);
   color:#fff;
+  font:inherit;
 }
 
 .contact button{
@@ -183,7 +244,7 @@ ul{
   color:#111;
   border:none;
   border-radius:999px;
-  font-weight:600;
+  font-weight:700;
 }
 
 footer{
@@ -194,13 +255,10 @@ footer{
   font-size:14px;
 }
 
+/* responsive */
 @media(max-width:900px){
-  .brief-wrap{
-    grid-template-columns:1fr;
-  }
-  .brief-thumb{
-    max-width:260px;
-  }
+  .exec-grid{grid-template-columns:1fr}
+  .exec-thumb{max-width:280px}
 }
 </style>
 </head>
@@ -219,6 +277,16 @@ footer{
     <p>
       We help leadership teams strengthen core conditions, align reinforcement systems,
       and make cohesion structural — so culture does not depend on personality or memory.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="h2">Reinforcement Architecture</div>
+    <p class="p">
+      Cohesion holds when leadership intent is reinforced across core conditions,
+      operating rhythm, and visible field signals.
     </p>
   </div>
 </section>
@@ -242,33 +310,41 @@ footer{
   <img src="virtual-meeting.png" alt="Virtual leadership meeting workspace">
 </section>
 
-<section class="section">
+<section class="section exec">
   <div class="wrap">
 
-    <div class="brief-header">
-      <div class="brief-label">Executive Brief</div>
-      <div class="brief-title">Alignment Under Strain</div>
+    <div class="exec-top">
+      <div class="exec-label">Executive Brief</div>
+      <h2 class="exec-title">Alignment Under Strain</h2>
     </div>
 
-    <div class="brief-wrap">
-      <div>
-        <p class="p">
+    <div class="exec-grid">
+
+      <div class="exec-card">
+        <p class="exec-intro">
           A focused examination of how enterprise cohesion weakens under structural pressure —
           and how reinforcement architecture stabilizes it.
         </p>
-        <a class="brief-link"
-           href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf"
-           target="_blank">
-          Download the Executive Brief →
-        </a>
+
+        <div class="exec-actions">
+          <a class="btn primary" href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf" target="_blank" rel="noopener">
+            Download PDF →
+          </a>
+          <a class="btn ghost" href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf" target="_blank" rel="noopener">
+            Open in new tab
+          </a>
+        </div>
+
+        <div class="exec-meta">
+          PDF • Executive-ready formatting • Designed for forwarding
+        </div>
       </div>
 
-      <a class="brief-thumb"
-         href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf"
-         target="_blank">
-        <img src="alignment-under-strain-cover.png"
-             alt="Alignment Under Strain cover thumbnail">
+      <a class="exec-thumb" href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf" target="_blank" rel="noopener" aria-label="Open Alignment Under Strain PDF">
+        <img src="alignment-under-strain-cover.png" alt="Alignment Under Strain cover thumbnail">
+        <div class="exec-thumb-cap">Click to open the brief</div>
       </a>
+
     </div>
 
   </div>
