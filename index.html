@@ -1,150 +1,296 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Desk & Margin | Enterprise Culture Advisory</title>
+<meta name="description" content="Partner-led advisory aligning people and priorities across the enterprise — culturally and strategically." />
 <link rel="icon" type="image/png" href="favicon.png">
 
 <style>
-:root {
-  --ink: #111111;
-  --muted: #6f6a63;
-  --paper: #f6f3ee;
-  --line: #e5e2dd;
-  --serif: "Georgia", "Times New Roman", serif;
+:root{
+  --ink-navy:#002244;
+  --ink-black:#111111;
+
+  --paper:#f2f0ec;
+  --field-white:#fffdf8;
+
+  --meta-grey:#2f2f2f;
+  --muted-ink:#3a3a3a;
+  --line-grey:#b7b1a7;
+
+  --soft:#f3f1ec;
+
+  --font-serif:"Georgia","Times New Roman",serif;
+  --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
+
+  --max:980px;
+
+  --tone-field: rgba(17,17,17,0.025);
+  --tone-os: rgba(17,17,17,0.050);
+  --tone-core: rgba(17,17,17,0.085);
 }
 
-body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--serif);
-  line-height: 1.7;
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:var(--font-sans);
+  background:var(--paper);
+  color:var(--ink-black);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+a:hover{text-decoration:underline}
+
+.wrap{max-width:var(--max); margin:0 auto; padding:0 24px}
+
+header{
+  padding:26px 0;
+  border-bottom:1px solid rgba(17,17,17,0.12);
+  background:rgba(255,255,255,0.35);
+  backdrop-filter:saturate(120%) blur(6px);
+}
+.header-row{
+  display:flex; align-items:flex-start; justify-content:space-between; gap:18px;
+}
+.brand{
+  display:flex; flex-direction:column; gap:8px;
+}
+.wordmark{
+  line-height:1.05;
+}
+.wordmark .l1{
+  font-family:var(--font-serif);
+  font-size:24px;
+  font-weight:500;
+  letter-spacing:0.2px;
+}
+.wordmark .l2{
+  font-family:var(--font-sans);
+  font-size:11px;
+  letter-spacing:0.32em;
+  text-transform:uppercase;
+  color:rgba(17,17,17,0.6);
+  transform: translateX(2px);
+}
+.tagline{
+  max-width:70ch;
+  font-size:14px;
+  color:rgba(17,17,17,0.65);
+}
+.header-cta{
+  display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:flex-end;
+}
+.pill{
+  font-size:12px;
+  padding:7px 12px;
+  border:1px solid rgba(17,17,17,0.18);
+  border-radius:999px;
+  color:rgba(17,17,17,0.65);
+  white-space:nowrap;
+}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:12px 20px;
+  border-radius:999px;
+  border:1px solid var(--ink-black);
+  background:transparent;
+  font-size:14px;
+}
+.btn.primary{background:var(--ink-black); color:#fff}
+
+.hero{
+  position:relative;
+  padding:140px 0 110px;
+  color:#fff;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.68), rgba(0,0,0,0.52)),
+    url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2400&q=80');
+  background-size:cover;
+  background-position:center;
+  border-bottom:1px solid rgba(17,17,17,0.12);
+}
+.kicker{
+  font-size:12px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.78);
+  margin-bottom:24px;
+}
+.hero h1{
+  font-family:var(--font-serif);
+  font-weight:500;
+  font-size:clamp(42px,4.6vw,62px);
+  line-height:1.08;
+  margin:0 0 22px;
+  max-width:22ch;
+}
+.hero .lead{
+  font-size:20px;
+  max-width:68ch;
+  color:rgba(255,255,255,0.92);
+}
+.hero .cta-row{margin-top:30px}
+
+.section{
+  padding:92px 0;
+  border-bottom:1px solid rgba(17,17,17,0.12);
+  background:var(--field-white);
+}
+.section.alt{background:var(--paper)}
+.h2{
+  font-family:var(--font-serif);
+  font-size:30px;
+  font-weight:500;
+  margin:0 0 18px;
+}
+.strongline{
+  font-family:var(--font-serif);
+  font-size:22px;
+  font-weight:500;
+  margin:0 0 18px;
+  max-width:65ch;
+}
+.p{
+  margin:0 0 16px;
+  color:rgba(17,17,17,0.68);
+  max-width:70ch;
+  font-size:16px;
 }
 
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 28px;
+.framework{
+  margin-top:44px;
+}
+.framework-grid{
+  display:grid;
+  grid-template-columns: 360px 1fr;
+  gap:34px;
+  align-items:center;
+  margin-top:20px;
 }
 
-header {
-  padding: 60px 0 40px 0;
-  border-bottom: 1px solid var(--line);
+.cohesion-mark{
+  position:relative;
+  width:360px;
+  height:360px;
+  margin:0 auto;
+}
+.ring{position:absolute; inset:0; border-radius:50%; border:1px solid rgba(17,17,17,0.12)}
+.ring.outer{background:var(--tone-field)}
+.ring.middle{inset:18%; background:var(--tone-os)}
+.ring.core{inset:36%; background:var(--tone-core)}
+.center-words{
+  position:absolute; inset:36%;
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  text-align:center;
+  font-family:var(--font-serif);
+  font-size:30px;
+  line-height:1.22;
 }
 
-.brand {
-  font-size: 20px;
-  letter-spacing: 1px;
+.key{
+  display:grid; gap:12px;
+}
+.key-row{
+  padding:14px 16px;
+  border:1px solid rgba(17,17,17,0.12);
+  border-radius:14px;
+}
+.key-row.core{background:var(--tone-core)}
+.key-row.os{background:var(--tone-os)}
+.key-row.field{background:var(--tone-field)}
+.key-label{
+  font-size:11px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:rgba(0,0,0,0.60);
+  margin-bottom:6px;
+}
+.key-text{font-size:15px}
+
+.full-image{
+  padding:0;
+  background:transparent;
+  border-bottom:1px solid rgba(17,17,17,0.12);
+}
+.full-image img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  display:block;
 }
 
-.hero {
-  padding: 120px 0 100px 0;
+ul{max-width:70ch; color:rgba(17,17,17,0.68); padding-left:22px; margin:0}
+li{margin-bottom:10px}
+
+/* EXEC BRIEF THUMBNAIL SECTION */
+.brief-wrap{
+  display:grid;
+  grid-template-columns: 1fr 320px;
+  gap:44px;
+  align-items:center;
+  margin-top:26px;
+}
+.brief-card{
+  border:1px solid rgba(17,17,17,0.12);
+  border-radius:14px;
+  background:rgba(255,255,255,0.35);
+  padding:20px;
+}
+.brief-link{
+  display:inline-block;
+  font-weight:600;
+  border-bottom:1px solid rgba(17,17,17,0.85);
+  padding-bottom:2px;
+}
+.brief-thumb{
+  border:1px solid rgba(17,17,17,0.12);
+  box-shadow:0 12px 40px rgba(0,0,0,0.07);
+  border-radius:6px;
+  overflow:hidden;
+  transition:transform .2s ease;
+}
+.brief-thumb:hover{transform: translateY(-4px)}
+.brief-thumb img{display:block; width:100%; height:auto}
+
+/* Contact */
+.contact{
+  background:#151515;
+  color:#f4f1eb;
+  padding:120px 0;
+}
+.contact .p{color:rgba(244,241,235,0.86)}
+form{margin-top:18px; max-width:720px; display:grid; gap:12px}
+input, textarea{
+  padding:12px 12px;
+  border-radius:10px;
+  border:1px solid rgba(244,241,235,0.22);
+  background:rgba(255,255,255,0.03);
+  color:#f4f1eb;
+  font:inherit;
+}
+textarea{min-height:130px}
+.contact .btn.primary{
+  background:#f4f1eb; color:#111; border-color:#f4f1eb;
 }
 
-.hero h1 {
-  font-size: 44px;
-  font-weight: normal;
-  margin-bottom: 24px;
+/* Footer */
+footer{
+  background:#0f0f0f;
+  color:rgba(244,241,235,0.65);
+  padding:46px 0;
+}
+.footer-row{
+  display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap;
 }
 
-.hero p {
-  font-size: 20px;
-  max-width: 720px;
-  color: var(--muted);
-}
-
-.section {
-  padding: 90px 0;
-  border-top: 1px solid var(--line);
-}
-
-.section h2 {
-  font-size: 30px;
-  font-weight: normal;
-  margin-bottom: 24px;
-}
-
-.section p {
-  font-size: 18px;
-  max-width: 720px;
-  margin-bottom: 18px;
-}
-
-.brief-container {
-  display: flex;
-  gap: 70px;
-  align-items: center;
-}
-
-.brief-text {
-  flex: 1;
-}
-
-.brief-image {
-  flex: 0 0 280px;
-}
-
-.brief-image img {
-  width: 100%;
-  border: 1px solid var(--line);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.06);
-  transition: transform 0.2s ease;
-}
-
-.brief-image img:hover {
-  transform: translateY(-4px);
-}
-
-.brief-link {
-  font-weight: 600;
-  text-decoration: none;
-  border-bottom: 1px solid var(--ink);
-  padding-bottom: 3px;
-}
-
-.brief-link:hover {
-  opacity: 0.7;
-}
-
-.cta {
-  padding: 110px 0;
-  text-align: center;
-  border-top: 1px solid var(--line);
-}
-
-.cta h3 {
-  font-size: 26px;
-  font-weight: normal;
-  margin-bottom: 20px;
-}
-
-.cta a {
-  text-decoration: none;
-  font-weight: 600;
-  border-bottom: 1px solid var(--ink);
-  padding-bottom: 4px;
-}
-
-footer {
-  padding: 60px 0;
-  text-align: center;
-  font-size: 14px;
-  color: var(--muted);
-  border-top: 1px solid var(--line);
-}
-
-@media (max-width: 900px) {
-  .brief-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .brief-image {
-    width: 240px;
-  }
+/* Responsive */
+@media (max-width: 900px){
+  .framework-grid{grid-template-columns:1fr}
+  .cohesion-mark{width:min(360px,100%); height:auto; aspect-ratio:1/1}
+  .brief-wrap{grid-template-columns:1fr}
+  .brief-thumb{max-width:260px}
 }
 </style>
 </head>
@@ -152,79 +298,165 @@ footer {
 <body>
 
 <header>
-  <div class="container">
-    <div class="brand">DESK & MARGIN OUTFITTERS</div>
+  <div class="wrap header-row">
+    <div class="brand">
+      <div class="wordmark">
+        <div class="l1">Desk &amp; Margin</div>
+        <div class="l2">Outfitters</div>
+      </div>
+      <div class="tagline">Partner-led advisory aligning people and priorities across the enterprise.</div>
+    </div>
+
+    <div class="header-cta">
+      <span class="pill">Confidential • Limited engagements</span>
+      <a class="btn primary" href="#contact">Request a private introduction</a>
+    </div>
   </div>
 </header>
 
 <section class="hero">
-  <div class="container">
-    <h1>
-      Culture rarely collapses overnight.<br>
-      It drifts when leadership intent isn’t reinforced.
-    </h1>
-    <p>
-      We help leadership teams strengthen core conditions, align reinforcement systems,
-      and make cohesion structural — so culture does not depend on personality or memory.
-    </p>
+  <div class="wrap">
+    <div class="kicker">Leadership advisory • Enterprise alignment • Culture architecture</div>
+    <h1>Align the enterprise — culturally and strategically.</h1>
+    <div class="lead">
+      We help leadership teams strengthen core conditions, align reinforcement systems, and make cohesion structural —
+      so culture does not depend on personality or memory.
+    </div>
+    <div class="cta-row">
+      <a class="btn primary" href="#contact" style="background:#fff;color:#111;border-color:#fff">Request a private introduction</a>
+    </div>
   </div>
 </section>
 
 <section class="section">
-  <div class="container">
-    <h2>Reinforcement Architecture</h2>
-    <p>
-      Alignment is not messaging. It is structural.
+  <div class="wrap">
+    <div class="strongline">Culture doesn’t collapse overnight. It drifts when leadership intent isn’t reinforced.</div>
+    <p class="p">
+      Organizations often assume culture will “hold” on its own. Without structure, clarity, and reinforcement,
+      even strong cultures drift under pressure.
     </p>
-    <p>
-      Cohesion holds when leadership intent is reinforced across core conditions,
-      operating rhythm, and visible field signals.
+    <p class="p">
+      The work is not about slogans or campaigns. It is about architecture — the rhythms, narratives,
+      and leader behaviors that create alignment at scale.
     </p>
-  </div>
-</section>
 
-<section class="section">
-  <div class="container brief-container">
+    <div class="framework">
+      <div class="h2">Reinforcement architecture</div>
+      <p class="p">Cohesion holds when reinforcement is aligned across three layers.</p>
 
-    <div class="brief-text">
-      <h2>Executive Brief</h2>
-      <p>
-        <em>Alignment Under Strain</em> explores how enterprise cohesion weakens under structural pressure —
-        and how reinforcement architecture stabilizes it.
-      </p>
-      <p>
-        <a href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf" target="_blank" class="brief-link">
-          Download the Executive Brief →
-        </a>
+      <div class="framework-grid">
+        <div class="cohesion-mark" aria-label="Three rings with Trust, Clarity, Cohesion at the center">
+          <div class="ring outer"></div>
+          <div class="ring middle"></div>
+          <div class="ring core"></div>
+          <div class="center-words">
+            <div>Trust</div>
+            <div>Clarity</div>
+            <div>Cohesion</div>
+          </div>
+        </div>
+
+        <div class="key">
+          <div class="key-row core">
+            <div class="key-label">Core Conditions</div>
+            <div class="key-text">Trust • Clarity • Cohesion</div>
+          </div>
+          <div class="key-row os">
+            <div class="key-label">Operating System</div>
+            <div class="key-text">Narrative • Operating rhythm • Decision signals</div>
+          </div>
+          <div class="key-row field">
+            <div class="key-label">Field Signals</div>
+            <div class="key-text">Artifacts • Rituals • Leader behavior</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="p" style="margin-top:26px">
+        We align leadership intent with enterprise reality — so strategy and culture move together.
       </p>
     </div>
+  </div>
+</section>
 
-    <div class="brief-image">
-      <a href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf" target="_blank">
-        <img src="alignment-under-strain-cover.png" alt="Alignment Under Strain Executive Brief Cover">
+<section class="full-image">
+  <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=2400&q=80"
+       alt="Leadership team in discussion">
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <div class="strongline">When transition comes, culture becomes the stress test.</div>
+    <ul>
+      <li>Acquisition or integration</li>
+      <li>Leadership transition</li>
+      <li>Structural realignment</li>
+      <li>Operating model shifts</li>
+      <li>Rapid growth or contraction</li>
+      <li>Distributed workforce transitions</li>
+      <li>Crisis and catastrophe response</li>
+    </ul>
+  </div>
+</section>
+
+<section class="full-image">
+  <img src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?auto=format&fit=crop&w=2400&q=80"
+       alt="Virtual meeting on a laptop in a calm workspace">
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="h2">Executive brief</div>
+    <div class="brief-wrap">
+      <div class="brief-card">
+        <p class="p" style="margin-top:0">
+          <em>Alignment Under Strain</em> explores how enterprise cohesion weakens under structural pressure —
+          and how reinforcement architecture stabilizes it.
+        </p>
+        <p class="p" style="margin-bottom:0">
+          <a class="brief-link" href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf" target="_blank">
+            Download the Executive Brief →
+          </a>
+        </p>
+      </div>
+
+      <a class="brief-thumb" href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf" target="_blank"
+         aria-label="Download Alignment Under Strain PDF">
+        <img src="alignment-under-strain-cover.png" alt="Alignment Under Strain — cover page thumbnail">
       </a>
     </div>
-
   </div>
 </section>
 
-<section class="cta">
-  <div class="container">
-    <h3>Request a Private Introduction</h3>
-    <p>
-      If this resonates, we welcome a focused conversation.
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="h2" style="color:#f4f1eb">Request a private introduction</div>
+    <p class="p">If you are aligning teams at scale — or preparing the enterprise for what’s ahead — let’s begin a confidential conversation.</p>
+
+    <form action="#" method="post">
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="text" name="organization" placeholder="Organization (optional)" />
+      <textarea name="message" placeholder="What are you building or navigating?" required></textarea>
+      <button class="btn primary" type="submit">Send</button>
+    </form>
+
+    <p class="p" style="font-size:12px; color:rgba(244,241,235,0.6); margin-top:16px">
+      Boutique model. Partner-led. Limited concurrent engagements.
     </p>
-    <a href="mailto:hello@deskandmarginoutfitters.com">
-      hello@deskandmarginoutfitters.com →
-    </a>
   </div>
 </section>
 
 <footer>
-  <div class="container">
-    © Desk & Margin Outfitters
+  <div class="wrap footer-row">
+    <div>© <span id="y"></span> Desk &amp; Margin Outfitters</div>
+    <div>Partner-led. Enterprise-focused. Confidential.</div>
   </div>
 </footer>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
