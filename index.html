@@ -17,9 +17,7 @@
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
   --max:1120px;
 }
-
 *{box-sizing:border-box}
-
 body{
   margin:0;
   background:var(--paper);
@@ -27,7 +25,6 @@ body{
   font-family:var(--sans);
   line-height:1.7;
 }
-
 .wrap{max-width:var(--max); margin:auto; padding:0 22px;}
 a{color:inherit}
 
@@ -35,7 +32,6 @@ header{
   border-bottom:1px solid var(--line);
   background:rgba(255,255,255,0.25);
 }
-
 header .wrap{
   display:flex;
   align-items:center;
@@ -43,7 +39,6 @@ header .wrap{
   padding:16px 0;
   gap:14px;
 }
-
 .brand{
   font-family:var(--serif);
   font-size:20px;
@@ -51,7 +46,6 @@ header .wrap{
   color:var(--ink);
   white-space:nowrap;
 }
-
 .nav{
   display:flex;
   gap:10px;
@@ -59,7 +53,6 @@ header .wrap{
   align-items:center;
   justify-content:flex-end;
 }
-
 .btn{
   display:inline-flex;
   align-items:center;
@@ -73,7 +66,6 @@ header .wrap{
   color:#111;
   background:transparent;
 }
-
 .btn.primary{
   background:#111;
   color:#fff;
@@ -86,7 +78,6 @@ header .wrap{
   overflow:hidden;
   border-bottom:1px solid var(--line);
 }
-
 .hero img{
   width:100%;
   display:block;
@@ -94,7 +85,6 @@ header .wrap{
   object-fit:cover;
   filter:saturate(0.96);
 }
-
 .hero::after{
   content:"";
   position:absolute;
@@ -108,14 +98,12 @@ header .wrap{
   );
   pointer-events:none;
 }
-
 .hero .text{
   position:absolute;
   left:0; right:0;
   bottom:72px;
   color:#fff;
 }
-
 .hero h1{
   font-family:var(--serif);
   font-size:46px;
@@ -125,7 +113,6 @@ header .wrap{
   font-weight:600;
   text-shadow:0 2px 6px rgba(0,0,0,0.5);
 }
-
 .hero p{
   font-size:18px;
   margin:0;
@@ -133,7 +120,6 @@ header .wrap{
   color:#ffffff;
   text-shadow:0 2px 6px rgba(0,0,0,0.35);
 }
-
 .hero .cta{
   margin-top:18px;
   display:flex;
@@ -141,21 +127,19 @@ header .wrap{
   flex-wrap:wrap;
 }
 
+/* SECTIONS */
 .section{padding:74px 0;}
-
 .section.alt{
   background:var(--field);
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
 }
-
 h2{
   font-family:var(--serif);
   font-size:32px;
   margin:0 0 14px;
   font-weight:600;
 }
-
 .kicker{
   font-size:12px;
   letter-spacing:0.18em;
@@ -163,25 +147,18 @@ h2{
   color:rgba(0,0,0,0.55);
   margin-bottom:10px;
 }
-
 p{
   max-width:76ch;
   margin:0 0 14px;
   color:rgba(0,0,0,0.74);
 }
-
 p:last-child{margin-bottom:0}
 
-.grid{
-  display:grid;
-  gap:34px;
-}
-
+.grid{display:grid; gap:34px;}
 .grid.two{
   grid-template-columns:1.1fr 0.9fr;
   align-items:start;
 }
-
 @media(max-width:900px){
   .grid.two{grid-template-columns:1fr;}
 }
@@ -192,24 +169,20 @@ p:last-child{margin-bottom:0}
   gap:14px;
   margin-top:18px;
 }
-
 @media(max-width:900px){
   .cards{grid-template-columns:1fr;}
 }
-
 .card{
   border:1px solid rgba(17,17,17,0.10);
   background:rgba(255,255,255,0.55);
   border-radius:14px;
   padding:16px 16px 14px;
 }
-
 .card strong{
   display:block;
   margin-bottom:6px;
   font-size:14px;
 }
-
 .card span{
   color:rgba(0,0,0,0.68);
   font-size:14px;
@@ -220,18 +193,15 @@ p:last-child{margin-bottom:0}
   margin:auto;
   text-align:center;
 }
-
 .layer{
   padding:18px 16px;
   border-radius:16px;
   margin:12px 0;
   border:1px solid rgba(17,17,17,0.08);
 }
-
 .layer.outer{background:#ece7e1;}
 .layer.mid{background:#e0dbd5;}
 .layer.inner{background:#d5d0c9;}
-
 .layer strong{font-family:var(--serif); font-size:16px;}
 .layer div{color:rgba(0,0,0,0.70); font-size:14px; margin-top:4px;}
 
@@ -250,24 +220,20 @@ p:last-child{margin-bottom:0}
   gap:34px;
   align-items:center;
 }
-
 @media(max-width:900px){
   .exec{grid-template-columns:1fr; max-width:720px; margin:auto;}
 }
-
 .exec img{
   width:100%;
   border:1px solid var(--line);
   border-radius:10px;
   box-shadow:0 14px 44px rgba(0,0,0,0.08);
 }
-
 .exec h3{
   font-family:var(--serif);
   margin:0 0 8px;
   font-size:22px;
 }
-
 .exec p{margin:0 0 14px;}
 
 footer{
@@ -339,6 +305,43 @@ footer{
       <div class="card">
         <strong>Change resilience</strong>
         <span>Integration, growth, and crises don’t fracture cohesion.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEW: ENJOYMENT + INNOVATION -->
+<section class="section alt">
+  <div class="wrap grid two">
+    <div>
+      <div class="kicker">The human engine</div>
+      <h2>People innovate when they trust the room.</h2>
+      <p>
+        Enjoyment matters — not as a perk, but as a signal. When people respect who they work for and feel
+        safe to speak plainly, organizations surface better ideas, catch problems earlier, and move with less friction.
+      </p>
+      <p>
+        Innovation isn’t a brainstorm. It’s a culture condition: trust, clarity, and cohesion strong enough that people
+        take smart risks — and leadership reinforces the same signals consistently.
+      </p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <strong>Retention you can feel</strong>
+        <span>People stay longer — and stay more engaged — when leadership is coherent.</span>
+      </div>
+      <div class="card">
+        <strong>Idea throughput</strong>
+        <span>Better ideas surface when dissent is safe and decisions are explainable.</span>
+      </div>
+      <div class="card">
+        <strong>Less defensive silence</strong>
+        <span>Problems get raised early instead of buried until they cost more.</span>
+      </div>
+      <div class="card">
+        <strong>Innovation under constraint</strong>
+        <span>Teams experiment responsibly when signals and guardrails are consistent.</span>
       </div>
     </div>
   </div>
