@@ -1,372 +1,352 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Desk & Margin | Enterprise Culture Advisory</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Desk & Margin Outfitters</title>
+
 <link rel="icon" type="image/png" href="favicon.png">
 
 <style>
+
 :root{
-  --ink:#111;
-  --paper:#f2f0ec;
-  --field:#fffdf8;
-  --muted:#6f6a63;
-  --line:#e5e2dd;
-  --serif:"Georgia","Times New Roman",serif;
-  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-  --max:1000px;
+--ink:#111;
+--paper:#f2f0ec;
+--field:#fffdf8;
+--muted:#6f6a63;
+--line:#e6e3de;
+
+--serif:"Georgia","Times New Roman",serif;
+--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+
+--max:1100px;
 }
 
 *{box-sizing:border-box}
+
 body{
-  margin:0;
-  font-family:var(--sans);
-  background:var(--paper);
-  color:var(--ink);
-  line-height:1.7;
+margin:0;
+background:var(--paper);
+color:var(--ink);
+font-family:var(--sans);
+line-height:1.7;
 }
 
 .wrap{
-  max-width:var(--max);
-  margin:0 auto;
-  padding:0 24px;
+max-width:var(--max);
+margin:auto;
+padding:0 22px;
 }
 
 header{
-  padding:28px 0;
-  border-bottom:1px solid var(--line);
-  background:rgba(255,255,255,0.25);
+border-bottom:1px solid var(--line);
+background:rgba(255,255,255,0.25);
+}
+
+header .wrap{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:18px 0;
 }
 
 .brand{
-  font-family:var(--serif);
-  font-size:22px;
-}
-
-/* HERO */
-.hero{
-  padding:140px 0 110px;
-  color:#fff;
-  background:
-    linear-gradient(to bottom, rgba(0,0,0,0.68), rgba(0,0,0,0.58)),
-    url('leader-meeting.png');
-  background-size:cover;
-  background-position:center;
-}
-
-.hero h1{
-  font-family:var(--serif);
-  font-size:clamp(40px,5vw,60px);
-  font-weight:500;
-  max-width:24ch;
-  margin:0 0 20px;
-}
-
-.hero p{
-  max-width:70ch;
-  font-size:20px;
-  color:rgba(255,255,255,0.92);
-}
-
-/* SECTIONS */
-.section{
-  padding:86px 0;
-  border-bottom:1px solid var(--line);
-  background:var(--field);
-}
-
-.section.alt{background:var(--paper)}
-
-.h2{
-  font-family:var(--serif);
-  font-size:30px;
-  font-weight:500;
-  margin:0 0 18px;
-}
-
-.p{
-  max-width:72ch;
-  margin:0 0 16px;
-  color:rgba(0,0,0,0.72);
-  font-size:16px;
-}
-
-ul{
-  max-width:72ch;
-  margin:0;
-  padding-left:20px;
-}
-
-.full-image img{
-  width:100%;
-  height:280px;              /* tightened: was feeling banner-y */
-  object-fit:cover;
-  display:block;
-  border-bottom:1px solid var(--line);
-}
-
-/* EXEC BRIEF — tightened + bound */
-.exec{
-  padding:64px 0;            /* key fix: reduce vertical emptiness */
-}
-
-.exec-inner{
-  max-width:900px;           /* subtly tighter measure */
-  margin:0 auto;
-}
-
-.exec-head{
-  margin-bottom:14px;        /* key fix: label + title feel connected */
-}
-
-.exec-label{
-  font-size:12px;
-  letter-spacing:0.18em;
-  text-transform:uppercase;
-  color:rgba(0,0,0,0.52);
-  margin:0 0 6px;
-}
-
-.exec-title{
-  font-family:var(--serif);
-  font-size:30px;
-  font-weight:600;
-  line-height:1.15;
-  margin:0;
-}
-
-.exec-grid{
-  display:grid;
-  grid-template-columns: 1fr 330px;  /* binds the right side */
-  gap:26px;                          /* key fix: reduce distance */
-  align-items:center;                /* key fix: centers visual mass */
-  margin-top:18px;
-}
-
-.exec-card{
-  border:1px solid rgba(17,17,17,0.10);
-  background:rgba(255,255,255,0.52);
-  border-radius:14px;
-  padding:20px;
-}
-
-.exec-intro{
-  margin:0;
-  color:rgba(0,0,0,0.74);
-  font-size:16px;
-  line-height:1.7;
-}
-
-.exec-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  align-items:center;
-  margin-top:14px;
+font-family:var(--serif);
+font-size:20px;
+text-decoration:none;
+color:var(--ink);
 }
 
 .btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:11px 16px;
-  border-radius:999px;
-  border:1px solid rgba(17,17,17,0.88);
-  font-weight:700;
-  font-size:14px;
-  text-decoration:none;
-  white-space:nowrap;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:10px 16px;
+border-radius:999px;
+border:1px solid rgba(0,0,0,0.3);
+font-weight:700;
+font-size:14px;
+text-decoration:none;
+color:#111;
 }
 
 .btn.primary{
-  background:#111;
-  color:#fff;
-  border-color:#111;
+background:#111;
+color:#fff;
+border-color:#111;
 }
 
-.exec-meta{
-  margin-top:10px;
-  font-size:13px;
-  color:rgba(0,0,0,0.55);
+.hero{
+position:relative;
 }
 
-.exec-thumb{
-  display:block;
-  border:1px solid rgba(17,17,17,0.10);
-  border-radius:12px;
-  overflow:hidden;
-  background:#fff;
-  box-shadow:0 14px 44px rgba(0,0,0,0.10);
-  transition:transform .2s ease, box-shadow .2s ease;
+.hero img{
+width:100%;
+display:block;
+height:520px;
+object-fit:cover;
 }
 
-.exec-thumb:hover{
-  transform:translateY(-4px);
-  box-shadow:0 18px 56px rgba(0,0,0,0.12);
+.hero .text{
+position:absolute;
+bottom:80px;
+left:0;
+right:0;
 }
 
-.exec-thumb img{
-  width:100%;
-  height:auto;
-  display:block;
+.hero h1{
+font-family:var(--serif);
+font-size:44px;
+max-width:800px;
+margin:0 0 12px;
 }
 
-.exec-thumb-cap{
-  padding:10px 12px;
-  background:rgba(255,255,255,0.65);
-  border-top:1px solid rgba(17,17,17,0.08);
-  font-size:12px;
-  color:rgba(0,0,0,0.55);
+.hero p{
+font-size:18px;
+max-width:680px;
+margin:0;
+color:rgba(0,0,0,0.8);
 }
 
-/* CONTACT */
-.contact{
-  background:#111;
-  color:#f4f1eb;
-  padding:110px 0;
+.section{
+padding:70px 0;
 }
 
-.contact input,
-.contact textarea{
-  width:100%;
-  padding:12px;
-  margin-bottom:12px;
-  border-radius:10px;
-  border:1px solid rgba(255,255,255,0.20);
-  background:rgba(255,255,255,0.05);
-  color:#fff;
-  font:inherit;
+.section.alt{
+background:var(--field);
+border-top:1px solid var(--line);
+border-bottom:1px solid var(--line);
 }
 
-.contact button{
-  padding:12px 22px;
-  background:#fff;
-  color:#111;
-  border:none;
-  border-radius:999px;
-  font-weight:800;
+h2{
+font-family:var(--serif);
+font-size:32px;
+margin:0 0 16px;
+}
+
+p{
+max-width:720px;
+}
+
+.grid{
+display:grid;
+gap:40px;
+}
+
+.grid.two{
+grid-template-columns:1fr 1fr;
+}
+
+img.full{
+width:100%;
+border-radius:8px;
+}
+
+.framework{
+max-width:600px;
+margin:auto;
+text-align:center;
+}
+
+.layer{
+padding:18px;
+border-radius:14px;
+margin:12px 0;
+}
+
+.layer.outer{
+background:#ece7e1;
+}
+
+.layer.mid{
+background:#e0dbd5;
+}
+
+.layer.inner{
+background:#d5d0c9;
+}
+
+.exec{
+display:grid;
+grid-template-columns:220px 1fr;
+gap:40px;
+align-items:center;
+}
+
+.exec img{
+width:100%;
+border:1px solid var(--line);
+}
+
+.exec h3{
+font-family:var(--serif);
+margin:0 0 10px;
+}
+
+.exec p{
+margin:0 0 16px;
 }
 
 footer{
-  background:#0f0f0f;
-  color:#aaa;
-  padding:40px 0;
-  text-align:center;
-  font-size:14px;
+text-align:center;
+padding:40px 0;
+font-size:13px;
+color:rgba(0,0,0,0.5);
 }
 
-/* responsive */
-@media(max-width:900px){
-  .exec-grid{grid-template-columns:1fr}
-  .exec-inner{max-width:720px}
-  .exec-thumb{max-width:320px}
-}
 </style>
+
 </head>
 
 <body>
 
 <header>
-  <div class="wrap">
-    <div class="brand">Desk & Margin Outfitters</div>
-  </div>
+
+<div class="wrap">
+
+<a class="brand" href="/">Desk & Margin Outfitters</a>
+
+<a class="btn" href="diagnostic.html">Reinforcement Diagnostic</a>
+
+</div>
+
 </header>
 
 <section class="hero">
-  <div class="wrap">
-    <h1>Align the enterprise — culturally and strategically.</h1>
-    <p>
-      We help leadership teams strengthen core conditions, align reinforcement systems,
-      and make cohesion structural — so culture does not depend on personality or memory.
-    </p>
-  </div>
+
+<img src="leader-meeting.png">
+
+<div class="text wrap">
+
+<h1>
+Culture doesn't collapse overnight.  
+It drifts when leadership intent isn't reinforced through systems.
+</h1>
+
+<p>
+We help leadership teams strengthen the core, align the reinforcement,
+and make the expression consistent — so culture doesn't depend on
+personality or memory.
+</p>
+
+</div>
+
 </section>
 
 <section class="section">
-  <div class="wrap">
-    <div class="h2">Reinforcement Architecture</div>
-    <p class="p">
-      Cohesion holds when leadership intent is reinforced across core conditions,
-      operating rhythm, and visible field signals.
-    </p>
-  </div>
+
+<div class="wrap">
+
+<h2>Culture rarely breaks loudly</h2>
+
+<p>
+Most organizations assume alignment persists if leadership intent is clear.
+Experience suggests otherwise. Intent weakens when it is not reinforced.
+Clarity drifts when it is not carried through systems.
+</p>
+
+<p>
+Under pressure, organizations increase communication.  
+They restate values and clarify priorities.
+These actions are necessary — but insufficient.
+</p>
+
+</div>
+
 </section>
 
 <section class="section alt">
-  <div class="wrap">
-    <div class="h2">When transition comes, culture becomes the stress test.</div>
-    <ul>
-      <li>Acquisition or integration</li>
-      <li>Leadership transition</li>
-      <li>Structural realignment</li>
-      <li>Operating model shifts</li>
-      <li>Rapid growth or contraction</li>
-      <li>Distributed workforce transitions</li>
-      <li>Crisis and catastrophe response</li>
-    </ul>
-  </div>
+
+<div class="wrap framework">
+
+<h2>Reinforcement Architecture</h2>
+
+<div class="layer outer">
+<strong>Field Signals</strong><br>
+Artifacts · Rituals · Leader Behavior
+</div>
+
+<div class="layer mid">
+<strong>Operating System</strong><br>
+Narrative · Operating Rhythm · Decision Signals
+</div>
+
+<div class="layer inner">
+<strong>Core Conditions</strong><br>
+Trust · Clarity · Cohesion
+</div>
+
+</div>
+
 </section>
 
-<section class="full-image">
-  <img src="virtual-meeting.png" alt="Virtual leadership meeting workspace">
+<section class="section">
+
+<div class="wrap grid two">
+
+<div>
+
+<img class="full" src="virtual-meeting.png">
+
+</div>
+
+<div>
+
+<h2>Modern culture operates across distance</h2>
+
+<p>
+Distributed work changes how alignment travels.
+Intent must move across time zones, screens,
+and organizational layers without distortion.
+</p>
+
+<p>
+When reinforcement systems are weak,
+distance accelerates drift.
+</p>
+
+</div>
+
+</div>
+
 </section>
 
-<section class="section exec">
-  <div class="wrap">
-    <div class="exec-inner">
+<section class="section alt">
 
-      <div class="exec-head">
-        <div class="exec-label">Executive Brief</div>
-        <h2 class="exec-title">Alignment Under Strain</h2>
-      </div>
+<div class="wrap exec">
 
-      <div class="exec-grid">
+<div>
 
-        <div class="exec-card">
-          <p class="exec-intro">
-            A focused examination of how enterprise cohesion weakens under structural pressure —
-            and how reinforcement architecture stabilizes it.
-          </p>
+<img src="alignment-under-strain-cover.png">
 
-          <div class="exec-actions">
-            <a class="btn primary" href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf" target="_blank" rel="noopener">
-              Download PDF →
-            </a>
-          </div>
+</div>
 
-          <div class="exec-meta">
-            PDF • Executive-ready formatting • Designed for forwarding
-          </div>
-        </div>
+<div>
 
-        <a class="exec-thumb" href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf" target="_blank" rel="noopener" aria-label="Open Alignment Under Strain PDF">
-          <img src="alignment-under-strain-cover.png" alt="Alignment Under Strain cover thumbnail">
-          <div class="exec-thumb-cap">Click to open the brief</div>
-        </a>
+<h3>Alignment Under Strain</h3>
 
-      </div>
+<p>
+An executive brief examining how organizational alignment
+erodes during pressure — and how reinforcement systems
+determine whether culture holds or fractures.
+</p>
 
-    </div>
-  </div>
-</section>
+<a class="btn primary" href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf">
+Download Executive Brief
+</a>
 
-<section id="contact" class="contact">
-  <div class="wrap">
-    <h2>Request a private introduction</h2>
-    <p>If this resonates, we welcome a focused conversation.</p>
+</div>
 
-    <form>
-      <input type="text" placeholder="Name" required>
-      <input type="email" placeholder="Email" required>
-      <textarea placeholder="What are you building or navigating?" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </div>
+</div>
+
 </section>
 
 <footer>
-  © <script>document.write(new Date().getFullYear())</script> Desk & Margin Outfitters
+
+© 2026 Desk & Margin Outfitters
+
 </footer>
 
 </body>
