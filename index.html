@@ -1,353 +1,381 @@
 <!doctype html>
 <html lang="en">
 <head>
-
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
 <title>Desk & Margin Outfitters</title>
-
 <link rel="icon" type="image/png" href="favicon.png">
 
 <style>
-
 :root{
---ink:#111;
---paper:#f2f0ec;
---field:#fffdf8;
---muted:#6f6a63;
---line:#e6e3de;
-
---serif:"Georgia","Times New Roman",serif;
---sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-
---max:1100px;
+  --ink:#111;
+  --paper:#f2f0ec;
+  --field:#fffdf8;
+  --muted:#6f6a63;
+  --line:#e6e3de;
+  --serif:"Georgia","Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --max:1120px;
 }
-
 *{box-sizing:border-box}
-
 body{
-margin:0;
-background:var(--paper);
-color:var(--ink);
-font-family:var(--sans);
-line-height:1.7;
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  line-height:1.7;
 }
-
-.wrap{
-max-width:var(--max);
-margin:auto;
-padding:0 22px;
-}
+.wrap{max-width:var(--max); margin:auto; padding:0 22px;}
+a{color:inherit}
 
 header{
-border-bottom:1px solid var(--line);
-background:rgba(255,255,255,0.25);
+  border-bottom:1px solid var(--line);
+  background:rgba(255,255,255,0.25);
 }
-
 header .wrap{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:18px 0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 0;
+  gap:14px;
 }
-
 .brand{
-font-family:var(--serif);
-font-size:20px;
-text-decoration:none;
-color:var(--ink);
+  font-family:var(--serif);
+  font-size:20px;
+  text-decoration:none;
+  color:var(--ink);
+  white-space:nowrap;
 }
-
+.nav{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:flex-end;
+}
 .btn{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-padding:10px 16px;
-border-radius:999px;
-border:1px solid rgba(0,0,0,0.3);
-font-weight:700;
-font-size:14px;
-text-decoration:none;
-color:#111;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 14px;
+  border-radius:999px;
+  border:1px solid rgba(0,0,0,0.26);
+  font-weight:750;
+  font-size:14px;
+  text-decoration:none;
+  color:#111;
+  background:transparent;
 }
-
 .btn.primary{
-background:#111;
-color:#fff;
-border-color:#111;
+  background:#111;
+  color:#fff;
+  border-color:#111;
 }
 
 .hero{
-position:relative;
+  position:relative;
+  overflow:hidden;
+  border-bottom:1px solid var(--line);
 }
-
 .hero img{
-width:100%;
-display:block;
-height:520px;
-object-fit:cover;
+  width:100%;
+  display:block;
+  height:520px;
+  object-fit:cover;
+  filter:saturate(0.96);
 }
-
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.30) 35%, rgba(0,0,0,0.05));
+  pointer-events:none;
+}
 .hero .text{
-position:absolute;
-bottom:80px;
-left:0;
-right:0;
+  position:absolute;
+  left:0; right:0;
+  bottom:72px;
+  color:#fff;
 }
-
 .hero h1{
-font-family:var(--serif);
-font-size:44px;
-max-width:800px;
-margin:0 0 12px;
+  font-family:var(--serif);
+  font-size:46px;
+  line-height:1.12;
+  margin:0 0 14px;
+  max-width:20ch;
+  font-weight:600;
 }
-
 .hero p{
-font-size:18px;
-max-width:680px;
-margin:0;
-color:rgba(0,0,0,0.8);
+  font-size:18px;
+  margin:0;
+  max-width:78ch;
+  color:rgba(255,255,255,0.90);
+}
+.hero .cta{
+  margin-top:18px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
 }
 
-.section{
-padding:70px 0;
-}
-
+.section{padding:74px 0;}
 .section.alt{
-background:var(--field);
-border-top:1px solid var(--line);
-border-bottom:1px solid var(--line);
+  background:var(--field);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
 }
 
 h2{
-font-family:var(--serif);
-font-size:32px;
-margin:0 0 16px;
+  font-family:var(--serif);
+  font-size:32px;
+  margin:0 0 14px;
+  font-weight:600;
 }
-
-p{
-max-width:720px;
+.kicker{
+  font-size:12px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:rgba(0,0,0,0.55);
+  margin-bottom:10px;
 }
+p{max-width:76ch; margin:0 0 14px; color:rgba(0,0,0,0.74);}
+p:last-child{margin-bottom:0}
 
 .grid{
-display:grid;
-gap:40px;
+  display:grid;
+  gap:34px;
 }
-
 .grid.two{
-grid-template-columns:1fr 1fr;
+  grid-template-columns:1.1fr 0.9fr;
+  align-items:start;
+}
+@media(max-width:900px){
+  .grid.two{grid-template-columns:1fr;}
 }
 
-img.full{
-width:100%;
-border-radius:8px;
+.cards{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:18px;
+}
+@media(max-width:900px){
+  .cards{grid-template-columns:1fr;}
+}
+.card{
+  border:1px solid rgba(17,17,17,0.10);
+  background:rgba(255,255,255,0.55);
+  border-radius:14px;
+  padding:16px 16px 14px;
+}
+.card strong{
+  display:block;
+  margin-bottom:6px;
+  font-size:14px;
+}
+.card span{
+  color:rgba(0,0,0,0.68);
+  font-size:14px;
 }
 
 .framework{
-max-width:600px;
-margin:auto;
-text-align:center;
+  max-width:640px;
+  margin:auto;
+  text-align:center;
 }
-
 .layer{
-padding:18px;
-border-radius:14px;
-margin:12px 0;
+  padding:18px 16px;
+  border-radius:16px;
+  margin:12px 0;
+  border:1px solid rgba(17,17,17,0.08);
 }
+.layer.outer{background:#ece7e1;}
+.layer.mid{background:#e0dbd5;}
+.layer.inner{background:#d5d0c9;}
+.layer strong{font-family:var(--serif); font-size:16px;}
+.layer div{color:rgba(0,0,0,0.70); font-size:14px; margin-top:4px;}
 
-.layer.outer{
-background:#ece7e1;
-}
-
-.layer.mid{
-background:#e0dbd5;
-}
-
-.layer.inner{
-background:#d5d0c9;
+.fullimg{
+  width:100%;
+  height:290px;
+  object-fit:cover;
+  display:block;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
 }
 
 .exec{
-display:grid;
-grid-template-columns:220px 1fr;
-gap:40px;
-align-items:center;
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:34px;
+  align-items:center;
 }
-
+@media(max-width:900px){
+  .exec{grid-template-columns:1fr; max-width:720px; margin:auto;}
+}
 .exec img{
-width:100%;
-border:1px solid var(--line);
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:10px;
+  box-shadow:0 14px 44px rgba(0,0,0,0.08);
 }
-
 .exec h3{
-font-family:var(--serif);
-margin:0 0 10px;
+  font-family:var(--serif);
+  margin:0 0 8px;
+  font-size:22px;
 }
-
-.exec p{
-margin:0 0 16px;
-}
+.exec p{margin:0 0 14px;}
 
 footer{
-text-align:center;
-padding:40px 0;
-font-size:13px;
-color:rgba(0,0,0,0.5);
+  text-align:center;
+  padding:46px 0;
+  font-size:13px;
+  color:rgba(0,0,0,0.55);
 }
-
 </style>
-
 </head>
 
 <body>
 
 <header>
-
-<div class="wrap">
-
-<a class="brand" href="/">Desk & Margin Outfitters</a>
-
-<a class="btn" href="diagnostic.html">Reinforcement Diagnostic</a>
-
-</div>
-
+  <div class="wrap">
+    <a class="brand" href="index.html">Desk &amp; Margin Outfitters</a>
+    <div class="nav">
+      <a class="btn" href="diagnostic.html">Reinforcement Diagnostic</a>
+      <a class="btn primary" href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf" target="_blank" rel="noopener">Executive Brief</a>
+    </div>
+  </div>
 </header>
 
 <section class="hero">
-
-<img src="leader-meeting.png">
-
-<div class="text wrap">
-
-<h1>
-Culture doesn't collapse overnight.  
-It drifts when leadership intent isn't reinforced through systems.
-</h1>
-
-<p>
-We help leadership teams strengthen the core, align the reinforcement,
-and make the expression consistent — so culture doesn't depend on
-personality or memory.
-</p>
-
-</div>
-
+  <img src="leader-meeting.png" alt="Leadership meeting">
+  <div class="text">
+    <div class="wrap">
+      <h1>Culture is execution.</h1>
+      <p>
+        When alignment drifts, strategy slows, decisions fragment, and trust gets expensive.
+        We help leadership teams reinforce intent through systems — so culture holds under pressure.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="diagnostic.html">Take the 2-minute Diagnostic</a>
+        <a class="btn" href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf" target="_blank" rel="noopener">Read the Executive Brief</a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="section">
+  <div class="wrap grid two">
+    <div>
+      <div class="kicker">Why leaders should care</div>
+      <h2>Culture determines speed, risk, and cost.</h2>
+      <p>
+        Most culture failures don’t look like drama. They look like rework, escalation, delays, and
+        “alignment meetings” that never end. Under strain, small inconsistencies compound into structural drag.
+      </p>
+      <p>
+        If you want faster execution, cleaner decisions, and fewer surprise fractures during change,
+        culture can’t be a vibe. It has to function as infrastructure.
+      </p>
+    </div>
 
-<div class="wrap">
-
-<h2>Culture rarely breaks loudly</h2>
-
-<p>
-Most organizations assume alignment persists if leadership intent is clear.
-Experience suggests otherwise. Intent weakens when it is not reinforced.
-Clarity drifts when it is not carried through systems.
-</p>
-
-<p>
-Under pressure, organizations increase communication.  
-They restate values and clarify priorities.
-These actions are necessary — but insufficient.
-</p>
-
-</div>
-
+    <div class="cards">
+      <div class="card">
+        <strong>Speed</strong>
+        <span>Clear priorities move through the org without distortion.</span>
+      </div>
+      <div class="card">
+        <strong>Decision quality</strong>
+        <span>Signals stay consistent — fewer reversals, fewer exceptions.</span>
+      </div>
+      <div class="card">
+        <strong>Risk containment</strong>
+        <span>Less shadow process, less uncontrolled interpretation.</span>
+      </div>
+      <div class="card">
+        <strong>Change resilience</strong>
+        <span>Integration, growth, and crises don’t fracture cohesion.</span>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="section alt">
+  <div class="wrap">
+    <div class="kicker">The stress test</div>
+    <h2>Transition exposes what stability hides.</h2>
+    <p>
+      Acquisitions. Leadership shifts. Distributed work. Crisis response. Rapid growth.
+      These don’t create cultural weakness — they reveal it.
+    </p>
+  </div>
+</section>
 
-<div class="wrap framework">
+<img class="fullimg" src="virtual-meeting.png" alt="Virtual leadership meeting workspace">
 
-<h2>Reinforcement Architecture</h2>
+<section class="section alt">
+  <div class="wrap framework">
+    <div class="kicker">How we think about it</div>
+    <h2>Reinforcement Architecture</h2>
 
-<div class="layer outer">
-<strong>Field Signals</strong><br>
-Artifacts · Rituals · Leader Behavior
-</div>
+    <div class="layer outer">
+      <strong>Field Signals</strong>
+      <div>Artifacts · Rituals · Leader Behavior</div>
+    </div>
 
-<div class="layer mid">
-<strong>Operating System</strong><br>
-Narrative · Operating Rhythm · Decision Signals
-</div>
+    <div class="layer mid">
+      <strong>Operating System</strong>
+      <div>Narrative · Operating Rhythm · Decision Signals</div>
+    </div>
 
-<div class="layer inner">
-<strong>Core Conditions</strong><br>
-Trust · Clarity · Cohesion
-</div>
+    <div class="layer inner">
+      <strong>Core Conditions</strong>
+      <div>Trust · Clarity · Cohesion</div>
+    </div>
 
-</div>
-
+    <p style="margin-top:18px;">
+      Most organizations work on expression. High-performing organizations reinforce the system.
+      The difference becomes visible under strain.
+    </p>
+  </div>
 </section>
 
 <section class="section">
-
-<div class="wrap grid two">
-
-<div>
-
-<img class="full" src="virtual-meeting.png">
-
-</div>
-
-<div>
-
-<h2>Modern culture operates across distance</h2>
-
-<p>
-Distributed work changes how alignment travels.
-Intent must move across time zones, screens,
-and organizational layers without distortion.
-</p>
-
-<p>
-When reinforcement systems are weak,
-distance accelerates drift.
-</p>
-
-</div>
-
-</div>
-
+  <div class="wrap">
+    <div class="kicker">Start here</div>
+    <h2>A quick diagnostic, built for leadership reality.</h2>
+    <p>
+      The Reinforcement Diagnostic measures alignment stability across core conditions, system translation,
+      and visible field signals. It’s short by design — and more revealing than it looks.
+    </p>
+    <a class="btn primary" href="diagnostic.html">Open the Diagnostic</a>
+  </div>
 </section>
 
 <section class="section alt">
-
-<div class="wrap exec">
-
-<div>
-
-<img src="alignment-under-strain-cover.png">
-
-</div>
-
-<div>
-
-<h3>Alignment Under Strain</h3>
-
-<p>
-An executive brief examining how organizational alignment
-erodes during pressure — and how reinforcement systems
-determine whether culture holds or fractures.
-</p>
-
-<a class="btn primary" href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf">
-Download Executive Brief
-</a>
-
-</div>
-
-</div>
-
+  <div class="wrap exec">
+    <div>
+      <img src="alignment-under-strain-cover.png" alt="Alignment Under Strain cover">
+    </div>
+    <div>
+      <div class="kicker">Executive brief</div>
+      <h3>Alignment Under Strain</h3>
+      <p>
+        A concise examination of how enterprise alignment erodes during pressure — and how reinforcement
+        systems determine whether culture holds or fractures.
+      </p>
+      <a class="btn primary" href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf" target="_blank" rel="noopener">Download PDF</a>
+    </div>
+  </div>
 </section>
 
 <footer>
-
-© 2026 Desk & Margin Outfitters
-
+  © <span id="y"></span> Desk &amp; Margin Outfitters
 </footer>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
