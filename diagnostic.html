@@ -1,561 +1,380 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Reinforcement Diagnostic | Desk & Margin Outfitters</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Culture Reinforcement Diagnostic | Desk & Margin Outfitters</title>
 <link rel="icon" type="image/png" href="favicon.png">
 
 <style>
+
 :root{
-  --ink:#111;
-  --paper:#f2f0ec;
-  --field:#fffdf8;
-  --muted:#6f6a63;
-  --line:#e5e2dd;
-  --serif:"Georgia","Times New Roman",serif;
-  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-  --max:980px;
+--ink:#111;
+--paper:#f2f0ec;
+--field:#fffdf8;
+--muted:#6f6a63;
+--line:#e6e3de;
+--serif:"Georgia","Times New Roman",serif;
+--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+--max:900px;
 }
 
 *{box-sizing:border-box}
+
 body{
-  margin:0;
-  font-family:var(--sans);
-  background:var(--paper);
-  color:var(--ink);
-  line-height:1.7;
+margin:0;
+background:var(--paper);
+font-family:var(--sans);
+color:var(--ink);
+line-height:1.7;
 }
 
-a{color:inherit}
-.wrap{max-width:var(--max); margin:0 auto; padding:0 22px}
+.wrap{
+max-width:var(--max);
+margin:auto;
+padding:0 22px;
+}
 
 header{
-  padding:22px 0;
-  border-bottom:1px solid var(--line);
-  background:rgba(255,255,255,0.25);
+border-bottom:1px solid var(--line);
+background:rgba(255,255,255,0.25);
+}
+
+header .wrap{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:16px 0;
 }
 
 .brand{
-  font-family:var(--serif);
-  font-size:20px;
-  text-decoration:none;
-}
-
-.hero{
-  padding:56px 0 34px;
-}
-
-.hero h1{
-  font-family:var(--serif);
-  font-weight:600;
-  font-size:34px;
-  margin:0 0 10px;
-  letter-spacing:0.2px;
-}
-
-.hero p{
-  margin:0;
-  max-width:76ch;
-  color:rgba(0,0,0,0.70);
-  font-size:16px;
-}
-
-.meta{
-  margin-top:14px;
-  font-size:12px;
-  letter-spacing:0.16em;
-  text-transform:uppercase;
-  color:rgba(0,0,0,0.55);
+font-family:var(--serif);
+font-size:20px;
+text-decoration:none;
+color:var(--ink);
 }
 
 .section{
-  background:var(--field);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  padding:34px 0;
+padding:70px 0;
 }
 
-.grid{
-  display:grid;
-  grid-template-columns: 1fr;
-  gap:18px;
+h1{
+font-family:var(--serif);
+font-size:40px;
+margin-bottom:12px;
 }
 
-.block{
-  border:1px solid rgba(17,17,17,0.10);
-  background:rgba(255,255,255,0.55);
-  border-radius:14px;
-  padding:18px 16px;
+p{
+color:rgba(0,0,0,0.75);
 }
 
-.block h2{
-  font-family:var(--serif);
-  font-weight:600;
-  font-size:18px;
-  margin:0 0 8px;
+.question{
+margin:28px 0;
 }
 
-.block p{
-  margin:0 0 10px;
-  color:rgba(0,0,0,0.72);
-  font-size:14px;
+.question strong{
+display:block;
+margin-bottom:8px;
 }
 
-.q{
-  padding:14px 0;
-  border-top:1px solid rgba(17,17,17,0.08);
+select{
+width:100%;
+padding:10px;
+border-radius:6px;
+border:1px solid var(--line);
+background:white;
 }
 
-.q:first-of-type{border-top:none}
-
-.q-title{
-  display:flex;
-  gap:10px;
-  align-items:baseline;
-  margin:0 0 8px;
+.context{
+margin-top:50px;
+padding-top:24px;
+border-top:1px solid var(--line);
 }
 
-.q-num{
-  font-family:var(--serif);
-  font-weight:600;
-  color:rgba(0,0,0,0.70);
+.context h3{
+font-family:var(--serif);
+font-size:22px;
+margin-bottom:10px;
 }
 
-.q-text{
-  margin:0;
-  color:rgba(0,0,0,0.84);
-  font-size:14px;
+button{
+margin-top:30px;
+padding:12px 18px;
+border-radius:999px;
+border:none;
+background:#111;
+color:white;
+font-weight:700;
+cursor:pointer;
 }
 
-.scale{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  margin-top:8px;
+.result{
+margin-top:50px;
+padding:28px;
+background:white;
+border-radius:12px;
+border:1px solid var(--line);
+display:none;
 }
 
-.choice{
-  border:1px solid rgba(17,17,17,0.18);
-  background:transparent;
-  color:rgba(0,0,0,0.85);
-  padding:9px 12px;
-  border-radius:999px;
-  font-weight:700;
-  font-size:13px;
-  cursor:pointer;
-  user-select:none;
+.result h2{
+font-family:var(--serif);
+margin-top:0;
 }
 
-.choice:hover{
-  border-color:rgba(17,17,17,0.40);
+.tactics{
+margin-top:16px;
 }
 
-.choice.selected{
-  background:#111;
-  color:#fff;
-  border-color:#111;
+.tactics li{
+margin-bottom:8px;
 }
 
-.actions{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  align-items:center;
-  margin-top:18px;
+.softcta{
+margin-top:18px;
+font-size:14px;
+color:rgba(0,0,0,0.6);
 }
 
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:12px 16px;
-  border-radius:999px;
-  border:1px solid rgba(17,17,17,0.88);
-  font-weight:800;
-  font-size:14px;
-  cursor:pointer;
-  text-decoration:none;
-}
-
-.btn.primary{
-  background:#111;
-  color:#fff;
-  border-color:#111;
-}
-
-.btn.ghost{
-  background:transparent;
-  color:#111;
-  border-color:rgba(17,17,17,0.22);
-}
-
-.note{
-  font-size:13px;
-  color:rgba(0,0,0,0.60);
-  margin:10px 0 0;
-  max-width:78ch;
-}
-
-.results{
-  margin-top:22px;
-  display:none;
-}
-
-.results.show{display:block}
-
-.result-card{
-  border:1px solid rgba(17,17,17,0.10);
-  background:rgba(255,255,255,0.60);
-  border-radius:14px;
-  padding:18px 16px;
-}
-
-.result-top{
-  display:flex;
-  gap:18px;
-  flex-wrap:wrap;
-  align-items:flex-end;
-  justify-content:space-between;
-}
-
-.rss-label{
-  font-size:12px;
-  letter-spacing:0.16em;
-  text-transform:uppercase;
-  color:rgba(0,0,0,0.55);
-  margin:0 0 6px;
-}
-
-.rss-value{
-  font-family:var(--serif);
-  font-size:40px;
-  font-weight:700;
-  margin:0;
-  line-height:1;
-}
-
-.breakdown{
-  display:grid;
-  grid-template-columns: 1fr;
-  gap:10px;
-  margin-top:14px;
-}
-
-.row{
-  display:flex;
-  justify-content:space-between;
-  gap:16px;
-  padding-top:10px;
-  border-top:1px solid rgba(17,17,17,0.08);
-  font-size:14px;
-}
-
-.row span:first-child{color:rgba(0,0,0,0.70)}
-.row span:last-child{font-weight:800}
-
-.interp{
-  margin-top:14px;
-  padding-top:12px;
-  border-top:1px solid rgba(17,17,17,0.08);
-}
-
-.interp h3{
-  font-family:var(--serif);
-  font-size:18px;
-  font-weight:700;
-  margin:0 0 6px;
-}
-
-.interp p{
-  margin:0;
-  color:rgba(0,0,0,0.72);
-  font-size:14px;
-  max-width:78ch;
-}
-
-footer{
-  padding:34px 0;
-  text-align:center;
-  font-size:13px;
-  color:rgba(0,0,0,0.55);
-}
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="wrap">
-    <a class="brand" href="index.html">Desk &amp; Margin Outfitters</a>
-  </div>
+<div class="wrap">
+<a class="brand" href="index.html">Desk & Margin Outfitters</a>
+</div>
 </header>
 
-<section class="hero">
-  <div class="wrap">
-    <h1>Reinforcement Diagnostic</h1>
-    <p>
-      A quick assessment of alignment stability across leadership systems and cultural signals.
-      Answer all nine questions, then calculate your score.
-    </p>
-    <div class="meta">9 questions · ~2 minutes · self-administered</div>
-  </div>
-</section>
-
 <section class="section">
-  <div class="wrap grid">
 
-    <!-- CORE -->
-    <div class="block">
-      <h2>Core Conditions</h2>
-      <p>Foundational conditions that determine whether leadership intent can travel consistently.</p>
+<div class="wrap">
 
-      <div class="q" data-q="1">
-        <div class="q-title">
-          <div class="q-num">1.</div>
-          <p class="q-text">Trust Alignment — senior leaders trust that strategic priorities are interpreted consistently across teams.</p>
-        </div>
-        <div class="scale" aria-label="Question 1 scale">
-          <button class="choice" data-v="1">1</button><button class="choice" data-v="2">2</button><button class="choice" data-v="3">3</button><button class="choice" data-v="4">4</button><button class="choice" data-v="5">5</button>
-        </div>
-      </div>
+<h1>Culture Reinforcement Diagnostic</h1>
 
-      <div class="q" data-q="2">
-        <div class="q-title">
-          <div class="q-num">2.</div>
-          <p class="q-text">Strategic Clarity — strategic priorities are clearly understood across functions and levels.</p>
-        </div>
-        <div class="scale" aria-label="Question 2 scale">
-          <button class="choice" data-v="1">1</button><button class="choice" data-v="2">2</button><button class="choice" data-v="3">3</button><button class="choice" data-v="4">4</button><button class="choice" data-v="5">5</button>
-        </div>
-      </div>
+<p>
+Nine quick questions that measure reinforcement stability across the enterprise.
+</p>
 
-      <div class="q" data-q="3">
-        <div class="q-title">
-          <div class="q-num">3.</div>
-          <p class="q-text">Cross-Functional Cohesion — functions operate as coordinated partners rather than independent actors.</p>
-        </div>
-        <div class="scale" aria-label="Question 3 scale">
-          <button class="choice" data-v="1">1</button><button class="choice" data-v="2">2</button><button class="choice" data-v="3">3</button><button class="choice" data-v="4">4</button><button class="choice" data-v="5">5</button>
-        </div>
-      </div>
-    </div>
+<!-- QUESTIONS -->
 
-    <!-- SYSTEM -->
-    <div class="block">
-      <h2>System Layer</h2>
-      <p>The translation engine: narrative, cadence, and decision signals.</p>
+<div class="question">
+<strong>Leadership priorities are consistently interpreted across teams.</strong>
+<select class="q">
+<option value="1">Rarely</option>
+<option value="2">Sometimes</option>
+<option value="3">Often</option>
+<option value="4">Almost always</option>
+</select>
+</div>
 
-      <div class="q" data-q="4">
-        <div class="q-title">
-          <div class="q-num">4.</div>
-          <p class="q-text">Narrative Consistency — leaders describe strategy and priorities using consistent language.</p>
-        </div>
-        <div class="scale" aria-label="Question 4 scale">
-          <button class="choice" data-v="1">1</button><button class="choice" data-v="2">2</button><button class="choice" data-v="3">3</button><button class="choice" data-v="4">4</button><button class="choice" data-v="5">5</button>
-        </div>
-      </div>
+<div class="question">
+<strong>Middle leadership reinforces enterprise priorities clearly.</strong>
+<select class="q">
+<option value="1">Rarely</option>
+<option value="2">Sometimes</option>
+<option value="3">Often</option>
+<option value="4">Almost always</option>
+</select>
+</div>
 
-      <div class="q" data-q="5">
-        <div class="q-title">
-          <div class="q-num">5.</div>
-          <p class="q-text">Operating Rhythm Alignment — routines and cadences reinforce strategic priorities.</p>
-        </div>
-        <div class="scale" aria-label="Question 5 scale">
-          <button class="choice" data-v="1">1</button><button class="choice" data-v="2">2</button><button class="choice" data-v="3">3</button><button class="choice" data-v="4">4</button><button class="choice" data-v="5">5</button>
-        </div>
-      </div>
+<div class="question">
+<strong>Frontline decisions reflect leadership priorities.</strong>
+<select class="q">
+<option value="1">Rarely</option>
+<option value="2">Sometimes</option>
+<option value="3">Often</option>
+<option value="4">Almost always</option>
+</select>
+</div>
 
-      <div class="q" data-q="6">
-        <div class="q-title">
-          <div class="q-num">6.</div>
-          <p class="q-text">Decision Signal Clarity — important decisions reinforce the same priorities leaders communicate.</p>
-        </div>
-        <div class="scale" aria-label="Question 6 scale">
-          <button class="choice" data-v="1">1</button><button class="choice" data-v="2">2</button><button class="choice" data-v="3">3</button><button class="choice" data-v="4">4</button><button class="choice" data-v="5">5</button>
-        </div>
-      </div>
-    </div>
+<div class="question">
+<strong>Recognition reinforces the behaviors leadership values.</strong>
+<select class="q">
+<option value="1">Rarely</option>
+<option value="2">Sometimes</option>
+<option value="3">Often</option>
+<option value="4">Almost always</option>
+</select>
+</div>
 
-    <!-- FIELD -->
-    <div class="block">
-      <h2>Field Signals</h2>
-      <p>Visible reinforcement: behavior, rituals, and artifacts.</p>
+<div class="question">
+<strong>Decision signals are consistent across functions.</strong>
+<select class="q">
+<option value="1">Rarely</option>
+<option value="2">Sometimes</option>
+<option value="3">Often</option>
+<option value="4">Almost always</option>
+</select>
+</div>
 
-      <div class="q" data-q="7">
-        <div class="q-title">
-          <div class="q-num">7.</div>
-          <p class="q-text">Leadership Behavior Consistency — leadership actions reflect stated expectations.</p>
-        </div>
-        <div class="scale" aria-label="Question 7 scale">
-          <button class="choice" data-v="1">1</button><button class="choice" data-v="2">2</button><button class="choice" data-v="3">3</button><button class="choice" data-v="4">4</button><button class="choice" data-v="5">5</button>
-        </div>
-      </div>
+<div class="question">
+<strong>Leaders behave consistently with stated priorities.</strong>
+<select class="q">
+<option value="1">Rarely</option>
+<option value="2">Sometimes</option>
+<option value="3">Often</option>
+<option value="4">Almost always</option>
+</select>
+</div>
 
-      <div class="q" data-q="8">
-        <div class="q-title">
-          <div class="q-num">8.</div>
-          <p class="q-text">Ritual Reinforcement — recurring rituals reinforce strategic priorities.</p>
-        </div>
-        <div class="scale" aria-label="Question 8 scale">
-          <button class="choice" data-v="1">1</button><button class="choice" data-v="2">2</button><button class="choice" data-v="3">3</button><button class="choice" data-v="4">4</button><button class="choice" data-v="5">5</button>
-        </div>
-      </div>
+<div class="question">
+<strong>Employees understand what leadership expects during ambiguity.</strong>
+<select class="q">
+<option value="1">Rarely</option>
+<option value="2">Sometimes</option>
+<option value="3">Often</option>
+<option value="4">Almost always</option>
+</select>
+</div>
 
-      <div class="q" data-q="9">
-        <div class="q-title">
-          <div class="q-num">9.</div>
-          <p class="q-text">Artifact Alignment — messages, programs, and symbols reinforce priorities without mixed signals.</p>
-        </div>
-        <div class="scale" aria-label="Question 9 scale">
-          <button class="choice" data-v="1">1</button><button class="choice" data-v="2">2</button><button class="choice" data-v="3">3</button><button class="choice" data-v="4">4</button><button class="choice" data-v="5">5</button>
-        </div>
-      </div>
-    </div>
+<div class="question">
+<strong>Team rituals reinforce enterprise culture.</strong>
+<select class="q">
+<option value="1">Rarely</option>
+<option value="2">Sometimes</option>
+<option value="3">Often</option>
+<option value="4">Almost always</option>
+</select>
+</div>
 
-    <div class="block">
-      <h2>Calculate</h2>
-      <p>When all questions are scored, calculate your Reinforcement Stability Score.</p>
+<div class="question">
+<strong>Employees feel confident raising problems upward.</strong>
+<select class="q">
+<option value="1">Rarely</option>
+<option value="2">Sometimes</option>
+<option value="3">Often</option>
+<option value="4">Almost always</option>
+</select>
+</div>
 
-      <div class="actions">
-        <button class="btn primary" id="calcBtn" type="button">Calculate Score →</button>
-        <button class="btn ghost" id="resetBtn" type="button">Reset</button>
-        <a class="btn ghost" href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf" target="_blank" rel="noopener">Executive Brief PDF</a>
-      </div>
 
-      <p class="note">
-        Results appear immediately on this page. For best use, have multiple leaders score independently and compare outputs.
-      </p>
+<!-- CONTEXT -->
 
-      <div class="results" id="results">
-        <div class="result-card">
-          <div class="result-top">
-            <div>
-              <div class="rss-label">Reinforcement Stability Score</div>
-              <p class="rss-value" id="rssValue">—</p>
-            </div>
-          </div>
+<div class="context">
 
-          <div class="breakdown">
-            <div class="row"><span>Core Conditions</span><span id="coreValue">—</span></div>
-            <div class="row"><span>System Layer</span><span id="systemValue">—</span></div>
-            <div class="row"><span>Field Signals</span><span id="fieldValue">—</span></div>
-          </div>
+<h3>Operating Context (optional)</h3>
 
-          <div class="interp">
-            <h3 id="bandTitle">—</h3>
-            <p id="bandCopy">—</p>
-          </div>
-        </div>
-      </div>
+<div class="question">
+<strong>Employee count</strong>
+<select id="size">
+<option>Under 500</option>
+<option>500 – 2,000</option>
+<option>2,000 – 10,000</option>
+<option>10,000+</option>
+</select>
+</div>
 
-    </div>
+<div class="question">
+<strong>Work model</strong>
+<select id="work">
+<option>Mostly co-located</option>
+<option>Hybrid</option>
+<option>Mostly distributed</option>
+</select>
+</div>
 
-  </div>
+<div class="question">
+<strong>Current environment</strong>
+<select id="change">
+<option>Stable</option>
+<option>Active transition</option>
+<option>Integration / post-M&A</option>
+</select>
+</div>
+
+</div>
+
+
+<button onclick="calculate()">Generate Insight</button>
+
+
+<div class="result" id="result">
+
+<h2>Your Alignment Signal</h2>
+
+<p id="score"></p>
+
+<h3>Recommended Focus</h3>
+
+<ul class="tactics" id="tactics"></ul>
+
+<div class="softcta">
+If these patterns feel familiar, you're welcome to reach out for a private conversation.
+</div>
+
+</div>
+
+</div>
 </section>
-
-<footer>
-  © <span id="y"></span> Desk &amp; Margin Outfitters
-</footer>
 
 <script>
-(function(){
-  document.getElementById("y").textContent = new Date().getFullYear();
 
-  const answers = {}; // {1:5, 2:3...}
+function calculate(){
 
-  function setSelected(qEl, value){
-    const btns = qEl.querySelectorAll(".choice");
-    btns.forEach(b => b.classList.toggle("selected", Number(b.dataset.v) === value));
-  }
+let qs=document.querySelectorAll(".q")
+let score=0
 
-  document.querySelectorAll(".q").forEach(qEl => {
-    qEl.querySelectorAll(".choice").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const q = Number(qEl.dataset.q);
-        const v = Number(btn.dataset.v);
-        answers[q] = v;
-        setSelected(qEl, v);
-      });
-    });
-  });
+qs.forEach(q=>score+=parseInt(q.value))
 
-  function avg(arr){
-    return arr.reduce((a,b)=>a+b,0) / arr.length;
-  }
+let avg=score/qs.length
 
-  function round1(n){
-    return Math.round(n * 10) / 10;
-  }
+let message=""
+let tactics=[]
 
-  function bandFor(rss, core, system, field){
-    if (rss >= 4.3) {
-      return {
-        title: "Stable Under Pressure",
-        copy: "Reinforcement appears structurally stable. Focus on maintaining decision-signal clarity and preventing drift during major transitions."
-      };
-    }
-    if (rss >= 3.5) {
-      return {
-        title: "Localized Drift",
-        copy: "Inconsistencies may surface under strain. Look for narrative variance and decision-signal ambiguity—especially across middle layers."
-      };
-    }
-    if (rss >= 2.5) {
-      return {
-        title: "Structural Fragility",
-        copy: "Reinforcement systems may not be translating leadership intent consistently. Prioritize operating rhythm alignment and decision-signal clarity."
-      };
-    }
-    return {
-      title: "Active Erosion",
-      copy: "Alignment is likely deteriorating under pressure. Stabilize core conditions (trust/clarity/cohesion) and reduce mixed signals immediately."
-    };
-  }
+if(avg>3.2){
 
-  const resultsEl = document.getElementById("results");
+message="Alignment reinforcement appears strong. Leadership intent is translating through systems effectively."
 
-  document.getElementById("calcBtn").addEventListener("click", () => {
-    // ensure all answered
-    for (let i=1;i<=9;i++){
-      if (typeof answers[i] !== "number"){
-        alert("Please score all 9 questions before calculating.");
-        return;
-      }
-    }
+tactics=[
+"Maintain leadership narrative discipline during transitions.",
+"Protect rituals and artifacts that reinforce culture.",
+"Conduct periodic leadership alignment reviews."
+]
 
-    const core = avg([answers[1], answers[2], answers[3]]);
-    const system = avg([answers[4], answers[5], answers[6]]);
-    const field = avg([answers[7], answers[8], answers[9]]);
+}
 
-    const rss = (core * 0.40) + (system * 0.35) + (field * 0.25);
+else if(avg>2.4){
 
-    document.getElementById("coreValue").textContent = round1(core).toFixed(1);
-    document.getElementById("systemValue").textContent = round1(system).toFixed(1);
-    document.getElementById("fieldValue").textContent = round1(field).toFixed(1);
-    document.getElementById("rssValue").textContent = round1(rss).toFixed(1);
+message="Alignment exists but may drift under strain."
 
-    const band = bandFor(rss, core, system, field);
-    document.getElementById("bandTitle").textContent = band.title;
-    document.getElementById("bandCopy").textContent = band.copy;
+tactics=[
+"Clarify leadership decision signals across departments.",
+"Introduce cross-team leadership forums to reinforce priorities.",
+"Ensure recognition reflects stated leadership values."
+]
 
-    resultsEl.classList.add("show");
-    resultsEl.scrollIntoView({behavior:"smooth", block:"start"});
-  });
+}
 
-  document.getElementById("resetBtn").addEventListener("click", () => {
-    for (let i=1;i<=9;i++) delete answers[i];
-    document.querySelectorAll(".choice").forEach(b => b.classList.remove("selected"));
-    resultsEl.classList.remove("show");
-    document.getElementById("rssValue").textContent = "—";
-    document.getElementById("coreValue").textContent = "—";
-    document.getElementById("systemValue").textContent = "—";
-    document.getElementById("fieldValue").textContent = "—";
-    document.getElementById("bandTitle").textContent = "—";
-    document.getElementById("bandCopy").textContent = "—";
-    window.scrollTo({top:0, behavior:"smooth"});
-  });
-})();
+else{
+
+message="Reinforcement signals appear fragmented."
+
+tactics=[
+"Establish a clear leadership narrative framework.",
+"Implement structured department-level alignment forums.",
+"Align leadership behavior and recognition signals.",
+"Create consistent enterprise operating cadence."
+]
+
+}
+
+document.getElementById("score").innerText=message
+
+let list=document.getElementById("tactics")
+list.innerHTML=""
+
+tactics.forEach(t=>{
+let li=document.createElement("li")
+li.innerText=t
+list.appendChild(li)
+})
+
+document.getElementById("result").style.display="block"
+
+}
+
 </script>
 
 </body>
