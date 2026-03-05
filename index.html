@@ -147,11 +147,11 @@
     }
     .heroText{
       padding:40px 34px;
-      max-width: 740px;
+      max-width: 820px;
       color:#fff;
     }
 
-    /* ✅ FIX: add subtle text plate behind hero copy (guaranteed readability) */
+    /* Readability plate behind hero copy */
     .heroPlate{
       display:inline-block;
       background: rgba(17,17,17,0.34);
@@ -167,22 +167,29 @@
       letter-spacing:0.22em;
       text-transform:uppercase;
       opacity:0.86;
-      margin-bottom:12px;
+      margin-bottom:10px;
     }
     .heroH1{
       font-family:var(--serif);
       font-size:40px;
       line-height:1.08;
-      margin:0 0 12px;
+      margin:0 0 10px;
       font-weight:750;
       text-shadow: 0 12px 28px rgba(0,0,0,0.28);
+    }
+    .heroSubhead{
+      margin:0 0 14px;
+      font-size:15px;
+      color:rgba(255,255,255,0.92);
+      max-width: 74ch;
+      text-shadow: 0 10px 24px rgba(0,0,0,0.24);
     }
     .heroP{
       margin:0 0 18px;
       font-size:16px;
-      color:rgba(255,255,255,0.88);
-      max-width: 64ch;
-      text-shadow: 0 10px 24px rgba(0,0,0,0.24);
+      color:rgba(255,255,255,0.86);
+      max-width: 70ch;
+      text-shadow: 0 10px 24px rgba(0,0,0,0.22);
     }
     .heroActions{
       display:flex;
@@ -222,7 +229,7 @@
     .lead{
       font-size:18px;
       color:rgba(0,0,0,0.76);
-      max-width:80ch;
+      max-width:84ch;
       margin:0;
     }
 
@@ -232,6 +239,31 @@
       border-radius:var(--radius);
       padding:24px;
       box-shadow: var(--shadow-soft);
+    }
+
+    /* NEW: Why leaders should care block */
+    .whyGrid{
+      display:grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap:22px;
+      align-items:start;
+      margin-top:26px;
+    }
+    @media (max-width: 860px){
+      .whyGrid{ grid-template-columns:1fr; }
+    }
+    .whyBullets{
+      margin:10px 0 0;
+      padding-left:18px;
+      color:rgba(0,0,0,0.72);
+      font-size:16px;
+    }
+    .whyBullets li{ margin:8px 0; }
+    .whyNote{
+      margin-top:14px;
+      font-size:16px;
+      color:rgba(0,0,0,0.72);
+      max-width:86ch;
     }
 
     /* Reinforcement Architecture (with “spine” and tighter stack) */
@@ -414,7 +446,7 @@
       max-width:70ch;
     }
 
-    /* ✅ SECOND HERO IMAGE (restored) */
+    /* Second hero image (restored) */
     .hero2{
       padding:0 0 72px;
     }
@@ -522,10 +554,15 @@
         <img src="leader-meeting.png" alt="Leaders in a focused meeting" />
         <div class="heroOverlay">
           <div class="heroText">
-            <!-- ✅ wrap hero copy in plate -->
             <div class="heroPlate">
               <div class="eyebrow">Culture is built in the margins</div>
               <h1 class="heroH1">Not with slogans. Not by accident.</h1>
+
+              <!-- NEW: value-forward subhead -->
+              <p class="heroSubhead">
+                Culture is execution infrastructure — reinforced to reduce drift, speed decisions, and protect trust under strain.
+              </p>
+
               <p class="heroP">
                 Culture becomes durable when leadership intent is reinforced through systems of care —
                 built on trust, cadence, and clarity.
@@ -536,6 +573,56 @@
                 <a class="btn" href="#intro">Request a Private Intro</a>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW: WHY LEADERS SHOULD CARE -->
+  <section id="why">
+    <div class="wrap">
+      <div class="kicker">Why leaders should care</div>
+      <h2 class="sectionTitle">Culture is execution infrastructure.</h2>
+
+      <div class="whyGrid">
+        <div class="card">
+          <p class="lead" style="margin:0;">
+            It decides what happens when you’re not in the room — how priorities get interpreted, how decisions move,
+            and whether smart risk-taking survives the middle layers.
+          </p>
+
+          <p class="whyNote">
+            When culture is reinforced, alignment holds without constant intervention. When it isn’t, drift becomes expensive:
+            slow execution, internal friction, avoidable attrition, and “alignment work” that never ends.
+          </p>
+
+          <ul class="whyBullets">
+            <li>Faster decisions with fewer escalations</li>
+            <li>Higher retention of high performers</li>
+            <li>Cleaner integration during growth or M&amp;A</li>
+            <li>Better frontline judgment under pressure</li>
+            <li>Real innovation (less fear, less politics)</li>
+          </ul>
+
+          <p class="whyNote" style="margin-bottom:0;">
+            <strong>And we don’t prescribe one “right” culture.</strong>
+            We help leaders reinforce the culture they intend — so it doesn’t depend on personality or memory.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="kicker" style="margin-bottom:10px;">Start here</div>
+          <p style="margin:0; color:rgba(0,0,0,0.72); font-size:16px;">
+            Use the diagnostic to identify where reinforcement is breaking down, then use the brief and framework to align on what to fix.
+          </p>
+
+          <div class="ctaStrip" style="margin-top:18px;">
+            <div>
+              <strong>Reinforcement Diagnostic</strong>
+              <span>9 questions → clear readout → practical levers.</span>
+            </div>
+            <a class="btn primary" href="diagnostic.html">Take it →</a>
           </div>
         </div>
       </div>
@@ -640,7 +727,7 @@
     </div>
   </section>
 
-  <!-- ✅ SECOND HERO IMAGE (RESTORED) -->
+  <!-- SECOND HERO IMAGE -->
   <section class="hero2">
     <div class="wrap">
       <div class="hero2Frame">
