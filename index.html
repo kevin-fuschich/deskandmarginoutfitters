@@ -1,420 +1,335 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="color-scheme" content="light" />
-  <title>Desk &amp; Margin Outfitters</title>
-  <meta name="description" content="Culture is built in the margins. We design tools that help teams protect what matters and build what’s next." />
-  <link rel="icon" type="image/png" href="favicon.png" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="color-scheme" content="light" />
+<title>Desk &amp; Margin Outfitters</title>
+<link rel="icon" type="image/png" href="favicon.png" />
 
-  <style>
-    :root{
-      --ink:#111111;
-      --paper:#f2f0ec;
-      --field:#fffdf8;
-      --muted:#6f6a63;
-      --line:#e6e3de;
+<style>
+:root{
+  --ink:#111;
+  --paper:#f2f0ec;
+  --field:#fffdf8;
+  --muted:#6f6a63;
+  --line:#e6e3de;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --max:1000px;
+  --shadow:0 14px 42px rgba(0,0,0,.10);
+}
 
-      --serif:Georgia,"Times New Roman",serif;
-      --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:var(--sans);
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
 
-      --max:1040px;
-      --radius:18px;
+/* Header */
+header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(242,240,236,.88);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 0;
+  gap:16px;
+}
+.brand{
+  display:flex;
+  flex-direction:column;
+  line-height:1.1;
+}
+.brand .name{
+  font-family:var(--serif);
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:.02em;
+}
+.brand .tag{
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(0,0,0,.55);
+  margin-top:6px;
+}
+.navlinks{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+  align-items:center;
+}
+.navlinks a{
+  font-size:13px;
+  font-weight:800;
+  color:rgba(0,0,0,.72);
+  padding:8px 10px;
+  border-radius:999px;
+  border:1px solid transparent;
+}
+.navlinks a:hover{
+  border-color:rgba(0,0,0,.12);
+  background:rgba(255,255,255,.45);
+}
+.pill{
+  border:1px solid rgba(0,0,0,.14) !important;
+  background:rgba(255,255,255,.50);
+}
 
-      --shadow:0 10px 28px rgba(0,0,0,.06);
-      --shadow2:0 18px 48px rgba(0,0,0,.08);
-    }
+/* Hero */
+.hero{padding:26px 0 8px}
+.heroCard{
+  border-radius:24px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:#000;
+  box-shadow:var(--shadow);
+  position:relative;
+}
+.heroImg{
+  position:relative;
+  height:min(440px, 56vw);
+}
+.heroImg img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
 
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:var(--sans);
-      background:var(--paper);
-      color:var(--ink);
-      line-height:1.7;
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
-    }
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding:0 22px}
+/* ✅ FIX: readable scrim where text lives (left pocket) */
+.heroImg::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,
+      rgba(0,0,0,.78) 0%,
+      rgba(0,0,0,.62) 26%,
+      rgba(0,0,0,.38) 48%,
+      rgba(0,0,0,.16) 66%,
+      rgba(0,0,0,.04) 82%,
+      rgba(0,0,0,0) 100%),
+    linear-gradient(180deg,
+      rgba(0,0,0,.10) 0%,
+      rgba(0,0,0,.18) 55%,
+      rgba(0,0,0,.44) 100%);
+  pointer-events:none;
+}
 
-    /* Header */
-    header{
-      position:sticky;
-      top:0;
-      z-index:10;
-      background:rgba(242,240,236,.86);
-      backdrop-filter:saturate(180%) blur(10px);
-      border-bottom:1px solid var(--line);
-    }
-    .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:14px 0;
-      gap:16px;
-    }
-    .brand{
-      display:flex;
-      flex-direction:column;
-      line-height:1.1;
-    }
-    .brand .name{
-      font-family:var(--serif);
-      font-weight:700;
-      font-size:18px;
-      letter-spacing:.02em;
-    }
-    .brand .tag{
-      font-size:12px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:rgba(0,0,0,.55);
-      margin-top:6px;
-    }
-    .navlinks{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-      align-items:center;
-    }
-    .navlinks a{
-      font-size:13px;
-      font-weight:850;
-      letter-spacing:.02em;
-      color:rgba(0,0,0,.72);
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid transparent;
-    }
-    .navlinks a:hover{
-      border-color:rgba(0,0,0,.12);
-      background:rgba(255,255,255,.45);
-    }
-    .pill{
-      border:1px solid rgba(0,0,0,.14) !important;
-      background:rgba(255,255,255,.50);
-    }
+.heroContent{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:flex-end;
+}
+.heroInner{
+  padding:30px 22px 24px;
+  color:#fff;
+  max-width:800px;
+}
+.kicker{
+  font-size:12px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  opacity:.86;
+  margin:0 0 10px;
+}
+.heroTitle{
+  font-family:var(--serif);
+  font-size:44px;
+  line-height:1.06;
+  margin:0 0 12px;
+  max-width:20ch;
+  text-shadow:0 10px 28px rgba(0,0,0,.35);
+}
+.heroSub{
+  margin:0;
+  max-width:74ch;
+  font-size:16px;
+  color:rgba(255,255,255,.92);
+  text-shadow:0 8px 22px rgba(0,0,0,.28);
+}
+.actions{
+  margin-top:16px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:11px 14px;
+  border-radius:999px;
+  font-weight:900;
+  font-size:13px;
+  border:1px solid rgba(255,255,255,.25);
+  background:rgba(17,17,17,.40);
+  color:#fff;
+}
+.btn:hover{background:rgba(17,17,17,.56)}
+.btn.primary{
+  background:#fff;
+  color:#111;
+  border-color:#fff;
+}
+.btn.primary:hover{background:rgba(255,255,255,.92)}
 
-    /* Hero */
-    .hero{
-      padding:28px 0 10px;
-    }
-    .heroCard{
-      border-radius:24px;
-      overflow:hidden;
-      border:1px solid var(--line);
-      background:#000;
-      box-shadow:var(--shadow2);
-      position:relative;
-    }
-    .heroImg{
-      height:min(460px, 56vw);
-      position:relative;
-      overflow:hidden;
-    }
-    .heroImg img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-      opacity:.98;
-    }
+@media(max-width:980px){
+  .heroTitle{font-size:38px}
+}
 
-    /* FIX: left-side scrim + slight bottom deepen */
-    .heroImg::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(90deg,
-          rgba(0,0,0,.74) 0%,
-          rgba(0,0,0,.62) 22%,
-          rgba(0,0,0,.40) 44%,
-          rgba(0,0,0,.18) 64%,
-          rgba(0,0,0,.05) 80%,
-          rgba(0,0,0,0) 100%),
-        linear-gradient(180deg,
-          rgba(0,0,0,.08) 0%,
-          rgba(0,0,0,.28) 70%,
-          rgba(0,0,0,.44) 100%);
-      pointer-events:none;
-    }
+/* Sections */
+section{padding:58px 0}
+.sectionTitle{
+  font-size:12px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:rgba(0,0,0,.55);
+  margin:0 0 10px;
+}
+h2{
+  font-family:var(--serif);
+  font-size:36px;
+  line-height:1.12;
+  margin:0 0 14px;
+}
+.lead{
+  margin:0;
+  max-width:92ch;
+  color:rgba(0,0,0,.74);
+  font-size:16px;
+}
 
-    .heroContent{
-      position:absolute;
-      inset:0;
-      display:flex;
-      align-items:flex-end;
-    }
-    .heroInner{
-      width:100%;
-      padding:30px 22px 24px;
-      color:#fff;
-      max-width: 820px;
-    }
-    .kicker{
-      font-size:12px;
-      letter-spacing:.22em;
-      text-transform:uppercase;
-      opacity:.86;
-      margin:0 0 10px;
-    }
-    .heroTitle{
-      font-family:var(--serif);
-      font-size:44px;
-      line-height:1.06;
-      margin:0 0 12px;
-      max-width: 20ch;
-      text-shadow:0 10px 28px rgba(0,0,0,.35);
-    }
-    .heroSub{
-      margin:0;
-      max-width: 74ch;
-      font-size:16px;
-      color:rgba(255,255,255,.92);
-      text-shadow:0 8px 22px rgba(0,0,0,.28);
-    }
-    .heroActions{
-      margin-top:16px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:11px 14px;
-      border-radius:999px;
-      font-weight:900;
-      font-size:13px;
-      letter-spacing:.02em;
-      border:1px solid rgba(255,255,255,.25);
-      background:rgba(17,17,17,.40);
-      color:#fff;
-    }
-    .btn:hover{background:rgba(17,17,17,.56)}
-    .btn.primary{
-      background:#fff;
-      color:#111;
-      border-color:#fff;
-    }
-    .btn.primary:hover{background:rgba(255,255,255,.92)}
+/* Flow cards */
+.flow{
+  background:var(--field);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.grid3{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:16px;
+  margin-top:22px;
+}
+@media(max-width:980px){
+  .grid3{grid-template-columns:1fr}
+}
+.card{
+  border:1px solid rgba(0,0,0,.10);
+  background:rgba(255,255,255,.55);
+  border-radius:18px;
+  padding:18px 18px 16px;
+}
+.card strong{
+  display:block;
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(0,0,0,.55);
+  margin-bottom:8px;
+}
+.card h3{
+  font-family:var(--serif);
+  font-size:22px;
+  margin:0 0 10px;
+}
+.card p{
+  margin:0 0 12px;
+  color:rgba(0,0,0,.72);
+  font-size:14px;
+}
+.link{
+  font-weight:900;
+  border-bottom:1px solid rgba(0,0,0,.26);
+  padding-bottom:1px;
+}
 
-    /* Sections */
-    section{padding:62px 0}
-    .sectionTitle{
-      font-size:12px;
-      letter-spacing:.22em;
-      text-transform:uppercase;
-      color:rgba(0,0,0,.55);
-      margin:0 0 10px;
-    }
-    h2{
-      font-family:var(--serif);
-      font-size:38px;
-      line-height:1.12;
-      margin:0 0 14px;
-    }
-    .lead{
-      margin:0;
-      max-width:92ch;
-      color:rgba(0,0,0,.74);
-      font-size:16px;
-    }
+/* Exec brief */
+.briefCard{
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.50);
+  border-radius:24px;
+  overflow:hidden;
+  margin-top:22px;
+}
+.briefInner{
+  display:grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap:22px;
+  padding:22px;
+  align-items:center;
+}
+@media(max-width:980px){
+  .briefInner{grid-template-columns:1fr}
+}
+.briefLabel{
+  font-size:12px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:rgba(0,0,0,.55);
+  margin:0 0 10px;
+}
+.briefTitle{
+  font-family:var(--serif);
+  font-size:32px;
+  line-height:1.12;
+  margin:0 0 10px;
+}
+.briefDesc{
+  margin:0 0 14px;
+  color:rgba(0,0,0,.72);
+  max-width:80ch;
+}
+.thumb{
+  width:min(320px, 100%);
+  border-radius:14px;
+  border:1px solid rgba(0,0,0,.10);
+  background:#fff;
+  overflow:hidden;
+  justify-self:end;
+}
+.thumb img{width:100%; display:block}
+@media(max-width:980px){
+  .thumb{justify-self:start}
+}
 
-    /* Flow cards */
-    .flow{
-      background:var(--field);
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-    }
-    .grid3{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:16px;
-      margin-top:22px;
-    }
-    @media(max-width:980px){
-      .grid3{grid-template-columns:1fr}
-      .heroTitle{font-size:38px}
-    }
-    .card{
-      border:1px solid rgba(0,0,0,.10);
-      background:rgba(255,255,255,.55);
-      border-radius:18px;
-      padding:18px 18px 16px;
-      box-shadow:var(--shadow);
-    }
-    .card strong{
-      display:block;
-      font-size:12px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:rgba(0,0,0,.55);
-      margin-bottom:8px;
-    }
-    .card h3{
-      font-family:var(--serif);
-      font-size:22px;
-      margin:0 0 10px;
-    }
-    .card p{
-      margin:0 0 12px;
-      color:rgba(0,0,0,.72);
-      font-size:14px;
-    }
-    .link{
-      font-weight:900;
-      border-bottom:1px solid rgba(0,0,0,.26);
-      padding-bottom:1px;
-    }
-
-    /* Exec brief */
-    .briefCard{
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.50);
-      border-radius:24px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-      margin-top:22px;
-    }
-    .briefInner{
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap:22px;
-      padding:22px;
-      align-items:center;
-    }
-    @media(max-width:980px){
-      .briefInner{grid-template-columns:1fr}
-    }
-    .briefLabel{
-      font-size:12px;
-      letter-spacing:.22em;
-      text-transform:uppercase;
-      color:rgba(0,0,0,.55);
-      margin:0 0 10px;
-    }
-    .briefTitle{
-      font-family:var(--serif);
-      font-size:32px;
-      line-height:1.12;
-      margin:0 0 10px;
-    }
-    .briefDesc{
-      margin:0 0 14px;
-      color:rgba(0,0,0,.72);
-      max-width:80ch;
-    }
-    .thumb{
-      width:min(320px, 100%);
-      border-radius:14px;
-      border:1px solid rgba(0,0,0,.10);
-      background:#fff;
-      box-shadow:var(--shadow);
-      overflow:hidden;
-      justify-self:end;
-    }
-    .thumb img{width:100%; display:block}
-    @media(max-width:980px){
-      .thumb{justify-self:start}
-    }
-
-    /* What we do */
-    .whatGrid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
-      margin-top:22px;
-    }
-    @media(max-width:980px){
-      .whatGrid{grid-template-columns:1fr}
-    }
-
-    /* Contact */
-    .contact{
-      background:rgba(255,255,255,.16);
-      border-top:1px solid var(--line);
-    }
-    .contactCard{
-      border:1px solid rgba(0,0,0,.10);
-      background:rgba(255,255,255,.55);
-      border-radius:24px;
-      padding:22px;
-      box-shadow:var(--shadow);
-      margin-top:22px;
-    }
-    .contactCard h3{
-      font-family:var(--serif);
-      font-size:26px;
-      margin:0 0 10px;
-    }
-    .contactCard p{
-      margin:0 0 14px;
-      color:rgba(0,0,0,.72);
-      max-width:90ch;
-    }
-    .form{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-      margin-top:14px;
-    }
-    @media(max-width:780px){
-      .form{grid-template-columns:1fr}
-    }
-    input, textarea{
-      width:100%;
-      padding:12px 12px;
-      border-radius:12px;
-      border:1px solid rgba(0,0,0,.14);
-      background:rgba(255,255,255,.70);
-      font-family:var(--sans);
-      font-size:14px;
-      outline:none;
-    }
-    textarea{min-height:110px; grid-column:1/-1; resize:vertical}
-    .formActions{
-      margin-top:10px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-    .btnDark{
-      border-radius:999px;
-      padding:11px 14px;
-      border:1px solid #111;
-      background:#111;
-      color:#fff;
-      font-weight:900;
-      font-size:13px;
-      cursor:pointer;
-    }
-    .btnDark:hover{opacity:.92}
-    footer{
-      padding:28px 0 40px;
-      text-align:center;
-      color:rgba(0,0,0,.55);
-      font-size:13px;
-      border-top:1px solid var(--line);
-      background:rgba(255,255,255,.12);
-    }
-  </style>
+/* Footer */
+footer{
+  padding:28px 0 40px;
+  text-align:center;
+  color:rgba(0,0,0,.55);
+  font-size:13px;
+  border-top:1px solid var(--line);
+  background:rgba(255,255,255,.12);
+}
+</style>
 </head>
 
 <body>
 
 <header>
   <div class="wrap nav">
-    <a class="brand" href="index.html" style="display:flex; flex-direction:column; line-height:1.1;">
-      <div class="name" style="font-family:var(--serif); font-weight:700; font-size:18px; letter-spacing:.02em;">Desk &amp; Margin Outfitters</div>
-      <div class="tag" style="font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:rgba(0,0,0,.55); margin-top:6px;">Culture built with intention</div>
+    <a class="brand" href="index.html">
+      <div class="name">Desk &amp; Margin Outfitters</div>
+      <div class="tag">Culture built with intention</div>
     </a>
 
     <nav class="navlinks" aria-label="Primary navigation">
@@ -428,7 +343,7 @@
 
 <main>
 
-  <!-- HERO -->
+  <!-- HERO (ONLY FIX IS OVERLAY READABILITY) -->
   <section class="hero">
     <div class="wrap">
       <div class="heroCard">
@@ -442,7 +357,7 @@
                 Culture becomes durable when leadership intent is reinforced through systems of trust, rhythm, and visible signals —
                 especially inside complex, distributed organizations.
               </p>
-              <div class="heroActions">
+              <div class="actions">
                 <a class="btn primary" href="diagnostic.html">Take the Diagnostic →</a>
                 <a class="btn" href="field-guide.html">Open the Field Guide</a>
                 <a class="btn" href="#brief">Read the Executive Brief</a>
@@ -454,7 +369,7 @@
     </div>
   </section>
 
-  <!-- WHY LEADERS SHOULD CARE -->
+  <!-- WHY -->
   <section>
     <div class="wrap">
       <div class="sectionTitle">Why it matters</div>
@@ -463,9 +378,6 @@
         Culture determines how decisions get made when leadership is not in the room. Under strain — growth, leadership change,
         integration, distributed work — alignment often begins drifting long before anyone notices. When drift compounds, execution slows,
         friction rises, trust weakens, and innovation gets conservative.
-      </p>
-      <p class="lead" style="margin-top:14px;">
-        Surveys can reveal symptoms. Reinforcement architecture fixes causes.
       </p>
     </div>
   </section>
@@ -511,8 +423,8 @@
       <div class="sectionTitle">Executive brief</div>
       <h2>Alignment Under Strain</h2>
       <p class="lead">
-        Strategic shifts and organizational stress test the connective tissue of an enterprise. When alignment weakens,
-        communication alone rarely fixes the problem. Reinforcement either holds — or drift becomes expensive.
+        A concise framework for enterprise leaders: the dynamics of drift, reinforcement architecture, and what changes when
+        alignment is treated as infrastructure — not messaging.
       </p>
 
       <div class="briefCard">
@@ -521,8 +433,8 @@
             <div class="briefLabel">Executive Brief PDF</div>
             <div class="briefTitle">Alignment Under Strain</div>
             <p class="briefDesc">
-              A concise framework for enterprise leaders: the dynamics of drift, reinforcement architecture, and what changes when
-              alignment is treated as infrastructure — not messaging.
+              Culture rarely reveals its weaknesses during stability. Its integrity becomes visible when pressure is uneven and time is short.
+              This brief outlines why communication alone doesn’t hold alignment — and what reinforcement changes.
             </p>
             <a class="link" href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf" target="_blank" rel="noopener">Download the PDF →</a>
           </div>
@@ -535,40 +447,8 @@
     </div>
   </section>
 
-  <!-- WHAT WE DO -->
-  <section>
-    <div class="wrap">
-      <div class="sectionTitle">What we do</div>
-      <h2>Reinforcement systems that hold.</h2>
-      <p class="lead">
-        We help leaders stabilize alignment across the enterprise — culturally and strategically — so execution doesn’t depend on
-        personality, memory, or constant alignment meetings.
-      </p>
-
-      <div class="whatGrid">
-        <div class="card">
-          <strong>Diagnostics</strong>
-          <h3>Find the constraint</h3>
-          <p>Identify where reinforcement breaks first: core conditions, operating system, or field-level signals.</p>
-        </div>
-
-        <div class="card">
-          <strong>Architecture</strong>
-          <h3>Design the system</h3>
-          <p>Build cadence, decision signals, and visible artifacts that translate leadership intent into daily reality.</p>
-        </div>
-
-        <div class="card">
-          <strong>Transitions</strong>
-          <h3>Hold under strain</h3>
-          <p>Support integration, leadership transition, distributed shifts, and growth without cultural theater.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="intro">
+  <!-- INTRO (light, subtle) -->
+  <section id="intro">
     <div class="wrap">
       <div class="sectionTitle">Request a private introduction</div>
       <h2>Start with a conversation.</h2>
@@ -576,26 +456,9 @@
         If the diagnostic readout reflects what you’re seeing inside your organization, you’re welcome to reach out.
         We’ll keep it practical.
       </p>
-
-      <div class="contactCard">
-        <h3>Request Intro</h3>
-        <p>
-          Email works best: <a class="link" href="mailto:hello@deskandmarginoutfitters.com">hello@deskandmarginoutfitters.com →</a>
-        </p>
-
-        <form class="form" action="#" method="post" onsubmit="event.preventDefault(); alert('This form is currently a placeholder. Connect it to Formspree or Netlify Forms to enable submissions.');">
-          <input type="text" name="name" placeholder="Name" required />
-          <input type="email" name="email" placeholder="Email" required />
-          <input type="text" name="organization" placeholder="Organization (optional)" />
-          <input type="text" name="role" placeholder="Role (optional)" />
-          <textarea name="message" placeholder="What are you navigating right now?"></textarea>
-
-          <div class="formActions">
-            <button class="btnDark" type="submit">Send</button>
-            <a class="link" href="mailto:hello@deskandmarginoutfitters.com">Or email directly →</a>
-          </div>
-        </form>
-      </div>
+      <p class="lead" style="margin-top:10px;">
+        <a class="link" href="mailto:hello@deskandmarginoutfitters.com">hello@deskandmarginoutfitters.com →</a>
+      </p>
     </div>
   </section>
 
