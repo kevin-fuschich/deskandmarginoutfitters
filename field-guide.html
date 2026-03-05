@@ -1,1 +1,714 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <title>The Reinforcement Field Guide | Desk &amp; Margin Outfitters</title>
+  <meta name="description" content="A practical leadership playbook for stabilizing culture under strain. Core conditions, operating system reinforcement, and field-level signals." />
+  <link rel="icon" type="image/png" href="favicon.png" />
 
+  <style>
+    :root{
+      --ink:#111111;
+      --paper:#f2f0ec;
+      --field:#fffdf8;
+
+      --muted:#6f6a63;
+      --muted2:#8a847b;
+
+      --line:#e6e3de;
+      --line2:#d9d4cd;
+
+      --serif:"Georgia","Times New Roman",serif;
+      --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+
+      --max:1020px;
+      --radius:18px;
+
+      --shadow:0 10px 28px rgba(0,0,0,.06);
+      --shadow2:0 18px 48px rgba(0,0,0,.08);
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--paper);
+      color:var(--ink);
+      font-family:var(--sans);
+      line-height:1.7;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 22px}
+
+    /* Header */
+    header{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:rgba(242,240,236,.86);
+      backdrop-filter:saturate(180%) blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 0;
+      gap:16px;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      line-height:1.1;
+    }
+    .brand .name{
+      font-family:var(--serif);
+      font-weight:700;
+      font-size:18px;
+      letter-spacing:.02em;
+    }
+    .brand .tag{
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:rgba(0,0,0,.55);
+      margin-top:6px;
+    }
+    .navlinks{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      align-items:center;
+    }
+    .navlinks a{
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.02em;
+      color:rgba(0,0,0,.72);
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+    }
+    .navlinks a:hover{
+      border-color:rgba(0,0,0,.12);
+      background:rgba(255,255,255,.45);
+    }
+    .pill{
+      border:1px solid rgba(0,0,0,.14) !important;
+      background:rgba(255,255,255,.50);
+    }
+
+    /* Layout */
+    main{padding:28px 0 80px}
+    .kicker{
+      font-size:12px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:rgba(0,0,0,.55);
+      margin:0 0 10px;
+    }
+    h1{
+      font-family:var(--serif);
+      font-size:44px;
+      line-height:1.08;
+      margin:0 0 12px;
+    }
+    .subhead{
+      margin:0;
+      color:rgba(0,0,0,.74);
+      max-width:92ch;
+      font-size:16px;
+    }
+
+    .heroCard{
+      margin-top:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.50);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:var(--shadow2);
+    }
+    .heroInner{
+      padding:22px 22px 20px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:18px;
+      align-items:start;
+    }
+    @media(max-width:920px){
+      .heroInner{grid-template-columns:1fr}
+    }
+    .heroBox{
+      border:1px solid rgba(0,0,0,.10);
+      background:rgba(0,0,0,.03);
+      border-radius:18px;
+      padding:16px 16px 14px;
+    }
+    .heroBox strong{
+      font-family:var(--serif);
+      font-size:18px;
+    }
+    .heroBox p{
+      margin:8px 0 0;
+      color:rgba(0,0,0,.70);
+      font-size:14px;
+    }
+
+    .btnRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top:14px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:11px 14px;
+      border-radius:999px;
+      font-weight:900;
+      font-size:13px;
+      letter-spacing:.02em;
+      border:1px solid rgba(0,0,0,.16);
+      background:rgba(255,255,255,.55);
+      color:#111;
+    }
+    .btn:hover{background:rgba(255,255,255,.70)}
+    .btn.primary{
+      background:#111;
+      color:#fff;
+      border-color:#111;
+    }
+    .btn.primary:hover{opacity:.92}
+
+    /* Dividers */
+    .rule{
+      margin:40px 0 18px;
+      border-top:1px solid var(--line2);
+    }
+    .sectionHdr{
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:18px 0 14px;
+    }
+    .sectionHdr h2{
+      font-family:var(--serif);
+      font-size:30px;
+      margin:0;
+    }
+    .chip{
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:rgba(0,0,0,.60);
+      border:1px solid rgba(0,0,0,.12);
+      padding:7px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.45);
+      font-weight:900;
+      white-space:nowrap;
+    }
+
+    /* Playbook layout */
+    .twoCol{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:18px;
+      align-items:start;
+      margin-top:12px;
+    }
+    @media(max-width:920px){
+      .twoCol{grid-template-columns:1fr}
+    }
+
+    .card{
+      border:1px solid rgba(0,0,0,.10);
+      background:rgba(255,255,255,.55);
+      border-radius:18px;
+      padding:18px 18px 16px;
+      box-shadow:var(--shadow);
+    }
+    .card h3{
+      font-family:var(--serif);
+      font-size:20px;
+      margin:0 0 8px;
+    }
+    .card p{
+      margin:0;
+      color:rgba(0,0,0,.72);
+      font-size:14px;
+    }
+    .list{
+      margin:10px 0 0;
+      padding-left:18px;
+      color:rgba(0,0,0,.74);
+      font-size:14px;
+    }
+    .list li{margin:0 0 6px}
+
+    /* Intervention cards */
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      margin-top:14px;
+    }
+    @media(max-width:980px){
+      .grid3{grid-template-columns:1fr}
+    }
+    .iv{
+      border:1px solid rgba(0,0,0,.10);
+      background:rgba(0,0,0,.03);
+      border-radius:18px;
+      padding:16px 16px 14px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .iv::after{
+      content:"";
+      position:absolute; inset:0;
+      background:radial-gradient(900px 220px at 18% 0%, rgba(255,255,255,.40), transparent 45%);
+      pointer-events:none;
+    }
+    .ivTitle{
+      font-weight:950;
+      letter-spacing:.02em;
+      margin:0 0 8px;
+      font-size:14px;
+    }
+    .ivDesc{
+      margin:0 0 12px;
+      color:rgba(0,0,0,.70);
+      font-size:14px;
+    }
+    .kv{
+      display:grid;
+      gap:6px;
+      margin-top:8px;
+      font-size:13px;
+      color:rgba(0,0,0,.70);
+    }
+    .kv b{
+      color:rgba(0,0,0,.78);
+    }
+
+    /* Scaling band table */
+    .bands{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:12px;
+      margin-top:14px;
+    }
+    .band{
+      border:1px solid rgba(0,0,0,.10);
+      background:rgba(255,255,255,.50);
+      border-radius:18px;
+      padding:16px 16px 14px;
+      box-shadow:var(--shadow);
+    }
+    .bandTop{
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .bandTop strong{
+      font-family:var(--serif);
+      font-size:18px;
+    }
+    .band ul{margin:10px 0 0; padding-left:18px; color:rgba(0,0,0,.74); font-size:14px;}
+    .band li{margin:0 0 6px}
+
+    /* Checklist */
+    .checkGrid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:14px;
+    }
+    @media(max-width:920px){
+      .checkGrid{grid-template-columns:1fr}
+    }
+    .check{
+      border:1px solid rgba(0,0,0,.10);
+      background:rgba(255,255,255,.52);
+      border-radius:16px;
+      padding:14px 14px 12px;
+      box-shadow:var(--shadow);
+      font-size:14px;
+      color:rgba(0,0,0,.76);
+    }
+
+    /* Subtle CTA */
+    .softCta{
+      margin-top:18px;
+      color:rgba(0,0,0,.66);
+      font-size:14px;
+    }
+    .softCta a{
+      font-weight:900;
+      border-bottom:1px solid rgba(0,0,0,.26);
+      padding-bottom:1px;
+    }
+
+    footer{
+      padding:28px 0 40px;
+      text-align:center;
+      color:rgba(0,0,0,.55);
+      font-size:13px;
+      border-top:1px solid var(--line);
+      background:rgba(255,255,255,.12);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <div class="name">Desk &amp; Margin Outfitters</div>
+      <div class="tag">Culture built with intention</div>
+    </a>
+
+    <nav class="navlinks" aria-label="Primary navigation">
+      <a class="pill" href="diagnostic.html">Diagnostic</a>
+      <a href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf" target="_blank" rel="noopener">Executive Brief</a>
+      <a href="#checklist">Checklist</a>
+      <a href="index.html#intro">Request Intro</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <p class="kicker">Field guide</p>
+    <h1>The Reinforcement Field Guide</h1>
+    <p class="subhead">
+      A leadership playbook for stabilizing culture under strain. Use this after the diagnostic to target the weakest layer
+      — core conditions, operating system, or field signals — with practical interventions that scale.
+    </p>
+
+    <div class="btnRow">
+      <a class="btn primary" href="diagnostic.html">Take the Diagnostic →</a>
+      <a class="btn" href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf" target="_blank" rel="noopener">Executive Brief PDF</a>
+      <a class="btn" href="#checklist">Jump to Checklist</a>
+    </div>
+
+    <div class="heroCard">
+      <div class="heroInner">
+        <div class="heroBox">
+          <strong>How to use this guide</strong>
+          <p>
+            1) Take the diagnostic. 2) Identify your lowest layer. 3) Use the matching playbook section below.
+            Fix the constraint first — then reinforce the next layer.
+          </p>
+        </div>
+        <div class="heroBox">
+          <strong>Important rule</strong>
+          <p>
+            Don’t start with “expression.” Under strain, expression without reinforcement becomes theater.
+            Reinforcement holds. Drift spreads.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CORE CONDITIONS -->
+    <div class="rule"></div>
+    <div class="sectionHdr">
+      <h2>Core Conditions Playbook</h2>
+      <div class="chip">Trust · Clarity · Cohesion</div>
+    </div>
+
+    <div class="twoCol">
+      <div class="card">
+        <h3>When this layer breaks</h3>
+        <ul class="list">
+          <li>Priorities are “understood” but interpreted differently.</li>
+          <li>Cross-functional friction rises; coordination feels personal.</li>
+          <li>Leaders rely on volume (more comms) to force coherence.</li>
+          <li>Teams protect local goals instead of enterprise direction.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>What you’re really solving</h3>
+        <p>
+          Core conditions are the foundation for interpretation. If trust, clarity, or cohesion are weak,
+          the operating system won’t carry intent reliably — and field signals will contradict one another.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid3">
+      <div class="iv">
+        <div class="ivTitle">Leadership Listening Loops</div>
+        <p class="ivDesc">Small, leader-led sessions that surface drift before it becomes a rupture.</p>
+        <div class="kv">
+          <div><b>Purpose:</b> rebuild trust through direct signal</div>
+          <div><b>Cadence:</b> quarterly, 6–10 sessions</div>
+          <div><b>Output:</b> “What we heard / what we’ll do” summary</div>
+        </div>
+      </div>
+
+      <div class="iv">
+        <div class="ivTitle">Enterprise Priority Reset</div>
+        <p class="ivDesc">Reduce priority churn. Translate the top priorities into plain language.</p>
+        <div class="kv">
+          <div><b>Purpose:</b> stop interpretation drift</div>
+          <div><b>Cadence:</b> quarterly review; monthly reinforcement</div>
+          <div><b>Output:</b> one-page priority statement</div>
+        </div>
+      </div>
+
+      <div class="iv">
+        <div class="ivTitle">Cross-Function Alignment Forum</div>
+        <p class="ivDesc">A working session for leaders to align on tradeoffs, owners, and handoffs.</p>
+        <div class="kv">
+          <div><b>Purpose:</b> cohesion through shared decisions</div>
+          <div><b>Cadence:</b> quarterly, 60–90 minutes</div>
+          <div><b>Output:</b> “tradeoff log” + owner commitments</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="softCta">
+      If this layer feels unstable, don’t start by “messaging harder.” Start by clarifying intent and rebuilding trust through direct signal.
+      If you want a private readout, <a href="mailto:hello@deskandmarginoutfitters.com">request an introduction →</a>
+    </div>
+
+    <!-- OPERATING SYSTEM -->
+    <div class="rule"></div>
+    <div class="sectionHdr">
+      <h2>Operating System Playbook</h2>
+      <div class="chip">Narrative · Operating Rhythm · Decision Signals</div>
+    </div>
+
+    <div class="twoCol">
+      <div class="card">
+        <h3>When this layer breaks</h3>
+        <ul class="list">
+          <li>Leaders describe priorities differently (same slide, different story).</li>
+          <li>Cadence exists, but doesn’t reinforce priorities.</li>
+          <li>Decision exceptions accumulate; “real priorities” become unclear.</li>
+          <li>Middle layers fill ambiguity with local narrative.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>What you’re really solving</h3>
+        <p>
+          The operating system is translation. If narrative, cadence, and decision signals aren’t aligned,
+          intent becomes optional — and drift scales fast.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid3">
+      <div class="iv">
+        <div class="ivTitle">Leadership Narrative Brief</div>
+        <p class="ivDesc">A one-page document that stabilizes language, tradeoffs, and what “good” looks like.</p>
+        <div class="kv">
+          <div><b>Purpose:</b> consistent story across leaders</div>
+          <div><b>Cadence:</b> quarterly; refreshed as needed</div>
+          <div><b>Output:</b> narrative + tradeoffs + “do/don’t”</div>
+        </div>
+      </div>
+
+      <div class="iv">
+        <div class="ivTitle">Operating Cadence Anchor</div>
+        <p class="ivDesc">Tie reviews and forums to priorities — so the calendar becomes reinforcement.</p>
+        <div class="kv">
+          <div><b>Purpose:</b> make intent repeatable</div>
+          <div><b>Cadence:</b> monthly/quarterly rhythm</div>
+          <div><b>Output:</b> recurring agenda template</div>
+        </div>
+      </div>
+
+      <div class="iv">
+        <div class="ivTitle">Decision Signal Discipline</div>
+        <p class="ivDesc">Force major decisions to declare which priority they reinforce (or violate).</p>
+        <div class="kv">
+          <div><b>Purpose:</b> stop exceptions from becoming culture</div>
+          <div><b>Cadence:</b> continuous; reviewed quarterly</div>
+          <div><b>Output:</b> decision log + rationale mapping</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FIELD SIGNALS -->
+    <div class="rule"></div>
+    <div class="sectionHdr">
+      <h2>Field Signals Playbook</h2>
+      <div class="chip">Artifacts · Rituals · Leader Behavior</div>
+    </div>
+
+    <div class="twoCol">
+      <div class="card">
+        <h3>When this layer breaks</h3>
+        <ul class="list">
+          <li>Recognition rewards the wrong behaviors.</li>
+          <li>Rituals feel performative or inconsistent across teams.</li>
+          <li>Leader behavior under pressure contradicts stated values.</li>
+          <li>Culture becomes personality-dependent.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>What you’re really solving</h3>
+        <p>
+          Field signals are how culture becomes real. If artifacts and behavior diverge — even subtly —
+          people learn to ignore messaging and follow visible signals instead.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid3">
+      <div class="iv">
+        <div class="ivTitle">Recognition Architecture</div>
+        <p class="ivDesc">Reward what you want repeated — not what is easy to measure.</p>
+        <div class="kv">
+          <div><b>Purpose:</b> make priorities visible</div>
+          <div><b>Cadence:</b> ongoing; reviewed quarterly</div>
+          <div><b>Output:</b> recognition criteria + examples</div>
+        </div>
+      </div>
+
+      <div class="iv">
+        <div class="ivTitle">Ritual Design</div>
+        <p class="ivDesc">A small set of repeatable rituals that reinforce direction without theater.</p>
+        <div class="kv">
+          <div><b>Purpose:</b> consistency across teams</div>
+          <div><b>Cadence:</b> weekly/monthly</div>
+          <div><b>Output:</b> ritual scripts + guardrails</div>
+        </div>
+      </div>
+
+      <div class="iv">
+        <div class="ivTitle">Leader Signal Consistency</div>
+        <p class="ivDesc">Define 3–5 non-negotiable behaviors leaders must show under strain.</p>
+        <div class="kv">
+          <div><b>Purpose:</b> remove “personality culture”</div>
+          <div><b>Cadence:</b> quarterly review + coaching</div>
+          <div><b>Output:</b> behavior commitments + examples</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCALING -->
+    <div class="rule"></div>
+    <div class="sectionHdr">
+      <h2>Scaling Reinforcement</h2>
+      <div class="chip">Employee bands</div>
+    </div>
+
+    <p class="lead">
+      Tactics change with scale. Use these bands as operating realities — not HR categories.
+    </p>
+
+    <div class="bands">
+      <div class="band">
+        <div class="bandTop">
+          <strong>Under 500</strong>
+          <span class="chip">Direct signal</span>
+        </div>
+        <ul>
+          <li>Keep reinforcement lightweight: one strong cadence beats five weak ones.</li>
+          <li>Leaders should speak in plain language and stay consistent long enough for it to travel.</li>
+          <li>Use small-group listening loops instead of surveys.</li>
+        </ul>
+      </div>
+
+      <div class="band">
+        <div class="bandTop">
+          <strong>500–2,000</strong>
+          <span class="chip">Middle layers form</span>
+        </div>
+        <ul>
+          <li>Stabilize narrative: leaders should use the same language when describing priorities.</li>
+          <li>Introduce a quarterly cross-functional alignment forum (tradeoffs + ownership).</li>
+          <li>Start building decision-signal discipline (exceptions are expensive).</li>
+        </ul>
+      </div>
+
+      <div class="band">
+        <div class="bandTop">
+          <strong>2,000–10,000</strong>
+          <span class="chip">Reinforcement systems matter</span>
+        </div>
+        <ul>
+          <li>Department-level town halls that translate enterprise priorities into local commitments.</li>
+          <li>Structured listening beyond surveys: pattern capture + “what we heard / what we’ll do.”</li>
+          <li>Enterprise artifacts that scale (ritual templates, story banks, recognition criteria).</li>
+        </ul>
+      </div>
+
+      <div class="band">
+        <div class="bandTop">
+          <strong>10,000+</strong>
+          <span class="chip">Culture as infrastructure</span>
+        </div>
+        <ul>
+          <li>Operating rhythm becomes the spine: a shared cadence across functions and regions.</li>
+          <li>Annual leadership anchor moment (in-person if possible) to reinforce coherence.</li>
+          <li>Explicit decision-rights and escalation paths to prevent parallel cultures.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CHECKLIST -->
+    <div class="rule" id="checklist"></div>
+    <div class="sectionHdr">
+      <h2>Reinforcement Checklist</h2>
+      <div class="chip">12 questions</div>
+    </div>
+
+    <p class="lead">
+      Use this quarterly. The point is not perfection — it’s early detection of drift.
+    </p>
+
+    <div class="checkGrid">
+      <div class="check">Leaders use consistent language when describing priorities.</div>
+      <div class="check">Teams interpret priorities similarly across functions.</div>
+      <div class="check">Operating cadence reinforces priorities (not just reporting).</div>
+      <div class="check">Major decisions visibly tie back to stated priorities.</div>
+      <div class="check">Decision exceptions are tracked and reviewed.</div>
+      <div class="check">Middle layers reinforce enterprise intent clearly.</div>
+      <div class="check">Front-line decisions reflect leadership priorities.</div>
+      <div class="check">Recognition reinforces the behaviors leadership values.</div>
+      <div class="check">Rituals reinforce direction and reduce ambiguity.</div>
+      <div class="check">Leader behavior under pressure matches stated values.</div>
+      <div class="check">Employees feel safe escalating problems upward.</div>
+      <div class="check">Artifacts and signals don’t contradict one another.</div>
+    </div>
+
+    <div class="softCta">
+      If you want a simple private readout (and practical next steps), email:
+      <a href="mailto:hello@deskandmarginoutfitters.com">hello@deskandmarginoutfitters.com →</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  © <span id="y"></span> Desk &amp; Margin Outfitters
+</footer>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
