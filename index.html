@@ -66,9 +66,7 @@
       gap:16px;
       padding:16px 0;
     }
-    .brand{
-      line-height:1.05;
-    }
+    .brand{ line-height:1.05; }
     .brand .name{
       font-family:var(--serif);
       font-weight:700;
@@ -119,16 +117,17 @@
     .btn:active{ transform: translateY(0); }
 
     /* Hero */
-    .hero{
-      padding:22px 0 0;
-    }
+    .hero{ padding:22px 0 0; }
     .heroFrame{
       border-radius:22px;
       overflow:hidden;
-      background:#000;
+      background:
+        radial-gradient(1200px 520px at 12% 30%, rgba(255,255,255,0.16), rgba(255,255,255,0.00) 56%),
+        linear-gradient(180deg, rgba(17,17,17,0.92), rgba(17,17,17,0.68));
       box-shadow: var(--shadow);
       position:relative;
       min-height: 360px;
+      border:1px solid rgba(17,17,17,0.12);
     }
     .heroFrame img{
       width:100%;
@@ -150,8 +149,6 @@
       max-width: 740px;
       color:#fff;
     }
-
-    /* ✅ text plate behind hero copy (readability) */
     .heroPlate{
       display:inline-block;
       background: rgba(17,17,17,0.34);
@@ -161,7 +158,6 @@
       box-shadow: 0 18px 46px rgba(0,0,0,0.22);
       backdrop-filter: blur(6px);
     }
-
     .eyebrow{
       font-size:12px;
       letter-spacing:0.22em;
@@ -178,26 +174,12 @@
       text-shadow: 0 12px 28px rgba(0,0,0,0.28);
     }
     .heroP{
-      margin:0 0 12px;
+      margin:0 0 18px;
       font-size:16px;
       color:rgba(255,255,255,0.88);
       max-width: 64ch;
       text-shadow: 0 10px 24px rgba(0,0,0,0.24);
     }
-
-    /* “what’s in it for you” note */
-    .heroNote{
-      margin:0 0 18px;
-      font-size:13.5px;
-      color:rgba(255,255,255,0.82);
-      max-width: 70ch;
-      text-shadow: 0 10px 24px rgba(0,0,0,0.22);
-    }
-    .heroNote strong{
-      color:rgba(255,255,255,0.92);
-      font-weight:850;
-    }
-
     .heroActions{
       display:flex;
       gap:10px;
@@ -216,9 +198,7 @@
     }
 
     /* Sections */
-    section{
-      padding:72px 0;
-    }
+    section{ padding:72px 0; }
     .sectionTitle{
       font-family:var(--serif);
       font-size:36px;
@@ -248,18 +228,38 @@
       box-shadow: var(--shadow-soft);
     }
 
+    /* Value note (below hero, not on it) */
+    .valueNote{
+      padding:28px 0 0;
+    }
+    .valueBox{
+      background:rgba(255,255,255,0.55);
+      border:1px solid rgba(17,17,17,0.10);
+      border-radius:18px;
+      padding:18px 18px 16px;
+      box-shadow: var(--shadow-soft);
+    }
+    .valueBox strong{
+      font-family:var(--serif);
+      font-size:18px;
+      font-weight:750;
+      display:block;
+      margin-bottom:6px;
+    }
+    .valueBox p{
+      margin:0;
+      color:rgba(0,0,0,0.74);
+      font-size:16px;
+      max-width: 92ch;
+    }
+
     /* Reinforcement Architecture */
     .arch{
       background:var(--field);
       border-top:1px solid var(--line);
       border-bottom:1px solid var(--line);
     }
-    .archIntro{
-      margin-bottom:26px;
-    }
-    .archIntro .lead{
-      margin-top:10px;
-    }
+    .archIntro{ margin-bottom:26px; }
     .archExplainer{
       margin-top:10px;
       font-size:16px;
@@ -397,11 +397,7 @@
       background:#fff;
       box-shadow: var(--shadow-soft);
     }
-    .thumb img{
-      width:100%;
-      height:auto;
-      display:block;
-    }
+    .thumb img{ width:100%; height:auto; display:block; }
 
     /* Diagnostic CTA strip */
     .ctaStrip{
@@ -477,10 +473,7 @@
     @media (max-width: 860px){
       .contactGrid{ grid-template-columns:1fr; }
     }
-    form{
-      display:grid;
-      gap:10px;
-    }
+    form{ display:grid; gap:10px; }
     input, textarea{
       width:100%;
       padding:12px 12px;
@@ -533,23 +526,16 @@
   <section class="hero">
     <div class="wrap">
       <div class="heroFrame">
+        <!-- ✅ Image is here; fallback background remains if it fails to load -->
         <img src="leader-meeting.png" alt="Leaders in a focused meeting" />
         <div class="heroOverlay">
           <div class="heroText">
             <div class="heroPlate">
               <div class="eyebrow">Culture is built in the margins</div>
               <h1 class="heroH1">Not with slogans. Not by accident.</h1>
-
-              <!-- ✅ UPDATED HERO LINE (recommended) -->
               <p class="heroP">
                 Culture becomes durable and capable of sustained productivity and innovation when leadership intent is reinforced through systems of care built on trust, cadence, and clarity.
               </p>
-
-              <!-- ✅ Minimal value prop note (no em dash) -->
-              <p class="heroNote">
-                <strong>What’s in it for you:</strong> less drift, faster decisions, and trust that holds under strain without turning culture into theater.
-              </p>
-
               <div class="heroActions">
                 <a class="btn primary" href="diagnostic.html">Take the Diagnostic</a>
                 <a class="btn" href="#brief">Read the Executive Brief</a>
@@ -562,13 +548,25 @@
     </div>
   </section>
 
+  <!-- VALUE NOTE (below hero, not on hero) -->
+  <section class="valueNote">
+    <div class="wrap">
+      <div class="valueBox">
+        <strong>Why leaders care</strong>
+        <p>
+          When culture is reinforced well, strategy turns into coordinated action. Decisions move faster, trust holds under strain,
+          and innovation survives the middle layers of the organization without becoming theater.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- REINFORCEMENT ARCHITECTURE -->
   <section class="arch" id="framework">
     <div class="wrap">
       <div class="archIntro">
         <div class="kicker">How we think about it</div>
         <h2 class="sectionTitle">Reinforcement Architecture</h2>
-
         <div class="archExplainer">
           Culture becomes durable when leadership intent is reinforced through three layers of the organization.
         </div>
