@@ -1,326 +1,365 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<meta name="color-scheme" content="light" />
-<title>Desk &amp; Margin Outfitters</title>
-<link rel="icon" type="image/png" href="favicon.png" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <title>Desk &amp; Margin Outfitters</title>
+  <meta name="description" content="Culture is built in the margins. We design tools that help teams protect what matters and build what’s next." />
+  <link rel="icon" type="image/png" href="favicon.png" />
 
-<style>
-:root{
-  --ink:#111;
-  --paper:#f2f0ec;
-  --field:#fffdf8;
-  --muted:#6f6a63;
-  --line:#e6e3de;
-  --serif:Georgia,"Times New Roman",serif;
-  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-  --max:1000px;
-  --shadow:0 14px 42px rgba(0,0,0,.10);
-}
+  <style>
+    :root{
+      --ink:#111111;
+      --paper:#f2f0ec;
+      --field:#fffdf8;
 
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:var(--sans);
-  background:var(--paper);
-  color:var(--ink);
-  line-height:1.7;
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
-}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+      --muted:#6f6a63;
+      --line:#e6e3de;
+      --line2:#d9d4cd;
 
-/* Header */
-header{
-  position:sticky;
-  top:0;
-  z-index:10;
-  background:rgba(242,240,236,.88);
-  backdrop-filter: blur(10px);
-  border-bottom:1px solid var(--line);
-}
-.nav{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:14px 0;
-  gap:16px;
-}
-.brand{
-  display:flex;
-  flex-direction:column;
-  line-height:1.1;
-}
-.brand .name{
-  font-family:var(--serif);
-  font-weight:700;
-  font-size:18px;
-  letter-spacing:.02em;
-}
-.brand .tag{
-  font-size:12px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:rgba(0,0,0,.55);
-  margin-top:6px;
-}
-.navlinks{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  justify-content:flex-end;
-  align-items:center;
-}
-.navlinks a{
-  font-size:13px;
-  font-weight:800;
-  color:rgba(0,0,0,.72);
-  padding:8px 10px;
-  border-radius:999px;
-  border:1px solid transparent;
-}
-.navlinks a:hover{
-  border-color:rgba(0,0,0,.12);
-  background:rgba(255,255,255,.45);
-}
-.pill{
-  border:1px solid rgba(0,0,0,.14) !important;
-  background:rgba(255,255,255,.50);
-}
+      --serif:Georgia,"Times New Roman",serif;
+      --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
 
-/* Hero */
-.hero{padding:26px 0 8px}
-.heroCard{
-  border-radius:24px;
-  overflow:hidden;
-  border:1px solid var(--line);
-  background:#000;
-  box-shadow:var(--shadow);
-  position:relative;
-}
-.heroImg{
-  position:relative;
-  height:min(440px, 56vw);
-}
-.heroImg img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
+      --max:1040px;
+      --radius:18px;
 
-/* ✅ FIX: readable scrim where text lives (left pocket) */
-.heroImg::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(90deg,
-      rgba(0,0,0,.78) 0%,
-      rgba(0,0,0,.62) 26%,
-      rgba(0,0,0,.38) 48%,
-      rgba(0,0,0,.16) 66%,
-      rgba(0,0,0,.04) 82%,
-      rgba(0,0,0,0) 100%),
-    linear-gradient(180deg,
-      rgba(0,0,0,.10) 0%,
-      rgba(0,0,0,.18) 55%,
-      rgba(0,0,0,.44) 100%);
-  pointer-events:none;
-}
+      --shadow:0 12px 34px rgba(0,0,0,.08);
+      --shadow2:0 18px 52px rgba(0,0,0,.10);
+    }
 
-.heroContent{
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:flex-end;
-}
-.heroInner{
-  padding:30px 22px 24px;
-  color:#fff;
-  max-width:800px;
-}
-.kicker{
-  font-size:12px;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  opacity:.86;
-  margin:0 0 10px;
-}
-.heroTitle{
-  font-family:var(--serif);
-  font-size:44px;
-  line-height:1.06;
-  margin:0 0 12px;
-  max-width:20ch;
-  text-shadow:0 10px 28px rgba(0,0,0,.35);
-}
-.heroSub{
-  margin:0;
-  max-width:74ch;
-  font-size:16px;
-  color:rgba(255,255,255,.92);
-  text-shadow:0 8px 22px rgba(0,0,0,.28);
-}
-.actions{
-  margin-top:16px;
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-}
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:11px 14px;
-  border-radius:999px;
-  font-weight:900;
-  font-size:13px;
-  border:1px solid rgba(255,255,255,.25);
-  background:rgba(17,17,17,.40);
-  color:#fff;
-}
-.btn:hover{background:rgba(17,17,17,.56)}
-.btn.primary{
-  background:#fff;
-  color:#111;
-  border-color:#fff;
-}
-.btn.primary:hover{background:rgba(255,255,255,.92)}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      background:var(--paper);
+      color:var(--ink);
+      line-height:1.7;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
 
-@media(max-width:980px){
-  .heroTitle{font-size:38px}
-}
+    /* Header */
+    header{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:rgba(242,240,236,.86);
+      backdrop-filter:saturate(180%) blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 0;
+      gap:16px;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      line-height:1.1;
+    }
+    .brand .name{
+      font-family:var(--serif);
+      font-weight:700;
+      font-size:18px;
+      letter-spacing:.02em;
+    }
+    .brand .tag{
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:rgba(0,0,0,.55);
+      margin-top:6px;
+    }
+    .navlinks{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      align-items:center;
+    }
+    .navlinks a{
+      font-size:13px;
+      font-weight:850;
+      letter-spacing:.02em;
+      color:rgba(0,0,0,.72);
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+    }
+    .navlinks a:hover{
+      border-color:rgba(0,0,0,.12);
+      background:rgba(255,255,255,.45);
+    }
+    .pill{
+      border:1px solid rgba(0,0,0,.14) !important;
+      background:rgba(255,255,255,.50);
+    }
 
-/* Sections */
-section{padding:58px 0}
-.sectionTitle{
-  font-size:12px;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  color:rgba(0,0,0,.55);
-  margin:0 0 10px;
-}
-h2{
-  font-family:var(--serif);
-  font-size:36px;
-  line-height:1.12;
-  margin:0 0 14px;
-}
-.lead{
-  margin:0;
-  max-width:92ch;
-  color:rgba(0,0,0,.74);
-  font-size:16px;
-}
+    /* Hero */
+    .hero{padding:26px 0 10px}
+    .heroCard{
+      border-radius:24px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:#000;
+      box-shadow:var(--shadow2);
+      position:relative;
+    }
+    .heroImg{
+      position:relative;
+      height:min(470px, 58vw);
+      overflow:hidden;
+    }
+    .heroImg img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
 
-/* Flow cards */
-.flow{
-  background:var(--field);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-}
-.grid3{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:16px;
-  margin-top:22px;
-}
-@media(max-width:980px){
-  .grid3{grid-template-columns:1fr}
-}
-.card{
-  border:1px solid rgba(0,0,0,.10);
-  background:rgba(255,255,255,.55);
-  border-radius:18px;
-  padding:18px 18px 16px;
-}
-.card strong{
-  display:block;
-  font-size:12px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:rgba(0,0,0,.55);
-  margin-bottom:8px;
-}
-.card h3{
-  font-family:var(--serif);
-  font-size:22px;
-  margin:0 0 10px;
-}
-.card p{
-  margin:0 0 12px;
-  color:rgba(0,0,0,.72);
-  font-size:14px;
-}
-.link{
-  font-weight:900;
-  border-bottom:1px solid rgba(0,0,0,.26);
-  padding-bottom:1px;
-}
+    /* Gentle, even image calm — NOT a gradient war */
+    .heroImg::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,.18);
+      pointer-events:none;
+    }
 
-/* Exec brief */
-.briefCard{
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.50);
-  border-radius:24px;
-  overflow:hidden;
-  margin-top:22px;
-}
-.briefInner{
-  display:grid;
-  grid-template-columns: 1.05fr .95fr;
-  gap:22px;
-  padding:22px;
-  align-items:center;
-}
-@media(max-width:980px){
-  .briefInner{grid-template-columns:1fr}
-}
-.briefLabel{
-  font-size:12px;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  color:rgba(0,0,0,.55);
-  margin:0 0 10px;
-}
-.briefTitle{
-  font-family:var(--serif);
-  font-size:32px;
-  line-height:1.12;
-  margin:0 0 10px;
-}
-.briefDesc{
-  margin:0 0 14px;
-  color:rgba(0,0,0,.72);
-  max-width:80ch;
-}
-.thumb{
-  width:min(320px, 100%);
-  border-radius:14px;
-  border:1px solid rgba(0,0,0,.10);
-  background:#fff;
-  overflow:hidden;
-  justify-self:end;
-}
-.thumb img{width:100%; display:block}
-@media(max-width:980px){
-  .thumb{justify-self:start}
-}
+    .heroContent{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:flex-end;
+    }
+    .heroInner{
+      padding:22px 18px 22px;
+      width:100%;
+    }
 
-/* Footer */
-footer{
-  padding:28px 0 40px;
-  text-align:center;
-  color:rgba(0,0,0,.55);
-  font-size:13px;
-  border-top:1px solid var(--line);
-  background:rgba(255,255,255,.12);
-}
-</style>
+    /* ✅ Paper plate (boutique, readable, not “glass”) */
+    .heroPlate{
+      max-width:860px;
+      background:rgba(255,253,248,.92);  /* field paper */
+      border:1px solid rgba(17,17,17,.12);
+      border-radius:18px;
+      padding:18px 18px 16px;
+      box-shadow:0 22px 60px rgba(0,0,0,.22);
+    }
+    .heroPlate::before{
+      content:"";
+      display:block;
+      height:1px;
+      background:linear-gradient(90deg, rgba(0,0,0,.18), rgba(0,0,0,0));
+      margin:-2px 0 14px;
+      opacity:.35;
+    }
+
+    .kicker{
+      font-size:12px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:rgba(0,0,0,.58);
+      margin:0 0 10px;
+    }
+    .heroTitle{
+      font-family:var(--serif);
+      font-size:42px;
+      line-height:1.06;
+      margin:0 0 10px;
+      max-width:22ch;
+      color:#111;
+    }
+    .heroSub{
+      margin:0;
+      max-width:78ch;
+      font-size:16px;
+      color:rgba(0,0,0,.74);
+    }
+    .actions{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:11px 14px;
+      border-radius:999px;
+      font-weight:900;
+      font-size:13px;
+      letter-spacing:.02em;
+      border:1px solid rgba(0,0,0,.14);
+      background:rgba(255,255,255,.82);
+      color:#111;
+    }
+    .btn:hover{background:rgba(255,255,255,.92)}
+    .btn.primary{
+      background:#111;
+      color:#fff;
+      border-color:#111;
+    }
+    .btn.primary:hover{opacity:.92}
+
+    @media(max-width:980px){
+      .heroTitle{font-size:36px}
+      .heroPlate{padding:16px 16px 14px}
+    }
+
+    /* Sections */
+    section{padding:60px 0}
+    .sectionTitle{
+      font-size:12px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:rgba(0,0,0,.55);
+      margin:0 0 10px;
+    }
+    h2{
+      font-family:var(--serif);
+      font-size:36px;
+      line-height:1.12;
+      margin:0 0 14px;
+    }
+    .lead{
+      margin:0;
+      max-width:92ch;
+      color:rgba(0,0,0,.74);
+      font-size:16px;
+    }
+
+    /* Flow cards */
+    .flow{
+      background:var(--field);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    .grid3{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
+      margin-top:22px;
+    }
+    @media(max-width:980px){
+      .grid3{grid-template-columns:1fr}
+    }
+    .card{
+      border:1px solid rgba(0,0,0,.10);
+      background:rgba(255,255,255,.55);
+      border-radius:18px;
+      padding:18px 18px 16px;
+      box-shadow:var(--shadow);
+    }
+    .card strong{
+      display:block;
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:rgba(0,0,0,.55);
+      margin-bottom:8px;
+    }
+    .card h3{
+      font-family:var(--serif);
+      font-size:22px;
+      margin:0 0 10px;
+    }
+    .card p{
+      margin:0 0 12px;
+      color:rgba(0,0,0,.72);
+      font-size:14px;
+    }
+    .link{
+      font-weight:900;
+      border-bottom:1px solid rgba(0,0,0,.26);
+      padding-bottom:1px;
+    }
+
+    /* Exec brief */
+    .briefCard{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.50);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      margin-top:22px;
+    }
+    .briefInner{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:22px;
+      padding:22px;
+      align-items:center;
+    }
+    @media(max-width:980px){
+      .briefInner{grid-template-columns:1fr}
+    }
+    .briefLabel{
+      font-size:12px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:rgba(0,0,0,.55);
+      margin:0 0 10px;
+    }
+    .briefTitle{
+      font-family:var(--serif);
+      font-size:32px;
+      line-height:1.12;
+      margin:0 0 10px;
+    }
+    .briefDesc{
+      margin:0 0 14px;
+      color:rgba(0,0,0,.72);
+      max-width:80ch;
+    }
+    .thumb{
+      width:min(320px, 100%);
+      border-radius:14px;
+      border:1px solid rgba(0,0,0,.10);
+      background:#fff;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      justify-self:end;
+    }
+    .thumb img{width:100%; display:block}
+    @media(max-width:980px){
+      .thumb{justify-self:start}
+    }
+
+    /* ✅ Second hero image block */
+    .hero2Wrap{padding:0}
+    .hero2{
+      border-radius:24px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow2);
+      background:#111;
+    }
+    .hero2 img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    .spacer{height:56px}
+
+    /* Footer */
+    footer{
+      padding:28px 0 40px;
+      text-align:center;
+      color:rgba(0,0,0,.55);
+      font-size:13px;
+      border-top:1px solid var(--line);
+      background:rgba(255,255,255,.12);
+    }
+  </style>
 </head>
 
 <body>
@@ -343,7 +382,7 @@ footer{
 
 <main>
 
-  <!-- HERO (ONLY FIX IS OVERLAY READABILITY) -->
+  <!-- HERO 1 (FIXED: readable + boutique) -->
   <section class="hero">
     <div class="wrap">
       <div class="heroCard">
@@ -351,22 +390,24 @@ footer{
           <img src="leader-meeting.png" alt="Leadership team meeting" />
           <div class="heroContent">
             <div class="heroInner">
-              <p class="kicker">Culture is built in the margins</p>
-              <h1 class="heroTitle">Not with slogans. Not by accident.</h1>
-              <p class="heroSub">
-                Culture becomes durable when leadership intent is reinforced through systems of trust, rhythm, and visible signals —
-                especially inside complex, distributed organizations.
-              </p>
-              <div class="actions">
-                <a class="btn primary" href="diagnostic.html">Take the Diagnostic →</a>
-                <a class="btn" href="field-guide.html">Open the Field Guide</a>
-                <a class="btn" href="#brief">Read the Executive Brief</a>
+              <div class="heroPlate">
+                <p class="kicker">Culture is built in the margins</p>
+                <h1 class="heroTitle">Not with slogans. Not by accident.</h1>
+                <p class="heroSub">
+                  Culture becomes durable when leadership intent is reinforced through systems of trust, rhythm, and visible signals —
+                  especially inside complex, distributed organizations.
+                </p>
+                <div class="actions">
+                  <a class="btn primary" href="diagnostic.html">Take the Diagnostic →</a>
+                  <a class="btn" href="field-guide.html">Open the Field Guide</a>
+                  <a class="btn" href="#brief">Read the Executive Brief</a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+        </div><!-- /heroImg -->
+      </div><!-- /heroCard -->
+    </div><!-- /wrap -->
   </section>
 
   <!-- WHY -->
@@ -378,6 +419,9 @@ footer{
         Culture determines how decisions get made when leadership is not in the room. Under strain — growth, leadership change,
         integration, distributed work — alignment often begins drifting long before anyone notices. When drift compounds, execution slows,
         friction rises, trust weakens, and innovation gets conservative.
+      </p>
+      <p class="lead" style="margin-top:14px;">
+        Surveys can reveal symptoms. Reinforcement architecture fixes causes.
       </p>
     </div>
   </section>
@@ -410,7 +454,7 @@ footer{
         <div class="card">
           <strong>Step 3</strong>
           <h3>Field Guide</h3>
-          <p>A practical playbook with interventions that stabilize alignment when pressure rises.</p>
+          <p>A practical leadership playbook with interventions that stabilize alignment when pressure rises.</p>
           <a class="link" href="field-guide.html">Open the Field Guide →</a>
         </div>
       </div>
@@ -447,7 +491,17 @@ footer{
     </div>
   </section>
 
-  <!-- INTRO (light, subtle) -->
+  <!-- HERO 2 (RESTORED) -->
+  <section class="hero2Wrap">
+    <div class="wrap">
+      <div class="hero2">
+        <img src="virtual-meeting.png" alt="Virtual work scene" />
+      </div>
+    </div>
+    <div class="spacer"></div>
+  </section>
+
+  <!-- INTRO -->
   <section id="intro">
     <div class="wrap">
       <div class="sectionTitle">Request a private introduction</div>
