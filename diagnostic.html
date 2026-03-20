@@ -95,6 +95,19 @@ header{
   font-size:14px;
 }
 
+.scale-guide{
+  margin-top:10px;
+  padding:10px 12px;
+  border:1px solid rgba(17,17,17,0.08);
+  border-radius:12px;
+  background:rgba(255,255,255,0.45);
+  font-size:13px;
+  color:rgba(0,0,0,0.68);
+}
+.scale-guide strong{
+  color:rgba(0,0,0,0.82);
+}
+
 .q{
   padding:14px 0;
   border-top:1px solid rgba(17,17,17,0.08);
@@ -116,6 +129,12 @@ header{
   margin:0;
   color:rgba(0,0,0,0.86);
   font-size:14px;
+}
+
+.scale-label{
+  margin-top:6px;
+  font-size:12px;
+  color:rgba(0,0,0,0.58);
 }
 
 .scale{
@@ -347,12 +366,16 @@ footer{
     <div class="block">
       <h2>Core Conditions</h2>
       <p>Foundational conditions that determine whether leadership intent can travel consistently.</p>
+      <div class="scale-guide">
+        <strong>Rating scale:</strong> 1 = low / not true, 5 = high / consistently true.
+      </div>
 
       <div class="q" data-q="1">
         <div class="q-title">
           <div class="q-num">1.</div>
           <p class="q-text">Trust — leaders trust that priorities are interpreted consistently across teams.</p>
         </div>
+        <div class="scale-label">Rate from 1 (low / not true) to 5 (high / consistently true).</div>
         <div class="scale">
           <button class="choice" data-v="1">1</button><button class="choice" data-v="2">2</button><button class="choice" data-v="3">3</button><button class="choice" data-v="4">4</button><button class="choice" data-v="5">5</button>
         </div>
@@ -363,6 +386,7 @@ footer{
           <div class="q-num">2.</div>
           <p class="q-text">Clarity — strategic priorities are understood across functions and levels.</p>
         </div>
+        <div class="scale-label">Rate from 1 (low / not true) to 5 (high / consistently true).</div>
         <div class="scale">
           <button class="choice" data-v="1">1</button><button class="choice" data-v="2">2</button><button class="choice" data-v="3">3</button><button class="choice" data-v="4">4</button><button class="choice" data-v="5">5</button>
         </div>
@@ -373,6 +397,7 @@ footer{
           <div class="q-num">3.</div>
           <p class="q-text">Cohesion — functions operate as coordinated partners rather than independent actors.</p>
         </div>
+        <div class="scale-label">Rate from 1 (low / not true) to 5 (high / consistently true).</div>
         <div class="scale">
           <button class="choice" data-v="1">1</button><button class="choice" data-v="2">2</button><button class="choice" data-v="3">3</button><button class="choice" data-v="4">4</button><button class="choice" data-v="5">5</button>
         </div>
@@ -383,12 +408,16 @@ footer{
     <div class="block">
       <h2>System Layer</h2>
       <p>The translation engine: narrative, cadence, and decision signals.</p>
+      <div class="scale-guide">
+        <strong>Rating scale:</strong> 1 = low / not true, 5 = high / consistently true.
+      </div>
 
       <div class="q" data-q="4">
         <div class="q-title">
           <div class="q-num">4.</div>
           <p class="q-text">Narrative — leaders describe priorities using consistent language.</p>
         </div>
+        <div class="scale-label">Rate from 1 (low / not true) to 5 (high / consistently true).</div>
         <div class="scale">
           <button class="choice" data-v="1">1</button><button class="choice" data-v="2">2</button><button class="choice" data-v="3">3</button><button class="choice" data-v="4">4</button><button class="choice" data-v="5">5</button>
         </div>
@@ -399,6 +428,7 @@ footer{
           <div class="q-num">5.</div>
           <p class="q-text">Operating rhythm — routines and cadences reinforce priorities.</p>
         </div>
+        <div class="scale-label">Rate from 1 (low / not true) to 5 (high / consistently true).</div>
         <div class="scale">
           <button class="choice" data-v="1">1</button><button class="choice" data-v="2">2</button><button class="choice" data-v="3">3</button><button class="choice" data-v="4">4</button><button class="choice" data-v="5">5</button>
         </div>
@@ -409,6 +439,7 @@ footer{
           <div class="q-num">6.</div>
           <p class="q-text">Decision signals — important decisions reinforce the priorities leaders communicate.</p>
         </div>
+        <div class="scale-label">Rate from 1 (low / not true) to 5 (high / consistently true).</div>
         <div class="scale">
           <button class="choice" data-v="1">1</button><button class="choice" data-v="2">2</button><button class="choice" data-v="3">3</button><button class="choice" data-v="4">4</button><button class="choice" data-v="5">5</button>
         </div>
@@ -419,12 +450,16 @@ footer{
     <div class="block">
       <h2>Field Signals</h2>
       <p>Visible reinforcement: behavior, rituals, and artifacts.</p>
+      <div class="scale-guide">
+        <strong>Rating scale:</strong> 1 = low / not true, 5 = high / consistently true.
+      </div>
 
       <div class="q" data-q="7">
         <div class="q-title">
           <div class="q-num">7.</div>
           <p class="q-text">Leader behavior — leadership actions reflect stated expectations.</p>
         </div>
+        <div class="scale-label">Rate from 1 (low / not true) to 5 (high / consistently true).</div>
         <div class="scale">
           <button class="choice" data-v="1">1</button><button class="choice" data-v="2">2</button><button class="choice" data-v="3">3</button><button class="choice" data-v="4">4</button><button class="choice" data-v="5">5</button>
         </div>
@@ -435,6 +470,7 @@ footer{
           <div class="q-num">8.</div>
           <p class="q-text">Rituals — recurring rituals reinforce priorities (not just calendar fill).</p>
         </div>
+        <div class="scale-label">Rate from 1 (low / not true) to 5 (high / consistently true).</div>
         <div class="scale">
           <button class="choice" data-v="1">1</button><button class="choice" data-v="2">2</button><button class="choice" data-v="3">3</button><button class="choice" data-v="4">4</button><button class="choice" data-v="5">5</button>
         </div>
@@ -445,6 +481,7 @@ footer{
           <div class="q-num">9.</div>
           <p class="q-text">Artifacts — programs, symbols, and recognition reinforce priorities without mixed signals.</p>
         </div>
+        <div class="scale-label">Rate from 1 (low / not true) to 5 (high / consistently true).</div>
         <div class="scale">
           <button class="choice" data-v="1">1</button><button class="choice" data-v="2">2</button><button class="choice" data-v="3">3</button><button class="choice" data-v="4">4</button><button class="choice" data-v="5">5</button>
         </div>
