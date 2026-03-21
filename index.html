@@ -3,74 +3,128 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+
 <title>Desk & Margin Outfitters</title>
+<meta name="description" content="Culture is built in the margins. Desk & Margin Outfitters designs systems of care, ritual, and connection inside organizations." />
 
 <style>
 :root{
   --ink:#111;
   --paper:#f2f0ec;
+  --field:#fffdf8;
   --line:#e6e3de;
-  --accent:#000;
+  --muted:#6f6a63;
+
   --serif:Georgia, "Times New Roman", serif;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 
+*{box-sizing:border-box}
+
 body{
   margin:0;
-  font-family:var(--sans);
   background:var(--paper);
   color:var(--ink);
+  font-family:var(--sans);
+  line-height:1.6;
 }
 
 .container{
   max-width:960px;
   margin:0 auto;
-  padding:40px 20px;
+  padding:0 20px;
 }
 
-h1,h2,h3{
-  font-family:var(--serif);
-  font-weight:500;
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
+/* NAV */
 
 header{
   border-bottom:1px solid var(--line);
+  background:var(--field);
 }
 
-nav{
+.nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  padding:18px 0;
 }
 
+.nav a{
+  text-decoration:none;
+  color:var(--ink);
+  font-size:14px;
+}
+
+.brand{
+  font-family:var(--serif);
+  font-size:18px;
+}
+
+.nav-links a{
+  margin-left:20px;
+}
+
+/* HERO */
+
 .hero{
-  padding:80px 0;
+  padding:100px 0 80px;
 }
 
 .hero h1{
+  font-family:var(--serif);
   font-size:42px;
-  line-height:1.2;
+  line-height:1.25;
+  margin:0 0 20px;
 }
+
+.hero p{
+  max-width:640px;
+  color:var(--muted);
+}
+
+/* SECTIONS */
 
 .section{
-  padding:60px 0;
+  padding:70px 0;
   border-top:1px solid var(--line);
 }
+
+.section h2{
+  font-family:var(--serif);
+  font-size:26px;
+  margin-bottom:20px;
+}
+
+/* CASE STUDIES */
 
 .case{
-  margin-bottom:30px;
+  margin-bottom:40px;
 }
 
-.footer{
+.case a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.case h3{
+  font-family:var(--serif);
+  margin:0 0 8px;
+  font-size:20px;
+}
+
+.case p{
+  margin:0;
+  color:var(--muted);
+  max-width:640px;
+}
+
+/* FOOTER */
+
+footer{
   border-top:1px solid var(--line);
   padding:40px 0;
-  font-size:14px;
-  color:#666;
+  font-size:13px;
+  color:var(--muted);
 }
 </style>
 </head>
@@ -78,26 +132,31 @@ nav{
 <body>
 
 <header>
-  <div class="container">
-    <nav>
-      <strong>Desk & Margin</strong>
-      <div>
-        <a href="/case-studies/index.html">Case Studies</a>
-      </div>
-    </nav>
+  <div class="container nav">
+    <div class="brand">Desk & Margin Outfitters</div>
+    <div class="nav-links">
+      <a href="/case-studies/index.html">Case Studies</a>
+    </div>
   </div>
 </header>
 
 <main>
 
-<div class="container hero">
+<!-- HERO -->
+
+<section class="hero container">
   <h1>
     Culture is built in the margins.<br>
-    Not by accident. By design.
+    Not with slogans. Not by accident.
   </h1>
-</div>
+  <p>
+    We design systems of care, ritual, and connection that help organizations protect what matters and build what’s next.
+  </p>
+</section>
 
-<div class="container section">
+<!-- CASE STUDIES -->
+
+<section class="section container">
   <h2>Case Studies</h2>
 
   <div class="case">
@@ -105,16 +164,25 @@ nav{
       <h3>OGWA — Rebuilding Culture Inside a Premium Brand</h3>
     </a>
     <p>
-      How we restored connection, energy, and leadership proximity inside a high-performing product company.
+      A high-end water bottle company with strong products but declining internal energy turned to Desk & Margin to reconnect employees, redesign daily experience, and restore momentum.
     </p>
   </div>
 
-</div>
+</section>
+
+<!-- OPTIONAL NEXT SECTION (FUTURE USE) -->
+
+<section class="section container">
+  <h2>How We Work</h2>
+  <p>
+    We start with Discovery — understanding how work is actually experienced — then design targeted systems that reshape connection, leadership presence, and daily rhythm.
+  </p>
+</section>
 
 </main>
 
 <footer>
-  <div class="container footer">
+  <div class="container">
     Desk & Margin Outfitters © 2026
   </div>
 </footer>
