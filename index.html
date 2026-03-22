@@ -79,6 +79,7 @@
     nav a{
       font-size:13px;
       color:rgba(0,0,0,.75);
+      text-decoration:none;
     }
 
     .btn{
@@ -87,6 +88,7 @@
       border:1px solid rgba(0,0,0,.2);
       font-weight:700;
       font-size:13px;
+      text-decoration:none;
     }
 
     .btn.primary{
@@ -135,20 +137,20 @@
 
     .heroH1{
       font-family:var(--serif);
-      font-size:40px;
-      margin:0 0 8px;
+      font-size:38px;
+      margin:0 0 6px;
     }
 
     .heroH2{
       font-family:var(--serif);
-      font-size:26px;
-      margin:0 0 12px;
+      font-size:24px;
+      margin:0 0 10px;
     }
 
     .heroP{
       font-size:15px;
-      color:rgba(255,255,255,.9);
       margin:0 0 14px;
+      color:rgba(255,255,255,.9);
     }
 
     .heroActions{
@@ -188,13 +190,29 @@
       color:rgba(0,0,0,.75);
     }
 
+    /* BRIDGE */
+    .bridge{
+      margin-top:26px;
+      padding:22px;
+      border-radius:16px;
+      background:rgba(255,255,255,0.6);
+      border:1px solid var(--line);
+    }
+
+    .bridge p{
+      margin:0;
+      font-size:18px;
+      font-family:var(--serif);
+    }
+
+    /* SECTION */
     section{
       padding:70px 0;
     }
 
     .sectionTitle{
       font-family:var(--serif);
-      font-size:34px;
+      font-size:32px;
       margin-bottom:10px;
     }
 
@@ -215,6 +233,7 @@
       border:1px solid var(--line);
       border-radius:16px;
       padding:20px;
+      margin-top:18px;
     }
 
     .ctaStrip{
@@ -260,6 +279,7 @@
 
 <section class="hero">
   <div class="wrap">
+
     <div class="heroFrame">
       <img src="leader-meeting.png" alt="">
       <div class="heroOverlay">
@@ -283,10 +303,18 @@
       </div>
     </div>
 
+    <!-- VALUE -->
     <div class="valueBox">
       <div class="valueTitle">Why leaders care</div>
       <p class="valueText">
         Reinforced culture keeps teams aligned when pressure increases. It reduces drift, sharpens decisions, and helps strategy hold across the organization.
+      </p>
+    </div>
+
+    <!-- BRIDGE -->
+    <div class="bridge">
+      <p>
+        If you’re here, you’re likely navigating growth, change, or complexity. Alignment gets harder as organizations scale, especially under pressure.
       </p>
     </div>
 
@@ -298,17 +326,17 @@
     <div class="kicker">Executive brief</div>
     <h2 class="sectionTitle">Alignment Under Strain</h2>
     <p class="lead">
-      A focused look at how alignment breaks down — and what leaders can do to reinforce it.
+      A focused look at how alignment breaks down and what reinforcement changes.
     </p>
 
     <div class="card">
       <p>
-        Culture rarely fails when things are stable. It fails under pressure. This brief outlines why alignment breaks and how reinforcement changes that.
+        Culture rarely fails when things are stable. It fails under pressure. This brief outlines why alignment breaks and how reinforcement stabilizes it.
       </p>
 
       <div class="ctaStrip">
         <div>
-          <strong>See where alignment is breaking down. Take the diagnostic.</strong>
+          <strong>Learn where alignment is failing. Take the diagnostic.</strong>
         </div>
         <a class="btn primary" href="diagnostic.html">Take the Diagnostic →</a>
       </div>
