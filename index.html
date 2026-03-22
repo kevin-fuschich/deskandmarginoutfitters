@@ -1,245 +1,758 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Desk &amp; Margin Outfitters</title>
+  <meta name="description" content="Culture is built in the margins. We design tools that help teams protect what matters and build what’s next." />
+  <link rel="icon" type="image/png" href="favicon.png" />
 
-<title>Desk & Margin Outfitters</title>
+  <style>
+    :root{
+      --ink:#111111;
+      --paper:#f2f0ec;
+      --field:#fffdf8;
+      --muted:#6f6a63;
+      --line:#e6e3de;
+      --soft:#f6f3ee;
 
-<meta name="description" content="Culture is built in the margins. Desk & Margin Outfitters designs systems of care, ritual, and connection inside organizations." />
+      --serif:"Georgia","Times New Roman",serif;
+      --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
 
-<style>
-:root{
-  --ink:#111;
-  --paper:#f2f0ec;
-  --field:#fffdf8;
-  --muted:#6f6a63;
-  --line:#e6e3de;
+      --max:1080px;
+      --radius:16px;
+      --shadow:0 18px 40px rgba(0,0,0,0.10);
+      --shadow-soft:0 10px 22px rgba(0,0,0,0.08);
 
-  --serif:Georgia,"Times New Roman",serif;
-  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-}
+      --btn:#111111;
+      --btnText:#ffffff;
+    }
 
-*{box-sizing:border-box}
+    *{ box-sizing:border-box; }
+    html,body{ margin:0; padding:0; }
+    body{
+      font-family:var(--sans);
+      background:var(--paper);
+      color:var(--ink);
+      line-height:1.7;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
 
-body{
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:var(--sans);
-  line-height:1.65;
-}
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
 
-.container{
-  max-width:1000px;
-  margin:0 auto;
-  padding:0 24px;
-}
+    .wrap{
+      width:100%;
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 22px;
+    }
 
-/* NAV */
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(242,240,236,0.86);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+    }
 
-header{
-  background:var(--field);
-  border-bottom:1px solid var(--line);
-}
+    .head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:16px 0;
+    }
 
-.nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 0;
-}
+    .brand{ line-height:1.05; }
+    .brand .name{
+      font-family:var(--serif);
+      font-weight:700;
+      letter-spacing:0.01em;
+      font-size:20px;
+    }
+    .brand .sub{
+      font-size:11px;
+      letter-spacing:0.22em;
+      text-transform:uppercase;
+      color:rgba(0,0,0,0.55);
+      margin-top:4px;
+    }
 
-.brand{
-  font-family:var(--serif);
-  font-size:18px;
-}
+    nav{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
 
-.nav a{
-  text-decoration:none;
-  color:var(--ink);
-  font-size:14px;
-}
+    nav a{
+      font-size:13px;
+      color:rgba(0,0,0,0.72);
+      border-bottom:1px solid transparent;
+      padding-bottom:2px;
+    }
 
-.nav-links a{
-  margin-left:24px;
-}
+    nav a:hover{
+      border-bottom-color:rgba(0,0,0,0.35);
+    }
 
-/* HERO */
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:13px;
+      border:1px solid rgba(17,17,17,0.18);
+      background:transparent;
+      color:rgba(0,0,0,0.86);
+    }
 
-.hero{
-  padding:110px 0 90px;
-}
+    .btn.primary{
+      background:var(--btn);
+      color:var(--btnText);
+      border-color:var(--btn);
+    }
 
-.hero h1{
-  font-family:var(--serif);
-  font-size:44px;
-  line-height:1.25;
-  margin:0 0 24px;
-}
+    .btn:hover{ transform:translateY(-1px); }
+    .btn:active{ transform:translateY(0); }
 
-.hero p{
-  max-width:680px;
-  color:var(--muted);
-}
+    .hero{ padding:22px 0 0; }
 
-/* SECTION */
+    .heroFrame{
+      border-radius:22px;
+      overflow:hidden;
+      background:#000;
+      box-shadow:var(--shadow);
+      position:relative;
+      min-height:360px;
+      border:1px solid rgba(17,17,17,0.12);
+    }
 
-.section{
-  padding:80px 0;
-  border-top:1px solid var(--line);
-}
+    .heroFrame img{
+      width:100%;
+      height:420px;
+      object-fit:cover;
+      opacity:0.92;
+    }
 
-.section h2{
-  font-family:var(--serif);
-  font-size:28px;
-  margin-bottom:20px;
-}
+    .heroOverlay{
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.44) 42%, rgba(0,0,0,0.18) 70%, rgba(0,0,0,0.04) 100%),
+        linear-gradient(180deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.32) 100%);
+      display:flex;
+      align-items:flex-end;
+    }
 
-.section p{
-  max-width:720px;
-}
+    .heroText{
+      padding:40px 34px;
+      max-width:740px;
+      color:#fff;
+    }
 
-/* CASE STUDIES */
+    .heroPlate{
+      display:inline-block;
+      background:rgba(17,17,17,0.34);
+      border:1px solid rgba(255,255,255,0.14);
+      border-radius:18px;
+      padding:18px 18px 16px;
+      box-shadow:0 18px 46px rgba(0,0,0,0.22);
+      backdrop-filter:blur(6px);
+    }
 
-.case{
-  margin-top:30px;
-}
+    .eyebrow{
+      font-size:12px;
+      letter-spacing:0.22em;
+      text-transform:uppercase;
+      opacity:0.86;
+      margin-bottom:12px;
+    }
 
-.case a{
-  text-decoration:none;
-  color:inherit;
-}
+    .heroH1{
+      font-family:var(--serif);
+      font-size:40px;
+      line-height:1.08;
+      margin:0 0 12px;
+      font-weight:750;
+      text-shadow:0 12px 28px rgba(0,0,0,0.28);
+    }
 
-.case h3{
-  font-family:var(--serif);
-  font-size:22px;
-  margin:0 0 10px;
-}
+    .heroP{
+      margin:0 0 18px;
+      font-size:16px;
+      color:rgba(255,255,255,0.88);
+      max-width:64ch;
+      text-shadow:0 10px 24px rgba(0,0,0,0.24);
+    }
 
-.case p{
-  margin:0;
-  color:var(--muted);
-}
+    .heroActions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
 
-/* FOOTER */
+    .heroActions .btn{
+      border-color:rgba(255,255,255,0.22);
+      color:#fff;
+      background:rgba(255,255,255,0.06);
+    }
 
-footer{
-  border-top:1px solid var(--line);
-  padding:50px 0;
-  font-size:13px;
-  color:var(--muted);
-}
-</style>
+    .heroActions .btn.primary{
+      background:#fff;
+      color:#111;
+      border-color:#fff;
+    }
+
+    .valueRow{
+      padding:18px 0 0;
+    }
+
+    .valueBox{
+      background:rgba(255,255,255,0.55);
+      border:1px solid rgba(17,17,17,0.10);
+      border-radius:18px;
+      padding:16px 18px 16px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .valueTitle{
+      font-family:var(--serif);
+      font-size:18px;
+      font-weight:750;
+      margin:0 0 6px;
+    }
+
+    .valueText{
+      margin:0;
+      color:rgba(0,0,0,0.74);
+      font-size:16px;
+      max-width:95ch;
+    }
+
+    section{
+      padding:72px 0;
+    }
+
+    .sectionTitle{
+      font-family:var(--serif);
+      font-size:36px;
+      line-height:1.12;
+      margin:0 0 14px;
+      font-weight:750;
+    }
+
+    .kicker{
+      font-size:12px;
+      letter-spacing:0.22em;
+      text-transform:uppercase;
+      color:rgba(0,0,0,0.55);
+      margin-bottom:14px;
+    }
+
+    .lead{
+      font-size:18px;
+      color:rgba(0,0,0,0.76);
+      max-width:80ch;
+      margin:0;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.55);
+      border:1px solid rgba(17,17,17,0.10);
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .arch{
+      background:var(--field);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .archIntro{ margin-bottom:26px; }
+
+    .archExplainer{
+      margin-top:10px;
+      font-size:16px;
+      color:rgba(0,0,0,0.72);
+      max-width:86ch;
+    }
+
+    .stack{
+      position:relative;
+      margin-top:26px;
+      padding-left:18px;
+    }
+
+    .stack:before{
+      content:"";
+      position:absolute;
+      left:6px;
+      top:10px;
+      bottom:10px;
+      width:2px;
+      background:linear-gradient(180deg, rgba(17,17,17,0.10), rgba(17,17,17,0.04), rgba(17,17,17,0.10));
+      border-radius:10px;
+    }
+
+    .layer{
+      position:relative;
+      margin:14px 0;
+      border-radius:18px;
+      padding:22px 22px 20px;
+      background:rgba(17,17,17,0.04);
+      border:1px solid rgba(17,17,17,0.10);
+      box-shadow:0 10px 18px rgba(0,0,0,0.06);
+    }
+
+    .layer:before{
+      content:"";
+      position:absolute;
+      left:-18px;
+      top:50%;
+      width:14px;
+      height:14px;
+      transform:translateY(-50%);
+      border-radius:999px;
+      background:rgba(17,17,17,0.18);
+      border:2px solid rgba(255,255,255,0.85);
+      box-shadow:0 6px 14px rgba(0,0,0,0.10);
+    }
+
+    .layerTop{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .layerH{
+      font-family:var(--serif);
+      font-size:22px;
+      margin:0 0 6px;
+      font-weight:750;
+    }
+
+    .layerSub{
+      margin:0;
+      color:rgba(0,0,0,0.70);
+      font-size:15px;
+    }
+
+    .chip{
+      font-size:11px;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+      color:rgba(0,0,0,0.66);
+      border:1px solid rgba(17,17,17,0.14);
+      padding:8px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.55);
+      font-weight:800;
+      white-space:nowrap;
+    }
+
+    .archFooterLine{
+      margin-top:22px;
+      font-size:18px;
+      color:rgba(0,0,0,0.76);
+      text-align:center;
+      max-width:88ch;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .briefGrid{
+      display:grid;
+      grid-template-columns:1.2fr 0.8fr;
+      gap:26px;
+      align-items:center;
+      margin-top:26px;
+    }
+
+    @media (max-width: 860px){
+      .briefGrid{ grid-template-columns:1fr; }
+    }
+
+    .briefTitle{
+      font-family:var(--serif);
+      font-size:28px;
+      margin:8px 0 10px;
+      font-weight:750;
+    }
+
+    .briefMeta{
+      font-size:12px;
+      letter-spacing:0.22em;
+      text-transform:uppercase;
+      color:rgba(0,0,0,0.55);
+      margin:0 0 10px;
+    }
+
+    .briefCopy{
+      margin:0 0 16px;
+      color:rgba(0,0,0,0.72);
+      font-size:16px;
+      max-width:72ch;
+    }
+
+    .linkRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top:6px;
+    }
+
+    .textLink{
+      font-weight:850;
+      border-bottom:1px solid rgba(0,0,0,0.30);
+      padding-bottom:2px;
+    }
+
+    .thumb{
+      border-radius:14px;
+      overflow:hidden;
+      border:1px solid rgba(17,17,17,0.12);
+      background:#fff;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .thumb img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    .ctaStrip{
+      background:rgba(255,255,255,0.46);
+      border:1px solid rgba(17,17,17,0.10);
+      border-radius:18px;
+      padding:22px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+      margin-top:26px;
+    }
+
+    .ctaStrip strong{
+      font-family:var(--serif);
+      font-size:20px;
+    }
+
+    .ctaStrip span{
+      color:rgba(0,0,0,0.70);
+      font-size:14px;
+      display:block;
+      margin-top:2px;
+      max-width:70ch;
+    }
+
+    .hero2{
+      padding:0 0 72px;
+    }
+
+    .hero2Frame{
+      border-radius:22px;
+      overflow:hidden;
+      background:#000;
+      box-shadow:var(--shadow);
+      position:relative;
+      border:1px solid rgba(17,17,17,0.10);
+    }
+
+    .hero2Frame img{
+      width:100%;
+      height:380px;
+      object-fit:cover;
+      opacity:0.96;
+    }
+
+    .hero2Overlay{
+      position:absolute;
+      inset:auto 0 0 0;
+      padding:18px 22px;
+      background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.52) 100%);
+    }
+
+    .hero2Text{
+      color:rgba(255,255,255,0.92);
+      max-width:78ch;
+      font-size:15px;
+    }
+
+    .hero2Text strong{
+      font-family:var(--serif);
+      font-size:18px;
+      font-weight:750;
+      display:block;
+      margin-bottom:6px;
+      color:#fff;
+    }
+
+    .contactGrid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+      margin-top:26px;
+      align-items:start;
+    }
+
+    @media (max-width: 860px){
+      .contactGrid{ grid-template-columns:1fr; }
+    }
+
+    form{ display:grid; gap:10px; }
+
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid rgba(17,17,17,0.14);
+      background:rgba(255,255,255,0.75);
+      font-family:var(--sans);
+      font-size:14px;
+      color:#111;
+    }
+
+    textarea{
+      min-height:120px;
+      resize:vertical;
+    }
+
+    .smallNote{
+      font-size:12px;
+      color:rgba(0,0,0,0.60);
+      margin:0;
+    }
+
+    footer{
+      padding:34px 0 44px;
+      text-align:center;
+      color:rgba(0,0,0,0.55);
+      font-size:13px;
+      border-top:1px solid var(--line);
+      background:rgba(255,255,255,0.18);
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-  <div class="container nav">
-    <div class="brand">Desk & Margin Outfitters</div>
-    <div class="nav-links">
-      <a href="/case-studies/index.html">Case Studies</a>
-    </div>
+  <div class="wrap head">
+    <a class="brand" href="index.html" aria-label="Desk & Margin Outfitters Home">
+      <div class="name">Desk &amp; Margin Outfitters</div>
+      <div class="sub">Culture built in the margins</div>
+    </a>
+
+    <nav aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="diagnostic.html">Diagnostic</a>
+      <a href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf" target="_blank" rel="noopener">Executive Brief</a>
+      <a class="btn primary" href="#intro">Request a Private Intro</a>
+    </nav>
   </div>
 </header>
 
 <main>
 
-<!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="heroFrame">
+        <img src="leader-meeting.png" alt="Leaders in a focused meeting" />
+        <div class="heroOverlay">
+          <div class="heroText">
+            <div class="heroPlate">
+              <div class="eyebrow">Culture is built in the margins</div>
+              <h1 class="heroH1">Not with slogans. Not by accident.</h1>
+              <p class="heroP">
+                Culture becomes durable and capable of sustained productivity and innovation when leadership intent is reinforced through systems of care built on trust, cadence, and clarity.
+              </p>
+              <div class="heroActions">
+                <a class="btn primary" href="diagnostic.html">Take the Diagnostic</a>
+                <a class="btn" href="#brief">Read the Executive Brief</a>
+                <a class="btn" href="#intro">Request a Private Intro</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<section class="hero container">
-  <h1>
-    Culture is built in the margins.<br>
-    Not with slogans. Not by accident. But through systems of care, held together by trust, ritual, and intention.
-  </h1>
+      <div class="valueRow">
+        <div class="valueBox">
+          <p class="valueTitle">Why leaders care</p>
+          <p class="valueText">
+            Reinforced culture turns strategy into coordinated action. It reduces drift, accelerates decision-making, protects trust under strain, and helps innovation survive scale.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <p>
-    Desk & Margin Outfitters helps organizations design the moments that shape how work actually feels — from leadership presence to daily rhythms, from onboarding to change.
-  </p>
-</section>
+  <section class="arch" id="framework">
+    <div class="wrap">
+      <div class="archIntro">
+        <div class="kicker">How we think about it</div>
+        <h2 class="sectionTitle">Reinforcement Architecture</h2>
+        <div class="archExplainer">
+          Culture becomes durable when leadership intent is reinforced through three layers of the organization.
+        </div>
+      </div>
 
-<!-- WHAT WE DO -->
+      <div class="stack">
+        <div class="layer">
+          <div class="layerTop">
+            <div>
+              <h3 class="layerH">Field Signals</h3>
+              <p class="layerSub">Artifacts · Rituals · Leader Behavior</p>
+            </div>
+            <div class="chip">Layer 3 · Visible</div>
+          </div>
+        </div>
 
-<section class="section container">
-  <h2>What We Do</h2>
+        <div class="layer">
+          <div class="layerTop">
+            <div>
+              <h3 class="layerH">Operating System</h3>
+              <p class="layerSub">Narrative · Operating Rhythm · Decision Signals</p>
+            </div>
+            <div class="chip">Layer 2 · Reinforcement</div>
+          </div>
+        </div>
 
-  <p>
-    Most organizations focus on messaging, programs, or platforms. We focus on experience.
-  </p>
+        <div class="layer">
+          <div class="layerTop">
+            <div>
+              <h3 class="layerH">Core Conditions</h3>
+              <p class="layerSub">Trust · Clarity · Cohesion</p>
+            </div>
+            <div class="chip">Layer 1 · Foundation</div>
+          </div>
+        </div>
+      </div>
 
-  <p>
-    Through a structured discovery process, we identify where culture is formed — in meetings, transitions, leadership interactions, and everyday work — then redesign those moments intentionally.
-  </p>
+      <div class="archFooterLine">
+        Most organizations work on expression. High-performing organizations reinforce the system.
+        The difference becomes visible under strain.
+      </div>
+    </div>
+  </section>
 
-  <p>
-    The result is not a campaign. It’s a system.
-  </p>
-</section>
+  <section id="brief">
+    <div class="wrap">
+      <div class="kicker">Executive brief</div>
+      <h2 class="sectionTitle">Alignment Under Strain</h2>
+      <p class="lead">
+        A focused examination of how enterprise cohesion weakens under structural pressure and how reinforcement architecture stabilizes it.
+      </p>
 
-<!-- HOW WE WORK -->
+      <div class="briefGrid">
+        <div class="card">
+          <div class="briefMeta">Executive Brief</div>
+          <div class="briefTitle">Alignment Under Strain</div>
+          <p class="briefCopy">
+            Culture rarely reveals its weaknesses during stability. Its integrity becomes visible when pressure is uneven and time is short. This brief outlines the drift problem and what changes when leaders treat alignment as infrastructure.
+          </p>
 
-<section class="section container">
-  <h2>How We Work</h2>
+          <div class="linkRow">
+            <a class="textLink" href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf" target="_blank" rel="noopener">
+              Download the Executive Brief →
+            </a>
+            <a class="textLink" href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf" target="_blank" rel="noopener">
+              Open PDF →
+            </a>
+          </div>
 
-  <p>
-    Every engagement begins with <strong>Desk & Margin Discovery</strong> — a focused effort to understand how work is actually experienced across an organization.
-  </p>
+          <div class="ctaStrip">
+            <div>
+              <strong>Want a fast readout first?</strong>
+              <span>Take the diagnostic and get reinforcement levers tailored to your organization’s conditions.</span>
+            </div>
+            <a class="btn primary" href="diagnostic.html">Take the Diagnostic →</a>
+          </div>
+        </div>
 
-  <p>
-    We observe workflows, speak directly with employees, and analyze communication patterns to identify where connection breaks down, energy drops, and leadership intent fails to translate.
-  </p>
+        <a class="thumb" href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf" target="_blank" rel="noopener" aria-label="Open Alignment Under Strain PDF">
+          <img src="alignment-under-strain-cover.png" alt="Alignment Under Strain executive brief cover thumbnail" />
+        </a>
+      </div>
+    </div>
+  </section>
 
-  <p>
-    From there, we design targeted interventions — embedded directly into the work — that improve connection, clarity, and momentum without adding unnecessary complexity.
-  </p>
-</section>
+  <section class="hero2">
+    <div class="wrap">
+      <div class="hero2Frame">
+        <img src="virtual-meeting.png" alt="Remote work scene with laptop and video meeting" />
+        <div class="hero2Overlay">
+          <div class="hero2Text">
+            <strong>Distributed work raises the cost of reinforcement.</strong>
+            Drift doesn’t announce itself. It accumulates. Consistent signals keep teams aligned when you’re not in the same room.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- CASE STUDIES -->
+  <section id="intro">
+    <div class="wrap">
+      <div class="kicker">Request a private intro</div>
+      <h2 class="sectionTitle">Start with a conversation</h2>
+      <p class="lead">
+        If you’re navigating integration, growth, operating-model shifts, or leadership transition, we can help you stabilize alignment without turning culture into theater.
+      </p>
 
-<section class="section container">
-  <h2>Case Studies</h2>
+      <div class="contactGrid">
+        <div class="card">
+          <h3 style="font-family:var(--serif); margin:0 0 10px; font-size:22px;">What we do</h3>
+          <p style="margin:0; color:rgba(0,0,0,0.72);">
+            We help leadership teams strengthen the core, align the reinforcement, and make the expression consistent so culture doesn’t depend on personality or memory.
+          </p>
+          <p class="smallNote" style="margin-top:14px;">
+            Email works too: <a class="textLink" href="mailto:hello@deskandmarginoutfitters.com">hello@deskandmarginoutfitters.com</a>
+          </p>
+        </div>
 
-  <p>
-    A selection of engagements focused on rebuilding connection, improving leadership visibility, and redesigning how work is experienced day-to-day.
-  </p>
-
-  <div class="case">
-    <a href="/case-studies/ogwa-culture.html">
-      <h3>OGWA — Rebuilding Culture Inside a Premium Brand</h3>
-    </a>
-    <p>
-      A high-growth product company known for design and performance was experiencing internal drift — siloed teams, declining energy, and reduced innovation. We redesigned key moments in the workday to restore connection and momentum.
-    </p>
-  </div>
-
-</section>
-
-<!-- PHILOSOPHY -->
-
-<section class="section container">
-  <h2>Our Philosophy</h2>
-
-  <p>
-    Culture is not built through announcements. It is built through repeated, shared experience.
-  </p>
-
-  <p>
-    When those experiences are unintentional, culture drifts. When they are designed, culture strengthens.
-  </p>
-
-  <p>
-    The work is not to create something new. It is to reshape what already happens — so it works better.
-  </p>
-</section>
+        <div class="card">
+          <form action="#" method="post">
+            <input type="text" name="name" placeholder="Name" autocomplete="name" />
+            <input type="email" name="email" placeholder="Email" autocomplete="email" />
+            <input type="text" name="organization" placeholder="Organization" />
+            <textarea name="message" placeholder="What are you navigating right now?"></textarea>
+            <button class="btn primary" type="submit">Send →</button>
+          </form>
+          <p class="smallNote" style="margin-top:10px;">
+            This form is a placeholder until you connect it to a form service.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </main>
 
 <footer>
-  <div class="container">
-    Desk & Margin Outfitters © 2026
+  <div class="wrap">
+    © <span id="y"></span> Desk &amp; Margin Outfitters · Culture built with intention.
   </div>
 </footer>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
