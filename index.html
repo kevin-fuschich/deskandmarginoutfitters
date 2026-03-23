@@ -1,369 +1,303 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Desk & Margin Outfitters</title>
-  <meta name="description" content="Culture is built in the margins. Reinforced culture keeps teams aligned across the organization." />
-  <link rel="icon" type="image/png" href="favicon.png" />
-
-  <style>
-    :root{
-      --ink:#111;
-      --paper:#f2f0ec;
-      --field:#fffdf8;
-      --muted:#6f6a63;
-      --line:#e6e3de;
-
-      --serif:Georgia,"Times New Roman",serif;
-      --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-
-      --max:1080px;
-      --radius:16px;
-      --shadow:0 18px 40px rgba(0,0,0,0.10);
-      --shadow-soft:0 10px 22px rgba(0,0,0,0.08);
-    }
-
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:var(--sans);
-      background:var(--paper);
-      color:var(--ink);
-      line-height:1.7;
-    }
-
-    .wrap{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:0 22px;
-    }
-
-    header{
-      position:sticky;
-      top:0;
-      background:rgba(242,240,236,0.9);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid var(--line);
-      z-index:10;
-    }
-
-    .head{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:16px 0;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-
-    .brand .name{
-      font-family:var(--serif);
-      font-weight:700;
-      font-size:20px;
-    }
-
-    .brand .sub{
-      font-size:11px;
-      letter-spacing:.2em;
-      text-transform:uppercase;
-      color:rgba(0,0,0,.6);
-    }
-
-    nav{
-      display:flex;
-      gap:16px;
-      flex-wrap:wrap;
-    }
-
-    nav a{
-      font-size:13px;
-      color:rgba(0,0,0,.75);
-      text-decoration:none;
-    }
-
-    .btn{
-      padding:10px 14px;
-      border-radius:999px;
-      border:1px solid rgba(0,0,0,.2);
-      font-weight:700;
-      font-size:13px;
-      text-decoration:none;
-    }
-
-    .btn.primary{
-      background:#111;
-      color:#fff;
-      border-color:#111;
-    }
-
-    /* HERO */
-    .hero{
-      padding:24px 0 0;
-    }
-
-    .heroFrame{
-      position:relative;
-      border-radius:20px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-    }
-
-    .heroFrame img{
-      width:100%;
-      height:420px;
-      object-fit:cover;
-    }
-
-    .heroOverlay{
-      position:absolute;
-      inset:0;
-      background:linear-gradient(90deg, rgba(0,0,0,.65), rgba(0,0,0,.2));
-      display:flex;
-      align-items:flex-end;
-    }
-
-    .heroText{
-      padding:40px;
-      color:#fff;
-      max-width:720px;
-    }
-
-    .heroPlate{
-      background:rgba(0,0,0,.4);
-      padding:18px;
-      border-radius:16px;
-    }
-
-    .heroH1{
-      font-family:var(--serif);
-      font-size:38px;
-      margin:0 0 6px;
-    }
-
-    .heroH2{
-      font-family:var(--serif);
-      font-size:24px;
-      margin:0 0 10px;
-    }
-
-    .heroP{
-      font-size:15px;
-      margin:0 0 14px;
-      color:rgba(255,255,255,.9);
-    }
-
-    .heroActions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    .heroActions .btn{
-      color:#fff;
-      border-color:rgba(255,255,255,.4);
-    }
-
-    .heroActions .btn.primary{
-      background:#fff;
-      color:#111;
-    }
-
-    /* VALUE */
-    .valueBox{
-      margin-top:16px;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:16px;
-      box-shadow:var(--shadow-soft);
-    }
-
-    .valueTitle{
-      font-family:var(--serif);
-      font-weight:700;
-      margin-bottom:6px;
-    }
-
-    .valueText{
-      margin:0;
-      color:rgba(0,0,0,.75);
-    }
-
-    /* BRIDGE */
-    .bridge{
-      margin-top:26px;
-      padding:22px;
-      border-radius:16px;
-      background:rgba(255,255,255,0.6);
-      border:1px solid var(--line);
-    }
-
-    .bridge p{
-      margin:0;
-      font-size:18px;
-      font-family:var(--serif);
-    }
-
-    /* SECTION */
-    section{
-      padding:70px 0;
-    }
-
-    .sectionTitle{
-      font-family:var(--serif);
-      font-size:32px;
-      margin-bottom:10px;
-    }
-
-    .kicker{
-      font-size:12px;
-      letter-spacing:.2em;
-      text-transform:uppercase;
-      color:rgba(0,0,0,.6);
-    }
-
-    .lead{
-      max-width:800px;
-      color:rgba(0,0,0,.75);
-    }
-
-    .card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:20px;
-      margin-top:18px;
-    }
-
-    .ctaStrip{
-      margin-top:20px;
-      padding:18px;
-      border:1px solid var(--line);
-      border-radius:16px;
-      display:flex;
-      justify-content:space-between;
-      gap:16px;
-      flex-wrap:wrap;
-    }
-
-    footer{
-      padding:40px 0;
-      text-align:center;
-      font-size:13px;
-      color:rgba(0,0,0,.6);
-      border-top:1px solid var(--line);
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Desk & Margin Outfitters</title>
+<meta name="description" content="Culture is built in the margins. Desk & Margin Outfitters designs systems of care, ritual, and connection inside organizations." />
+<style>
+:root{
+  --ink:#111;
+  --paper:#f2f0ec;
+  --field:#fffdf8;
+  --muted:#6f6a63;
+  --line:#e6e3de;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);line-height:1.65;
+}
+a{color:inherit}
+.container{max-width:1080px;margin:0 auto;padding:0 24px}
+header{
+  background:rgba(255,253,248,.94);
+  border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:20;backdrop-filter:blur(8px);
+}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:18px 0}
+.brand{font-family:var(--serif);font-size:18px}
+.nav-links{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+.nav-links a{text-decoration:none;font-size:14px}
+.nav-links a:hover{text-decoration:underline;text-underline-offset:3px}
+.nav-cta{border:1px solid var(--ink);padding:8px 12px;line-height:1}
+.hero{padding:110px 0 88px}
+.eyebrow{
+  margin:0 0 18px;text-transform:uppercase;letter-spacing:.12em;
+  font-size:11px;color:var(--muted)
+}
+.hero h1{
+  font-family:var(--serif);font-size:52px;line-height:1.18;
+  margin:0 0 26px;letter-spacing:-.01em;max-width:920px
+}
+.hero p{max-width:740px;color:var(--muted);font-size:18px;margin:0 0 28px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+.button{
+  display:inline-block;text-decoration:none;border:1px solid var(--ink);
+  padding:12px 16px;font-size:14px;background:transparent
+}
+.button:hover{background:#ebe7e0}
+.button.secondary{border-color:var(--line);background:var(--field)}
+.section{padding:84px 0;border-top:1px solid var(--line)}
+.section-grid{display:grid;grid-template-columns:260px 1fr;gap:36px}
+.section-label{
+  font-size:12px;color:var(--muted);text-transform:uppercase;
+  letter-spacing:.12em;padding-top:8px
+}
+.section h2{
+  font-family:var(--serif);font-size:34px;line-height:1.2;
+  margin:0 0 20px;letter-spacing:-.01em
+}
+.section p{max-width:760px;margin:0 0 18px}
+.lede{font-size:18px;color:var(--muted)}
+.offerings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:26px}
+.card{background:var(--field);border:1px solid var(--line);padding:22px 22px 18px}
+.card h3{font-family:var(--serif);font-size:22px;margin:0 0 10px}
+.card p{margin:0 0 10px;color:var(--muted)}
+.card ul{margin:12px 0 0 18px;padding:0}
+.card li{margin:0 0 6px}
+.discovery-points{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:28px}
+.discovery-box{background:var(--field);border:1px solid var(--line);padding:20px}
+.discovery-box h3{margin:0 0 8px;font-size:16px}
+.discovery-box p{margin:0;color:var(--muted);font-size:15px}
+.case-list{display:grid;grid-template-columns:1fr;gap:18px}
+.case{background:var(--field);border:1px solid var(--line);transition:transform .15s ease, box-shadow .15s ease}
+.case:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,0,0,.04)}
+.case a{display:block;text-decoration:none;padding:24px}
+.case-meta{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:8px}
+.case h3{font-family:var(--serif);font-size:26px;line-height:1.2;margin:0 0 10px}
+.case p{margin:0 0 14px;color:var(--muted);max-width:820px}
+.case-link{font-size:14px;text-decoration:underline;text-underline-offset:3px}
+.quote-block{
+  margin-top:26px;padding:24px;background:var(--field);
+  border-left:3px solid var(--ink);border-top:1px solid var(--line);
+  border-right:1px solid var(--line);border-bottom:1px solid var(--line)
+}
+.quote-block p{margin:0;font-family:var(--serif);font-size:26px;line-height:1.35}
+.cta-wrap{background:var(--field);border:1px solid var(--line);padding:28px}
+footer{border-top:1px solid var(--line);padding:42px 0 52px;font-size:13px;color:var(--muted)}
+.footer-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:24px}
+.footer-title{font-family:var(--serif);font-size:17px;color:var(--ink);margin:0 0 10px}
+.footer-col p,.footer-col a{margin:0 0 8px;color:var(--muted);text-decoration:none}
+.footer-col a:hover{text-decoration:underline;text-underline-offset:3px}
+.small{font-size:12px}
+@media (max-width:900px){
+  .section-grid{grid-template-columns:1fr;gap:14px}
+  .section-label{padding-top:0}
+  .offerings,.discovery-points,.footer-grid{grid-template-columns:1fr}
+  .hero h1{font-size:42px}
+}
+@media (max-width:640px){
+  .hero{padding:84px 0 72px}
+  .hero h1{font-size:36px}
+  .hero p{font-size:17px}
+  .nav{align-items:flex-start;flex-direction:column}
+  .section{padding:68px 0}
+}
+</style>
 </head>
-
 <body>
-
 <header>
-  <div class="wrap head">
-    <div class="brand">
-      <div class="name">Desk & Margin Outfitters</div>
-      <div class="sub">Culture built in the margins</div>
+  <div class="container nav">
+    <div class="brand">Desk &amp; Margin Outfitters</div>
+    <div class="nav-links">
+      <a href="#what-we-do">What We Do</a>
+      <a href="#discovery">Discovery</a>
+      <a href="/case-studies/index.html">Case Studies</a>
+      <a href="#philosophy">Philosophy</a>
+      <a class="nav-cta" href="#start">Start a Project</a>
     </div>
-
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="diagnostic.html">Diagnostic</a>
-      <a href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf">Executive Brief</a>
-      <a class="btn primary" href="#intro">Request Intro</a>
-    </nav>
   </div>
 </header>
 
 <main>
+<section class="hero container">
+  <p class="eyebrow">Culture design for organizations in motion</p>
+  <h1>Culture is built in the margins.<br>Not with slogans. Not by accident. But through systems of care, held together by trust, ritual, and intention.</h1>
+  <p>Desk &amp; Margin Outfitters helps organizations design the moments that shape how work actually feels — from leadership presence to daily rhythms, from onboarding to transition, from change communication to the small systems employees live inside every day.</p>
+  <div class="hero-actions">
+    <a class="button" href="/case-studies/index.html">Explore Case Studies</a>
+    <a class="button secondary" href="#discovery">Learn About Discovery</a>
+  </div>
+</section>
 
-<section class="hero">
-  <div class="wrap">
+<section id="what-we-do" class="section">
+  <div class="container section-grid">
+    <div class="section-label">What We Do</div>
+    <div>
+      <h2>We design culture through experience, not just messaging.</h2>
+      <p class="lede">Most organizations focus on programs, platforms, and announcements. We focus on the lived experience of work.</p>
+      <p>Through a structured discovery process, we identify where culture is actually formed — in meetings, transitions, leadership interactions, shared rituals, onboarding moments, recognition practices, and the quiet patterns that employees absorb every day.</p>
+      <p>Then we redesign those moments intentionally. The result is not another campaign layered on top of the work. It is a system that changes how the work feels from the inside.</p>
 
-    <div class="heroFrame">
-      <img src="leader-meeting.png" alt="">
-      <div class="heroOverlay">
-        <div class="heroText">
-          <div class="heroPlate">
-
-            <div class="heroH1">CULTURE IS BUILT IN THE MARGINS.</div>
-            <div class="heroH2">It’s what keeps teams aligned across the organization.</div>
-            <div class="heroP">
-              Not just in quarterly updates or survey results, but in what gets reinforced every day.
-            </div>
-
-            <div class="heroActions">
-              <a class="btn primary" href="diagnostic.html">Take the Diagnostic</a>
-              <a class="btn" href="#brief">Executive Brief</a>
-              <a class="btn" href="#intro">Intro</a>
-            </div>
-
-          </div>
+      <div class="offerings">
+        <div class="card">
+          <h3>Culture Discovery</h3>
+          <p>A focused diagnostic and observation process to understand where connection breaks down, energy drops, and leadership intent fails to translate.</p>
+          <ul>
+            <li>Experience mapping</li>
+            <li>Communication review</li>
+            <li>Leadership and employee interviews</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Systems &amp; Ritual Design</h3>
+          <p>Practical interventions embedded directly into daily work — not extra programs employees have to carry.</p>
+          <ul>
+            <li>Leadership listening formats</li>
+            <li>Meeting and rhythm redesign</li>
+            <li>Recognition and belonging systems</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Change Support</h3>
+          <p>Tools, artifacts, and communication structures that help people navigate transition with more clarity and less drift.</p>
+          <ul>
+            <li>M&amp;A and integration support</li>
+            <li>Technology transition communications</li>
+            <li>Field guides and manager support</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Executive &amp; Employee Connection</h3>
+          <p>Formats that help leadership become visible, credible, and human — while giving employees real access, not staged access.</p>
+          <ul>
+            <li>Listening sessions</li>
+            <li>Town hall redesign</li>
+            <li>Narrative and message translation</li>
+          </ul>
         </div>
       </div>
     </div>
-
-    <!-- VALUE -->
-    <div class="valueBox">
-      <div class="valueTitle">Why leaders care</div>
-      <p class="valueText">
-        Reinforced culture keeps teams aligned when pressure increases. It reduces drift, sharpens decisions, and helps strategy hold across the organization.
-      </p>
-    </div>
-
-    <!-- BRIDGE -->
-    <div class="bridge">
-      <p>
-        If you’re here, you’re likely navigating growth, change, or complexity. Alignment gets harder as organizations scale, especially under pressure.
-      </p>
-    </div>
-
   </div>
 </section>
 
-<section id="brief">
-  <div class="wrap">
-    <div class="kicker">Executive brief</div>
-    <h2 class="sectionTitle">Alignment Under Strain</h2>
-    <p class="lead">
-      A focused look at how alignment breaks down and what reinforcement changes.
-    </p>
+<section id="discovery" class="section">
+  <div class="container section-grid">
+    <div class="section-label">Desk &amp; Margin Discovery</div>
+    <div>
+      <h2>Before we design solutions, we map the experience of work.</h2>
+      <p class="lede">Every engagement begins with Desk &amp; Margin Discovery — a focused effort to understand how work is actually experienced across an organization.</p>
+      <p>We observe workflows, speak directly with employees, and analyze communication patterns to identify where connection breaks down, where energy consistently drops, and where leadership intent fails to translate into experience.</p>
+      <p>The output is not a vague summary. It is a practical view of the system: where people naturally intersect, where friction accumulates, and where the most meaningful interventions will have the greatest effect.</p>
 
-    <div class="card">
-      <p>
-        Culture rarely fails when things are stable. It fails under pressure. This brief outlines why alignment breaks and how reinforcement stabilizes it.
-      </p>
-
-      <div class="ctaStrip">
-        <div>
-          <strong>Learn where alignment is failing. Take the diagnostic.</strong>
+      <div class="discovery-points">
+        <div class="discovery-box">
+          <h3>Where people intersect</h3>
+          <p>We identify the formal and informal moments where employees actually encounter one another across teams, functions, and levels.</p>
         </div>
-        <a class="btn primary" href="diagnostic.html">Take the Diagnostic →</a>
+        <div class="discovery-box">
+          <h3>Where energy drops</h3>
+          <p>We map predictable fatigue points in the day — meetings, transitions, communication overload, unclear handoffs, and dead space.</p>
+        </div>
+        <div class="discovery-box">
+          <h3>Where intent breaks down</h3>
+          <p>We compare what leaders think they are communicating with what employees actually hear, feel, and carry forward.</p>
+        </div>
       </div>
     </div>
-
   </div>
 </section>
 
-<section id="intro">
-  <div class="wrap">
-    <div class="kicker">Start a conversation</div>
-    <h2 class="sectionTitle">Request a private intro</h2>
-    <p class="lead">
-      If you're navigating growth, transition, or integration, we can help you stabilize alignment without adding noise.
-    </p>
+<section class="section">
+  <div class="container section-grid">
+    <div class="section-label">Case Studies</div>
+    <div>
+      <h2>Selected engagements and working examples.</h2>
+      <p>A mix of anonymized, adapted, and composite case studies that reflect real patterns, real operating tensions, and realistic organizational conditions.</p>
+
+      <div class="case-list">
+        <article class="case">
+          <a href="/case-studies/ogwa-culture.html">
+            <div class="case-meta">Culture Design / Employee Experience</div>
+            <h3>OGWA — Rebuilding Culture Inside a Premium Brand</h3>
+            <p>A high-growth product company known for design and performance was experiencing internal drift — siloed teams, declining energy, and reduced innovation. Focused discovery and embedded interventions helped restore connection and momentum.</p>
+            <span class="case-link">Read case study</span>
+          </a>
+        </article>
+
+        <article class="case">
+          <a href="/case-studies/perspectives-president.html">
+            <div class="case-meta">Leadership Connection / Internal Communication</div>
+            <h3>Perspectives With the President</h3>
+            <p>A performance-driven organization created small, unscripted employee conversations with the president, then scaled candor through on-demand audio and manager amplification.</p>
+            <span class="case-link">Read case study</span>
+          </a>
+        </article>
+
+        <article class="case">
+          <a href="/case-studies/integration-transition.html">
+            <div class="case-meta">Change Support / Integration</div>
+            <h3>Integration Without Collapse</h3>
+            <p>During a large-scale workforce transition, communication volume increased while clarity fell. A structured system of manager enablement, cadence, and centralized guidance helped restore coherence.</p>
+            <span class="case-link">Read case study</span>
+          </a>
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 
+<section id="philosophy" class="section">
+  <div class="container section-grid">
+    <div class="section-label">Our Philosophy</div>
+    <div>
+      <h2>Culture is not built through announcements. It is built through repeated, shared experience.</h2>
+      <p>When those experiences are unintentional, culture drifts. When they are designed, culture strengthens.</p>
+      <p>We are interested in the practical layer beneath culture language: the structures people move through, the signals they absorb, the behaviors leadership reinforces, and the stories employees tell themselves about what this place really is.</p>
+      <p>The work is not to invent a culture from scratch. It is to shape the one already forming — with more care, more intention, and more honesty.</p>
+      <div class="quote-block">
+        <p>“The smallest moments in a workday often do the heaviest cultural lifting.”</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="start" class="section">
+  <div class="container">
+    <div class="cta-wrap">
+      <h2>Start with Discovery.</h2>
+      <p>The first step is not a program. It is understanding what employees are actually experiencing, where the system is helping, and where it is quietly wearing people down.</p>
+      <a class="button" href="/case-studies/index.html">View the case studies</a>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer>
-  © <span id="y"></span> Desk & Margin Outfitters
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <p class="footer-title">Desk &amp; Margin Outfitters</p>
+      <p>A studio focused on culture, ritual, and the design of better organizational experience.</p>
+      <p class="small">© 2026 Desk &amp; Margin Outfitters</p>
+    </div>
+    <div class="footer-col">
+      <p class="footer-title">Explore</p>
+      <a href="#what-we-do">What We Do</a>
+      <a href="#discovery">Discovery</a>
+      <a href="/case-studies/index.html">Case Studies</a>
+      <a href="#philosophy">Philosophy</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-title">Featured</p>
+      <a href="/case-studies/ogwa-culture.html">OGWA Case Study</a>
+      <a href="/case-studies/perspectives-president.html">Perspectives With the President</a>
+      <a href="/case-studies/integration-transition.html">Integration Without Collapse</a>
+    </div>
+  </div>
 </footer>
-
-<script>
-document.getElementById("y").textContent = new Date().getFullYear();
-</script>
-
 </body>
 </html>
