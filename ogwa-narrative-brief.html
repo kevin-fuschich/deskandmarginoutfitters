@@ -1,142 +1,407 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OGWA Leadership Narrative Brief</title>
+  <meta name="description" content="Internal leadership narrative brief for OGWA." />
+  <link rel="icon" type="image/png" href="favicon.png" />
 
-<title>OGWA Leadership Narrative Brief</title>
+  <style>
+    :root{
+      --ink:#161616;
+      --paper:#f3efe8;
+      --sheet:#fffdf9;
+      --line:#e7e1d8;
+      --muted:#6d675f;
+      --accent:#d9d1c4;
 
-<style>
-:root{
-  --ink:#111;
-  --paper:#f4f1ea;
-  --line:#e6e2db;
-  --muted:#6a655d;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 
-  --serif:Georgia,"Times New Roman",serif;
-  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-}
+      --page-max: 900px;
+      --sheet-max: 760px;
 
-body{
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:var(--sans);
-}
+      --shadow: 0 24px 60px rgba(0,0,0,0.08);
+      --shadow-soft: 0 10px 24px rgba(0,0,0,0.05);
+      --radius: 18px;
+    }
 
-.page{
-  max-width:720px;
-  margin:60px auto;
-  padding:40px;
-  background:#fff;
-  border:1px solid var(--line);
-}
+    *{ box-sizing:border-box; }
+    html,body{ margin:0; padding:0; }
 
-.kicker{
-  font-size:11px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:var(--muted);
-  margin-bottom:12px;
-}
+    body{
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0.15)),
+        var(--paper);
+      color:var(--ink);
+      font-family:var(--sans);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
 
-h1{
-  font-family:var(--serif);
-  font-size:32px;
-  margin:0 0 24px;
-}
+    a{ color:inherit; text-decoration:none; }
 
-.section{
-  margin-top:26px;
-}
+    .page{
+      width:100%;
+      max-width:var(--page-max);
+      margin:0 auto;
+      padding:28px 20px 44px;
+    }
 
-.section h2{
-  font-family:var(--serif);
-  font-size:18px;
-  margin:0 0 8px;
-}
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin-bottom:24px;
+      color:rgba(0,0,0,0.72);
+      font-size:13px;
+    }
 
-.section p{
-  margin:0;
-  color:rgba(0,0,0,0.75);
-  line-height:1.6;
-}
+    .topbar a{
+      border-bottom:1px solid rgba(0,0,0,0.24);
+      padding-bottom:2px;
+    }
 
-.list{
-  margin-top:10px;
-}
+    .sheet{
+      width:100%;
+      max-width:var(--sheet-max);
+      margin:0 auto;
+      background:var(--sheet);
+      border:1px solid var(--line);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
 
-.list div{
-  margin-bottom:8px;
-}
+    .mast{
+      padding:30px 34px 22px;
+      border-bottom:1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(217,209,196,0.28), rgba(217,209,196,0.08));
+    }
 
-.label{
-  font-weight:700;
-}
+    .eyebrow{
+      font-size:11px;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:10px;
+      font-weight:700;
+    }
 
-.footer{
-  margin-top:40px;
-  font-size:12px;
-  color:var(--muted);
-}
-</style>
+    .title{
+      font-family:var(--serif);
+      font-size:38px;
+      line-height:1.05;
+      margin:0 0 10px;
+      font-weight:700;
+      letter-spacing:-0.01em;
+    }
+
+    .subtitle{
+      margin:0;
+      max-width:58ch;
+      color:rgba(0,0,0,0.72);
+      font-size:16px;
+    }
+
+    .meta{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:0;
+      border-top:1px solid var(--line);
+      background:rgba(255,255,255,0.55);
+    }
+
+    .metaBlock{
+      padding:14px 18px 15px;
+      border-right:1px solid var(--line);
+    }
+
+    .metaBlock:last-child{
+      border-right:none;
+    }
+
+    .metaLabel{
+      font-size:10px;
+      letter-spacing:0.16em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:5px;
+      font-weight:800;
+    }
+
+    .metaValue{
+      font-size:14px;
+      color:rgba(0,0,0,0.82);
+      font-weight:600;
+    }
+
+    .body{
+      padding:30px 34px 34px;
+    }
+
+    .section{
+      padding:0 0 22px;
+      margin:0 0 22px;
+      border-bottom:1px solid var(--line);
+    }
+
+    .section:last-child{
+      margin-bottom:0;
+      padding-bottom:0;
+      border-bottom:none;
+    }
+
+    .section h2{
+      font-family:var(--serif);
+      font-size:22px;
+      line-height:1.15;
+      margin:0 0 10px;
+      font-weight:700;
+    }
+
+    .section p{
+      margin:0;
+      color:rgba(0,0,0,0.76);
+      font-size:15px;
+      max-width:64ch;
+    }
+
+    .list{
+      display:grid;
+      gap:10px;
+      margin-top:10px;
+    }
+
+    .listItem{
+      display:grid;
+      grid-template-columns:150px 1fr;
+      gap:14px;
+      align-items:start;
+      padding:10px 0;
+      border-top:1px solid rgba(0,0,0,0.06);
+    }
+
+    .listItem:first-child{
+      border-top:none;
+      padding-top:0;
+    }
+
+    .listLabel{
+      font-size:11px;
+      letter-spacing:0.16em;
+      text-transform:uppercase;
+      color:var(--muted);
+      font-weight:800;
+      padding-top:3px;
+    }
+
+    .listCopy{
+      font-size:15px;
+      color:rgba(0,0,0,0.78);
+    }
+
+    .callout{
+      margin-top:14px;
+      padding:16px 16px 14px;
+      border:1px solid rgba(0,0,0,0.08);
+      border-radius:14px;
+      background:rgba(217,209,196,0.16);
+    }
+
+    .calloutLabel{
+      font-size:10px;
+      letter-spacing:0.16em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:6px;
+      font-weight:800;
+    }
+
+    .calloutText{
+      font-family:var(--serif);
+      font-size:20px;
+      line-height:1.35;
+      color:rgba(0,0,0,0.88);
+    }
+
+    .footer{
+      padding:16px 34px 22px;
+      border-top:1px solid var(--line);
+      background:rgba(255,255,255,0.55);
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .footer strong{
+      color:rgba(0,0,0,0.78);
+      font-weight:700;
+    }
+
+    @media print{
+      body{
+        background:#fff;
+      }
+
+      .page{
+        max-width:none;
+        padding:0;
+      }
+
+      .topbar{
+        display:none;
+      }
+
+      .sheet{
+        max-width:none;
+        box-shadow:none;
+        border:none;
+        border-radius:0;
+      }
+    }
+
+    @media (max-width: 720px){
+      .title{
+        font-size:32px;
+      }
+
+      .meta{
+        grid-template-columns:1fr;
+      }
+
+      .metaBlock{
+        border-right:none;
+        border-bottom:1px solid var(--line);
+      }
+
+      .metaBlock:last-child{
+        border-bottom:none;
+      }
+
+      .body,
+      .mast,
+      .footer{
+        padding-left:22px;
+        padding-right:22px;
+      }
+
+      .listItem{
+        grid-template-columns:1fr;
+        gap:6px;
+      }
+    }
+  </style>
 </head>
-
 <body>
-
-<div class="page">
-
-  <div class="kicker">OGWA · Leadership Artifact</div>
-
-  <h1>Leadership Narrative Brief</h1>
-
-  <div class="section">
-    <h2>What matters now</h2>
-    <p>
-      OGWA is entering a phase of scale where product quality, brand integrity, and operational discipline must move together.
-      Growth without consistency will erode the experience that defines the brand.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2>What we are prioritizing</h2>
-    <div class="list">
-      <div><span class="label">Product integrity</span> — performance and design must remain inseparable</div>
-      <div><span class="label">Operational clarity</span> — teams must know what matters without interpretation</div>
-      <div><span class="label">Focused execution</span> — fewer priorities, carried consistently</div>
+  <div class="page">
+    <div class="topbar">
+      <div>Desk &amp; Margin Outfitters · Example Artifact</div>
+      <a href="index.html">Back to site</a>
     </div>
+
+    <article class="sheet">
+      <header class="mast">
+        <div class="eyebrow">OGWA · Internal Leadership Use</div>
+        <h1 class="title">Leadership Narrative Brief</h1>
+        <p class="subtitle">
+          A one-page alignment tool used to keep leadership communication, priorities, and decisions consistent during a period of growth and operational complexity.
+        </p>
+      </header>
+
+      <section class="meta">
+        <div class="metaBlock">
+          <div class="metaLabel">Audience</div>
+          <div class="metaValue">Executive team · functional leaders · people managers</div>
+        </div>
+        <div class="metaBlock">
+          <div class="metaLabel">Purpose</div>
+          <div class="metaValue">Shared language and decision consistency</div>
+        </div>
+        <div class="metaBlock">
+          <div class="metaLabel">Cadence</div>
+          <div class="metaValue">Reviewed quarterly, referenced weekly</div>
+        </div>
+      </section>
+
+      <div class="body">
+        <section class="section">
+          <h2>What matters now</h2>
+          <p>
+            OGWA is entering a phase of scale where product quality, brand integrity, and operational discipline must move together. Growth without consistency will erode the experience that defines the brand.
+          </p>
+
+          <div class="callout">
+            <div class="calloutLabel">Central narrative</div>
+            <div class="calloutText">
+              We are scaling the business without diluting what makes it trusted.
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>What we are prioritizing</h2>
+          <div class="list">
+            <div class="listItem">
+              <div class="listLabel">Product integrity</div>
+              <div class="listCopy">Performance and design remain inseparable. We do not trade one for the other.</div>
+            </div>
+            <div class="listItem">
+              <div class="listLabel">Operational clarity</div>
+              <div class="listCopy">Teams should know what matters without interpretation, escalation, or retranslation.</div>
+            </div>
+            <div class="listItem">
+              <div class="listLabel">Focused execution</div>
+              <div class="listCopy">Fewer priorities, carried consistently, will outperform a larger list that diffuses attention.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>What we are not doing</h2>
+          <div class="list">
+            <div class="listItem">
+              <div class="listLabel">No scope drift</div>
+              <div class="listCopy">We are not expanding work without reinforcing execution capacity.</div>
+            </div>
+            <div class="listItem">
+              <div class="listLabel">No quality erosion</div>
+              <div class="listCopy">We are not trading product integrity for speed or short-term optics.</div>
+            </div>
+            <div class="listItem">
+              <div class="listLabel">No unstable priorities</div>
+              <div class="listCopy">We are not introducing initiatives that cannot be sustained through normal operating rhythm.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>How to talk about it</h2>
+          <p>
+            Use consistent language across functions. Avoid introducing new interpretations of priorities. When in doubt, reinforce what already exists instead of reframing it. Precision builds trust; novelty creates drift.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Decision signal</h2>
+          <p>
+            When faced with tradeoffs, choose the path that protects product integrity and reinforces clarity across teams. If a decision creates confusion about what matters most, it is likely the wrong one.
+          </p>
+        </section>
+      </div>
+
+      <footer class="footer">
+        <div><strong>Document type:</strong> Leadership narrative brief</div>
+        <div><strong>Role in system:</strong> Alignment artifact within operating rhythm</div>
+      </footer>
+    </article>
   </div>
-
-  <div class="section">
-    <h2>What we are not doing</h2>
-    <div class="list">
-      <div>We are not expanding scope without reinforcing execution</div>
-      <div>We are not trading quality for speed</div>
-      <div>We are not introducing priorities that cannot be sustained</div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>How to talk about it</h2>
-    <p>
-      Use consistent language. Avoid introducing new interpretations of priorities.
-      When in doubt, reinforce what already exists instead of reframing it.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2>Decision signal</h2>
-    <p>
-      When faced with tradeoffs, choose the path that protects product integrity and reinforces clarity across teams.
-      If a decision creates confusion, it is likely the wrong one.
-    </p>
-  </div>
-
-  <div class="footer">
-    This document is intended to align leadership communication and decision-making across OGWA.
-  </div>
-
-</div>
-
 </body>
 </html>
