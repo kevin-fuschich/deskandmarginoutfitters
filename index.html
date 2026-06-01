@@ -4,290 +4,308 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desk and Margin Outfitters | Enterprise Culture & Alignment</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        html { scroll-behavior: smooth; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+        body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans antialiased">
+<body class="bg-white text-slate-900 antialiased selection:bg-amber-100 selection:text-amber-900">
 
-    <!-- Header Navigation -->
-    <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex flex-col">
-                <span class="text-xs tracking-[0.3em] text-amber-500 font-bold uppercase">Desk and Margin</span>
-                <span class="text-xl tracking-wider font-light uppercase text-white -mt-1">Outfitters</span>
+    <!-- Header / Branding -->
+    <header class="max-w-6xl mx-auto px-6 pt-12 pb-6 flex justify-between items-start">
+        <a href="/" class="group">
+            <div class="text-xs tracking-[0.3em] font-light text-slate-400 uppercase leading-none mb-1">DESK AND MARGIN</div>
+            <div class="text-lg tracking-[0.4em] font-medium text-slate-800 uppercase leading-none group-hover:text-amber-600 transition-colors">
+                OUTFITTERS<span class="text-amber-500">.</span>
             </div>
-            <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wide text-slate-300">
-                <a href="#challenge" class="hover:text-amber-500 transition">The Gap</a>
-                <a href="#capabilities" class="hover:text-amber-500 transition">Capabilities</a>
-                <a href="#audit" class="hover:text-amber-500 transition">Friction Audit</a>
-                <a href="#contact" class="bg-amber-600 hover:bg-amber-500 text-slate-950 px-4 py-2 rounded font-semibold transition text-xs uppercase tracking-wider">Work With Us</a>
-            </nav>
-        </div>
+        </a>
+        <nav class="text-xs tracking-widest uppercase font-light pt-2 space-x-8 text-slate-500">
+            <a href="#capabilities" class="hover:text-slate-900 transition-colors">Capabilities</a>
+            <a href="#audit" class="hover:text-slate-900 transition-colors">Friction Audit</a>
+            <a href="#contact" class="hover:text-slate-900 transition-colors">Connect</a>
+        </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-[85vh] flex items-center justify-center py-20 px-6 overflow-hidden border-b border-slate-800">
-        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-            <div class="space-y-6">
-                <span class="inline-block text-xs font-semibold tracking-[0.2em] uppercase bg-amber-500/10 text-amber-400 px-3 py-1 rounded border border-amber-500/20">Enterprise Culture Consultancy</span>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-                    Build a connected culture. <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">Execute without friction.</span>
-                </h1>
-                <p class="text-lg text-slate-300 max-w-xl leading-relaxed">
-                    Desk and Margin Outfitters partners with HR leaders to design, deploy, and scale enterprise-wide culture programs. We provide the strategic bandwidth and corporate communications precision required to get your biggest people initiatives approved, launched, and embraced.
+    <hr class="max-w-6xl mx-auto border-slate-100 my-4" />
+
+    <!-- Full-Width Master Hero Image Section -->
+    <section class="max-w-6xl mx-auto px-6 pt-6 pb-12">
+        <div class="w-full h-[500px] overflow-hidden bg-slate-100 relative group">
+            <img 
+                src="https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=2000&q=80" 
+                alt="Desk and Margin Outfitters Executive Leadership Collaboration" 
+                class="w-full h-full object-cover filter contrast-[1.02] brightness-[0.98]"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- Hero Content Section -->
+    <main class="max-w-4xl mx-auto px-6 pb-20">
+        <h1 class="text-4xl sm:text-5xl font-light tracking-tight text-slate-900 leading-[1.15] mb-8">
+            Build a connected culture.<br />
+            <span class="text-slate-500">Execute without the operational friction.</span>
+        </h1>
+        <p class="text-lg text-slate-600 font-light leading-relaxed max-w-2xl mb-10">
+            Desk and Margin Outfitters partners with HR leaders to design, deploy, and scale enterprise-wide culture programs. We provide the strategic bandwidth and corporate communications precision required to get your biggest people initiatives approved, launched, and embraced.
+        </p>
+        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+            <a href="#audit" class="inline-flex justify-center items-center px-6 py-3 border border-slate-900 bg-slate-900 text-white text-xs tracking-widest uppercase font-medium hover:bg-slate-800 transition-colors">
+                Calculate Your Friction Index Score
+            </a>
+            <a href="#contact" class="inline-flex justify-center items-center px-6 py-3 border border-slate-200 text-slate-600 text-xs tracking-widest uppercase font-light hover:border-slate-400 hover:text-slate-900 transition-colors">
+                Request a Consultation
+            </a>
+        </div>
+    </main>
+
+    <!-- The Execution Gap Section with Secondary Image Split -->
+    <section class="bg-slate-50 border-y border-slate-100 py-20">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="text-[10px] tracking-[0.3em] uppercase font-medium text-amber-600 mb-3">The Operational Bottleneck</div>
+                <h2 class="text-2xl font-light tracking-tight text-slate-900 mb-6">The Gap Between HR Strategy and Corporate Communications</h2>
+                <div class="text-slate-600 font-light leading-relaxed space-y-6">
+                    <p>
+                        Great culture initiatives—from Open Enrollment to hybrid work rituals—live or die by how they are introduced to the enterprise. Too often, brilliant HR programs stall because navigating the internal corporate communications pipeline feels like a second full-time job. 
+                    </p>
+                    <p>
+                        We bridge that gap. As corporate communications veterans, we wrap your heavy-lifting HR initiatives in flawless, executive-ready messaging. We eliminate the systemic friction so your programs launch on time, satisfy internal stakeholders, and resonate deeply with your workforce.
+                    </p>
+                </div>
+            </div>
+            <div class="w-full h-[400px] overflow-hidden bg-slate-200">
+                <img 
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80" 
+                    alt="Multi-generational Corporate Strategy Alignment" 
+                    class="w-full h-full object-cover"
+                />
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Capabilities -->
+    <section id="capabilities" class="max-w-4xl mx-auto px-6 py-24">
+        <div class="text-[10px] tracking-[0.3em] uppercase font-medium text-amber-600 mb-4">Core Capabilities</div>
+        <h2 class="text-3xl font-light tracking-tight text-slate-900 mb-16">Modular Frameworks for Enterprise Alignment</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+                <h3 class="text-sm font-medium tracking-wide text-slate-900 uppercase mb-4">01 / Milestone Integration</h3>
+                <p class="text-xs text-slate-500 font-light leading-relaxed">
+                    Guiding leadership and preserving employee morale through critical transformations. We build non-disruptive cultural integration strategies for M&As, IPOs, rebrands, and systemic structural changes.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                    <a href="#audit" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-6 py-3 rounded text-center transition tracking-wide shadow-lg shadow-amber-500/10">Calculate Your Friction Index</a>
-                    <a href="#capabilities" class="border border-slate-700 hover:border-slate-500 bg-slate-900/50 px-6 py-3 rounded text-center font-medium transition">Explore Capabilities</a>
-                </div>
             </div>
-            <!-- Dynamic Image Container: Multi-generational Workspace -->
-            <div class="relative w-full h-[450px] rounded-xl overflow-hidden shadow-2xl border border-slate-800 bg-slate-950">
-                <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=800&q=80" 
-                     alt="Multi-generational corporate leadership team collaborating in a modern office setting" 
-                     class="w-full h-full object-cover opacity-90 hover:scale-105 transition duration-500">
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- The Challenge Section (The Execution Gap) -->
-    <section id="challenge" class="py-24 px-6 max-w-7xl mx-auto border-b border-slate-800">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <!-- Dynamic Image Container: Team Alignment Action Shot -->
-            <div class="relative w-full h-[400px] rounded-xl overflow-hidden border border-slate-800 order-last lg:order-first bg-slate-950">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" 
-                     alt="Diverse corporate workplace team aligned and celebrating an milestone breakthrough" 
-                     class="w-full h-full object-cover opacity-85">
-                <div class="absolute inset-0 bg-gradient-to-r from-slate-950/20 to-slate-950/80"></div>
-            </div>
-            <div class="space-y-6">
-                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white">The Execution Gap Between HR Strategy and Enterprise Communication</h2>
-                <p class="text-slate-300 leading-relaxed text-lg">
-                    Great culture initiatives—like rolling out a new hybrid-work model, revitalizing DEI, or launching an employee recognition framework—live or die by how they are introduced to the enterprise. 
+            <div>
+                <h3 class="text-sm font-medium tracking-wide text-slate-900 uppercase mb-4">02 / Culture Architecture</h3>
+                <p class="text-xs text-slate-500 font-light leading-relaxed">
+                    Designing, deploying, and monitoring custom employee engagement initiatives. From modern remote/hybrid workplace rituals to authentic employee recognition frameworks that drive true internal brand retention.
                 </p>
-                <div class="p-6 bg-slate-950/50 rounded-xl border border-slate-800/80 space-y-4">
-                    <p class="text-slate-300 text-sm italic">
-                        "Too often, brilliant HR programs stall because navigating the internal corporate communications pipeline feels like a second full-time job."
-                    </p>
-                    <p class="text-slate-400 text-sm">
-                        As corporate communications veterans, we wrap your heavy-lifting HR initiatives in flawless, executive-ready messaging. We eliminate cross-department friction so your programs launch on time and resonate deeply with every single generation on your payroll.
-                    </p>
-                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Capabilities Section -->
-    <section id="capabilities" class="py-24 px-6 max-w-7xl mx-auto border-b border-slate-800">
-        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white">Strategic Cultural Frameworks</h2>
-            <p class="text-slate-400">We don't just advise—we deploy the operational capacity and strategic alignment tools required to manage enterprise transformation smoothly.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Pillar 1 -->
-            <div class="p-8 bg-slate-950 rounded-xl border border-slate-800 hover:border-amber-500/30 transition flex flex-col justify-between">
-                <div class="space-y-4">
-                    <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center border border-amber-500/20 text-amber-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-.554-8.243-1.558" /></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white">Non-Disruptive Structural Milestones</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        When organizations face seismic shifts—M&As, IPOs, rapid growth, or return-to-office mandates—culture is vulnerable. We design gentle, non-disruptive integration frameworks that preserve morale through deep corporate evolutions.
-                    </p>
-                </div>
-            </div>
-            <!-- Pillar 2 -->
-            <div class="p-8 bg-slate-950 rounded-xl border border-slate-800 hover:border-amber-500/30 transition flex flex-col justify-between">
-                <div class="space-y-4">
-                    <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center border border-amber-500/20 text-amber-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94-3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" /></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white">Programmatic Culture Architecture</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        Culture isn't accidental; it must be engineered. We architect bespoke employee culture-building programs, design meaningful recognition matrices, and deploy authentic internal recognition systems that stick.
-                    </p>
-                </div>
-            </div>
-            <!-- Pillar 3 -->
-            <div class="p-8 bg-slate-950 rounded-xl border border-slate-800 hover:border-amber-500/30 transition flex flex-col justify-between">
-                <div class="space-y-4">
-                    <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center border border-amber-500/20 text-amber-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" /></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white">Frictionless Communications Ecosystem</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        We turn messy internal communication touchpoints into optimized corporate assets. From auditing standard meeting cadences and building flawless all-hands decks to drafting strategic executive leadership updates.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Friction Index CTA Banner & Diagnostic Quiz -->
-    <section id="audit" class="py-20 px-6 max-w-5xl mx-auto">
-        <div class="bg-gradient-to-br from-slate-950 to-slate-900 rounded-2xl border border-amber-500/20 p-8 md:p-12 shadow-xl relative overflow-hidden">
-            <div class="absolute -top-24 -right-24 w-48 h-48 bg-amber-500/5 rounded-full blur-3xl"></div>
-            
-            <div class="max-w-3xl mx-auto text-center mb-10 space-y-4">
-                <span class="text-xs font-bold uppercase tracking-widest text-amber-500 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">Proprietary Diagnostic Assessment</span>
-                <h2 class="text-3xl font-extrabold text-white tracking-tight">Is Internal Execution Drag Costing Your Team Momentum?</h2>
-                <p class="text-slate-400 text-sm">Our 60-second operational alignment diagnostic maps structural drag against your current culture workflows to deliver immediate, clear insights.</p>
-            </div>
-
-            <!-- Quiz Script Container -->
-            <div class="max-w-xl mx-auto bg-slate-950/80 p-6 rounded-xl border border-slate-800/60 min-h-[250px] flex flex-col justify-between" id="quiz-wrapper">
-                <div id="question-container">
-                    <div class="flex justify-between items-center mb-4 text-xs font-semibold text-slate-500 uppercase tracking-wider">
-                        <span id="question-step">Question 1 of 4</span>
-                        <span id="progress-percentage">25% Complete</span>
-                    </div>
-                    <div class="w-full bg-slate-800 h-1.5 rounded-full mb-6 overflow-hidden">
-                        <div id="progress-bar" class="bg-amber-500 h-full w-1/4 transition-all duration-300"></div>
-                    </div>
-                    <h3 class="text-base font-bold text-white mb-4" id="question-text">How does your HR team currently navigate enterprise announcements through Corporate Communications?</h3>
-                    <div class="space-y-3" id="options-container">
-                        <!-- Options injected via JavaScript -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer / Contact Section -->
-    <footer id="contact" class="border-t border-slate-800 bg-slate-950 py-16 px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-            <div class="space-y-6">
-                <div class="flex flex-col">
-                    <span class="text-xs tracking-[0.3em] text-amber-500 font-bold uppercase">Desk and Margin</span>
-                    <span class="text-xl tracking-wider font-light uppercase text-white -mt-1">Outfitters</span>
-                </div>
-                <p class="text-slate-400 text-sm max-w-sm leading-relaxed">
-                    A corporate communications and enterprise culture execution partner tailored explicitly for HR leadership dashboards. Protect your timelines, optimize your margins, and empower your human assets.
+            <div>
+                <h3 class="text-sm font-medium tracking-wide text-slate-900 uppercase mb-4">03 / Internal Touchpoints</h3>
+                <p class="text-xs text-slate-500 font-light leading-relaxed">
+                    Optimizing the enterprise communication ecosystem. We structure team meeting cadences, design impactful all-hands agendas, author broad leader messaging, and build turn-key HR rollout packages.
                 </p>
-                <p class="text-xs text-slate-600">&copy; 2026 Desk and Margin Outfitters. All rights reserved.</p>
             </div>
-            
-            <form class="space-y-4 bg-slate-900/40 p-6 rounded-xl border border-slate-800/80" onsubmit="event.preventDefault(); alert('Assessment inquiry received. Our strategy team will be in contact within 24 business hours.');">
-                <h3 class="text-lg font-bold text-white tracking-tight">Request an Executive Review</h3>
-                <div class="grid grid-cols-2 gap-4">
-                    <input type="text" placeholder="First Name" required class="w-full bg-slate-950 border border-slate-800 focus:border-amber-500 rounded p-3 text-sm text-white placeholder-slate-600 outline-none transition">
-                    <input type="text" placeholder="Last Name" required class="w-full bg-slate-950 border border-slate-800 focus:border-amber-500 rounded p-3 text-sm text-white placeholder-slate-600 outline-none transition">
-                </div>
-                <input type="email" placeholder="Corporate Email Address" required class="w-full bg-slate-950 border border-slate-800 focus:border-amber-500 rounded p-3 text-sm text-white placeholder-slate-600 outline-none transition">
-                <textarea placeholder="Tell us briefly about your current transition milestone (M&A, RTO, Program Rollouts)..." rows="3" class="w-full bg-slate-950 border border-slate-800 focus:border-amber-500 rounded p-3 text-sm text-white placeholder-slate-600 outline-none transition"></textarea>
-                <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-slate-950 font-bold p-3 rounded text-sm uppercase tracking-wider transition">Schedule Consultation</button>
-            </form>
         </div>
+    </section>
+
+    <!-- Interactive Diagnostic Audit -->
+    <section id="audit" class="bg-slate-900 text-white py-24 border-t border-slate-800">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <div class="text-[10px] tracking-[0.3em] uppercase font-medium text-amber-400 mb-3">Proprietary Evaluation</div>
+                <h2 class="text-3xl font-light tracking-tight mb-4">The Enterprise Alignment & Friction Audit</h2>
+                <p class="text-sm text-slate-400 font-light max-w-xl mx-auto">
+                    Is operational drag holding back your people initiatives? Take 60 seconds to evaluate your internal alignment pipeline and uncover hidden friction blocks.
+                </p>
+            </div>
+
+            <!-- Quiz Container -->
+            <div id="quiz-container" class="bg-slate-800/50 border border-slate-700 p-8 rounded-lg max-w-2xl mx-auto">
+                <div class="flex justify-between items-center mb-6 text-xs text-slate-400 tracking-wider">
+                    <span id="question-number">Question 1 of 4</span>
+                    <div class="w-24 bg-slate-700 h-1 rounded-full overflow-hidden">
+                        <div id="progress-bar" class="bg-amber-400 h-full w-1/4 transition-all duration-300"></div>
+                    </div>
+                </div>
+
+                <h3 id="question-text" class="text-base font-light tracking-wide mb-6 text-slate-100">
+                    When rolling out critical HR messages (like Open Enrollment or policy shifts), what is your primary bottleneck?
+                </h3>
+
+                <div id="options-space" class="space-y-3">
+                    <!-- Options injected via JavaScript -->
+                </div>
+            </div>
+
+            <!-- Results Container (Hidden initially) -->
+            <div id="results-container" class="hidden bg-slate-800 border border-amber-500/30 p-8 rounded-lg max-w-2xl mx-auto text-center">
+                <div class="text-xs tracking-widest text-amber-400 uppercase mb-2">Your Results</div>
+                <div class="text-5xl font-light mb-4" id="score-display">0%</div>
+                <h3 class="text-lg font-medium mb-3" id="tier-title">Calculating...</h3>
+                <p class="text-xs text-slate-300 font-light leading-relaxed max-w-md mx-auto mb-8" id="tier-description">
+                    Analysis...
+                </p>
+                <a href="#contact" onclick="resetQuiz()" class="inline-block px-6 py-3 bg-amber-500 text-slate-950 text-xs tracking-widest uppercase font-semibold hover:bg-amber-400 transition-colors">
+                    Review Your Modular Fixes
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="max-w-xl mx-auto px-6 py-24">
+        <div class="text-center mb-12">
+            <div class="text-[10px] tracking-[0.3em] uppercase font-medium text-amber-600 mb-3">Connect</div>
+            <h2 class="text-2xl font-light tracking-tight text-slate-900">Initiate a Conversation</h2>
+            <p class="text-xs text-slate-500 font-light mt-2">Let’s discuss your current operational runway and cultural goals.</p>
+        </div>
+
+        <form class="space-y-6">
+            <div>
+                <label class="block text-[10px] tracking-widest uppercase text-slate-400 font-medium mb-2">Full Name</label>
+                <input type="text" class="w-full border-b border-slate-200 focus:border-slate-900 outline-none text-sm font-light py-2 transition-colors" placeholder="Executive Name" />
+            </div>
+            <div>
+                <label class="block text-[10px] tracking-widest uppercase text-slate-400 font-medium mb-2">Corporate Email</label>
+                <input type="email" class="w-full border-b border-slate-200 focus:border-slate-900 outline-none text-sm font-light py-2 transition-colors" placeholder="name@enterprise.com" />
+            </div>
+            <div>
+                <label class="block text-[10px] tracking-widest uppercase text-slate-400 font-medium mb-2">Primary Objective</label>
+                <select class="w-full border-b border-slate-200 focus:border-slate-900 outline-none text-sm font-light py-2 bg-transparent rounded-none transition-colors">
+                    <option class="text-slate-800">Select an focus area...</option>
+                    <option class="text-slate-800">Milestone Integration (M&A, IPO, Restructuring)</option>
+                    <option class="text-slate-800">Culture Architecture & Recognition Programs</option>
+                    <option class="text-slate-800">Internal Touchpoint & Corporate Comms Optimization</option>
+                    <option class="text-slate-800">Comprehensive Operational Review</option>
+                </select>
+            </div>
+            <div class="pt-4">
+                <button type="submit" class="w-full bg-slate-900 text-white text-xs tracking-widest uppercase font-medium py-4 hover:bg-slate-800 transition-colors">
+                    Submit Intake Brief
+                </button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-50 border-t border-slate-100 py-12 text-center text-[10px] tracking-widest text-slate-400 uppercase font-light">
+        &copy; 2026 Desk and Margin Outfitters. All Rights Reserved.
     </footer>
 
     <!-- Diagnostic Engine Scripts -->
     <script>
         const quizData = [
             {
-                question: "How does your HR team currently navigate enterprise announcements through Corporate Communications?",
+                question: "When rolling out critical HR messages (like Open Enrollment or policy shifts), what is your primary bottleneck?",
                 options: [
-                    { text: "Seamless partnership: Comms builds the layouts instantly based on our exact strategy briefs.", points: 10 },
-                    { text: "Moderate friction: We deal with formatting adjustments and editorial delays that risk timelines.", points: 30 },
-                    { text: "Complete bottleneck: We often drop rogue plaintext files because internal pipelines are logjammed.", points: 50 }
+                    { text: "Drafting the copy takes forever because our team lacks dedicated communications bandwidth.", weight: 30 },
+                    { text: "Waiting on Corporate Communications channels or formatting approvals causes massive delays.", weight: 50 },
+                    { text: "We push messages out quickly, but employees rarely read them or take required action.", weight: 40 },
+                    { text: "Our pipelines work well; messages deploy smoothly and on schedule.", weight: 10 }
                 ]
             },
             {
-                question: "When navigating high-stakes structural revisions (M&As, shifting work footprints, IPOs), how is culture protected?",
+                question: "How would you describe your organization's current alignment through major structural milestones (M&As, growth, transitions)?",
                 options: [
-                    { text: "We deploy proactive, dedicated leadership frameworks to align internal alignment early.", points: 10 },
-                    { text: "We push messages reactively, leading to temporary talent retention leaks and cultural drag.", points: 35 },
-                    { text: "We are in crisis firefighting mode; tracking metrics or structural alignment is nearly impossible.", points: 50 }
+                    { text: "Fragmented. Silos have formed, and corporate leadership messaging feels distant or disconnected.", weight: 45 },
+                    { text: "Reactive. We communicate changes as they happen, but teams struggle to integrate smoothly.", weight: 35 },
+                    { text: "Exhausted. The constant shifts have created meeting fatigue and general cultural drift.", weight: 40 },
+                    { text: "Stable. Our teams navigate organizational pivots with clear documentation and trust.", weight: 10 }
                 ]
             },
             {
-                question: "What is the primary operational status of your employee appreciation or programmatic recognition initiatives?",
+                question: "What is the status of your internal culture-building and employee recognition initiatives?",
                 options: [
-                    { text: "Deeply embedded: Custom internal tools drive rich engagement trends naturally across departments.", points: 10 },
-                    { text: "Outdated or mechanical: Programs feel forced, inconsistent, or are rarely tracked by leadership.", points: 25 },
-                    { text: "Absent: We lack the internal design capacity or operational runway to deploy a framework.", points: 40 }
+                    { text: "We have programs, but they feel like forced compliance checks rather than an authentic culture.", weight: 40 },
+                    { text: "We want to deploy recognition frameworks, but lack the tactical operational bandwidth to start.", weight: 30 },
+                    { text: "Our remote/hybrid workforce strategy has made it incredibly difficult to maintain shared rituals.", weight: 45 },
+                    { text: "Highly active. Our cultural programs are clearly structured, monitored, and embraced.", weight: 10 }
                 ]
             },
             {
-                question: "How would you rate employee engagement and clarity regarding multi-tiered leadership all-hands messages?",
+                question: "When your HR team creates high-level assets (all-hands decks, leader talking points, rollout toolkits):",
                 options: [
-                    { text: "High alignment: Touchpoints are clear, interactive, and cleanly formatted.", points: 10 },
-                    { text: "Inconsistent resonance: Certain teams skip updates, leading to fragmented internal groups.", points: 20 },
-                    { text: "Total fatigue: Meetings run long, messaging feels disconnected, and retention feels strained.", points: 30 }
+                    { text: "They look unpolished or inconsistent because we don't have dedicated layout support.", weight: 35 },
+                    { text: "They require heavy revisions from internal comms or executive teams before launch.", weight: 50 },
+                    { text: "We spend disproportionate internal energy building slides instead of driving HR strategy.", weight: 40 },
+                    { text: "They are built swiftly using pre-approved, highly effective proprietary templates.", weight: 10 }
                 ]
             }
         ];
 
-        let currentStep = 0;
-        let totalScore = 0;
-
-        const questionStepElement = document.getElementById("question-step");
-        const progressPercentageElement = document.getElementById("progress-percentage");
-        const progressBarElement = document.getElementById("progress-bar");
-        const questionTextElement = document.getElementById("question-text");
-        const optionsContainer = document.getElementById("options-container");
-        const quizWrapper = document.getElementById("quiz-wrapper");
+        let currentQuestion = 0;
+        let cumulativeScore = 0;
 
         function loadQuestion() {
-            const currentQuiz = quizData[currentStep];
-            questionStepElement.innerText = `Question ${currentStep + 1} of ${quizData.length}`;
-            progressPercentageElement.innerText = `${Math.round(((currentStep + 1) / quizData.length) * 100)}% Complete`;
-            progressBarElement.style.width = `${((currentStep + 1) / quizData.length) * 100}%`;
-            questionTextElement.innerText = currentQuiz.question;
-            
-            optionsContainer.innerHTML = "";
-            currentQuiz.options.forEach(option => {
-                const button = document.createElement("button");
-                button.innerText = option.text;
-                button.className = "w-full text-left bg-slate-900 hover:bg-slate-850 border border-slate-800 hover:border-slate-700 p-4 rounded-lg text-sm text-slate-300 transition duration-150 outline-none";
-                button.onclick = () => handleAnswer(option.points);
-                optionsContainer.appendChild(button);
+            const container = document.getElementById("quiz-container");
+            const qText = document.getElementById("question-text");
+            const qNum = document.getElementById("question-number");
+            const pBar = document.getElementById("progress-bar");
+            const optionsSpace = document.getElementById("options-space");
+
+            qNum.innerText = `Question ${currentQuestion + 1} of 4`;
+            pBar.style.width = `${((currentQuestion + 1) / 4) * 100}%`;
+            qText.innerText = quizData[currentQuestion].question;
+            optionsSpace.innerHTML = "";
+
+            quizData[currentQuestion].options.forEach((opt, idx) => {
+                const btn = document.createElement("button");
+                btn.className = "w-full text-left p-4 bg-slate-800 hover:bg-slate-700/70 border border-slate-700 text-xs font-light tracking-wide text-slate-300 rounded transition-colors duration-150 flex items-center";
+                btn.innerHTML = `<span class="inline-block w-2 h-2 rounded-full border border-slate-500 mr-3 shrink-0"></span>${opt.text}`;
+                btn.onclick = () => selectOption(opt.weight);
+                optionsSpace.appendChild(btn);
             });
         }
 
-        function handleAnswer(points) {
-            totalScore += points;
-            currentStep++;
-            if (currentStep < quizData.length) {
+        function selectOption(weight) {
+            cumulativeScore += weight;
+            currentQuestion++;
+
+            if (currentQuestion < quizData.length) {
                 loadQuestion();
             } else {
-                showResults();
+                calculateAndShowResults();
             }
         }
 
-        function showResults() {
-            const finalPercentage = Math.round((totalScore / 170) * 100);
-            let tierTitle = "";
-            let tierFeedback = "";
+        function calculateAndShowResults() {
+            document.getElementById("quiz-container").classList.add("hidden");
+            const resultsBox = document.getElementById("results-container");
+            resultsBox.classList.remove("hidden");
 
-            if (finalPercentage < 40) {
-                tierTitle = "Low Operational Friction (Optimized Execution)";
-                tierFeedback = "Your internal alignment channels are operating functionally. Your biggest upside lies in scaling your programmatic recognition frameworks and weaving your culture messaging into deep, everyday behavioral rituals.";
-            } else if (finalPercentage <= 75) {
-                tierTitle = "Moderate Friction Drag (Capacity Leaks)";
-                tierFeedback = "Your People team is spending valuable strategic bandwidth drafting, formatting, or waiting on backlogged internal channels. Desk and Margin Outfitters offers turnkey communications capacity to clear approvals instantly.";
+            let frictionPercentage = Math.round((cumulativeScore / 185) * 100);
+            if (frictionPercentage > 100) frictionPercentage = 100;
+
+            document.getElementById("score-display").innerText = `${frictionPercentage}%`;
+
+            const title = document.getElementById("tier-title");
+            const desc = document.getElementById("tier-description");
+
+            if (frictionPercentage <= 35) {
+                title.innerText = "Low Operational Friction";
+                desc.innerText = "Your internal pipelines are operating with reasonable clarity. Your biggest challenge is likely optimization—ensuring your cultural rituals and recognition frameworks remain deeply linked to daily workforce habits rather than slowly fading into compliance elements.";
+            } else if (frictionPercentage <= 70) {
+                title.innerText = "Moderate Friction Drag";
+                desc.innerText = "Your people initiatives are actively losing momentum due to execution bottlenecks. Your team is spending valuable cycles formatting documents, navigating cross-department approvals, or waiting on backlogged communication channels instead of moving key strategies forward.";
             } else {
-                tierTitle = "Severe Pipeline Saturation (High Firefighting Risk)";
-                tierFeedback = "Critical transformations (M&As, hybrid configurations, message fatigue) are actively outstripping your operational capacity. You need targeted executive support to stabilize corporate message channels and prevent talent burnout.";
+                title.innerText = "Severe Pipeline Saturation";
+                desc.innerText = "Your department is experiencing critical friction drag. Major shifts (like growth cycles, return-to-office transitions, or structural milestones) are moving faster than your team can deploy supporting culture programs, putting you at immediate risk of employee burnout and misalignment.";
             }
-
-            quizWrapper.innerHTML = `
-                <div class="text-center py-4 space-y-4">
-                    <div class="text-xs font-bold text-amber-500 uppercase tracking-widest">Diagnostic Complete</div>
-                    <div class="text-4xl font-black text-white">${finalPercentage}%</div>
-                    <div class="text-sm font-semibold tracking-wide uppercase text-slate-200">${tierTitle}</div>
-                    <p class="text-xs text-slate-400 leading-relaxed max-w-sm mx-auto">${tierFeedback}</p>
-                    <div class="pt-4">
-                        <a href="#contact" class="inline-block bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold px-6 py-3 rounded uppercase tracking-wider transition">Request Modular Change Kit Fixes</a>
-                    </div>
-                </div>
-            `;
         }
 
-        // Initialize Quiz
+        function resetQuiz() {
+            currentQuestion = 0;
+            cumulativeScore = 0;
+            document.getElementById("results-container").classList.add("hidden");
+            document.getElementById("quiz-container").classList.remove("hidden");
+            loadQuestion();
+        }
+
+        // Init
         loadQuestion();
     </script>
 </body>
