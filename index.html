@@ -1,871 +1,348 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>D&amp;M Outfitters — Culture Built in the Margins</title>
-  <meta name="description" content="Culture is built in the margins. Reinforced culture keeps teams aligned across the organization." />
-  <link rel="icon" type="image/png" href="favicon.png" />
-
-  <style>
-    :root{
-      --ink:#111111;
-      --paper:#f2f0ec;
-      --field:#fffdf8;
-      --muted:#6f6a63;
-      --line:#e6e3de;
-      --soft:#f6f3ee;
-
-      --serif:"Georgia","Times New Roman",serif;
-      --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-
-      --max:1080px;
-      --radius:16px;
-      --shadow:0 18px 40px rgba(0,0,0,0.10);
-      --shadow-soft:0 10px 22px rgba(0,0,0,0.08);
-
-      --btn:#111111;
-      --btnText:#ffffff;
-    }
-
-    *{ box-sizing:border-box; }
-    html,body{ margin:0; padding:0; }
-
-    body{
-      font-family:var(--sans);
-      background:var(--paper);
-      color:var(--ink);
-      line-height:1.7;
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
-    }
-
-    a{ color:inherit; text-decoration:none; }
-    img{ max-width:100%; display:block; }
-
-    .wrap{
-      width:100%;
-      max-width:var(--max);
-      margin:0 auto;
-      padding:0 22px;
-    }
-
-    header{
-      position:sticky;
-      top:0;
-      z-index:50;
-      background:rgba(242,240,236,0.86);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid var(--line);
-    }
-
-    .head{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      padding:16px 0;
-      flex-wrap:wrap;
-    }
-
-    .brand{
-      line-height:1.05;
-    }
-
-    .brand .name{
-      font-family:var(--serif);
-      font-weight:700;
-      letter-spacing:0.01em;
-      font-size:20px;
-    }
-
-    .brand .sub{
-      font-size:11px;
-      letter-spacing:0.22em;
-      text-transform:uppercase;
-      color:rgba(0,0,0,0.55);
-      margin-top:4px;
-    }
-
-    nav{
-      display:flex;
-      gap:16px;
-      align-items:center;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-
-    nav a{
-      font-size:13px;
-      color:rgba(0,0,0,0.72);
-      border-bottom:1px solid transparent;
-      padding-bottom:2px;
-    }
-
-    nav a:hover{
-      border-bottom-color:rgba(0,0,0,0.35);
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:12px 16px;
-      border-radius:999px;
-      font-weight:800;
-      font-size:13px;
-      border:1px solid rgba(17,17,17,0.18);
-      background:transparent;
-      color:rgba(0,0,0,0.86);
-    }
-
-    .btn.primary{
-      background:var(--btn);
-      color:var(--btnText);
-      border-color:var(--btn);
-    }
-
-    .btn:hover{ transform:translateY(-1px); }
-    .btn:active{ transform:translateY(0); }
-
-    .hero{ padding:22px 0 0; }
-
-    .heroFrame{
-      border-radius:22px;
-      overflow:hidden;
-      background:#000;
-      box-shadow:var(--shadow);
-      position:relative;
-      min-height:360px;
-      border:1px solid rgba(17,17,17,0.12);
-    }
-
-    .heroFrame img{
-      width:100%;
-      height:420px;
-      object-fit:cover;
-      opacity:0.92;
-    }
-
-    .heroOverlay{
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(90deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.44) 42%, rgba(0,0,0,0.18) 70%, rgba(0,0,0,0.04) 100%),
-        linear-gradient(180deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.32) 100%);
-      display:flex;
-      align-items:flex-end;
-    }
-
-    .heroText{
-      padding:40px 34px;
-      max-width:740px;
-      color:#fff;
-    }
-
-    .heroPlate{
-      display:inline-block;
-      background:rgba(17,17,17,0.34);
-      border:1px solid rgba(255,255,255,0.14);
-      border-radius:18px;
-      padding:18px 18px 16px;
-      box-shadow:0 18px 46px rgba(0,0,0,0.22);
-      backdrop-filter:blur(6px);
-    }
-
-    .eyebrow{
-      font-size:12px;
-      letter-spacing:0.22em;
-      text-transform:uppercase;
-      opacity:0.86;
-      margin-bottom:12px;
-    }
-
-    .heroH1{
-      font-family:var(--serif);
-      font-size:40px;
-      line-height:1.08;
-      margin:0 0 8px;
-      font-weight:750;
-      text-shadow:0 12px 28px rgba(0,0,0,0.28);
-    }
-
-    .heroH2{
-      font-family:var(--serif);
-      font-size:27px;
-      line-height:1.15;
-      margin:0 0 12px;
-      font-weight:600;
-      color:rgba(255,255,255,0.96);
-      text-shadow:0 10px 24px rgba(0,0,0,0.24);
-    }
-
-    .heroP{
-      margin:0 0 18px;
-      font-size:16px;
-      color:rgba(255,255,255,0.88);
-      max-width:64ch;
-      text-shadow:0 10px 24px rgba(0,0,0,0.24);
-    }
-
-    .heroActions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-
-    .heroActions .btn{
-      border-color:rgba(255,255,255,0.22);
-      color:#fff;
-      background:rgba(255,255,255,0.06);
-    }
-
-    .heroActions .btn.primary{
-      background:#fff;
-      color:#111;
-      border-color:#fff;
-    }
-
-    .valueRow{
-      padding:18px 0 0;
-    }
-
-    .valueBox{
-      background:rgba(255,255,255,0.55);
-      border:1px solid rgba(17,17,17,0.10);
-      border-radius:18px;
-      padding:16px 18px 16px;
-      box-shadow:var(--shadow-soft);
-    }
-
-    .valueTitle{
-      font-family:var(--serif);
-      font-size:18px;
-      font-weight:750;
-      margin:0 0 6px;
-    }
-
-    .valueText{
-      margin:0;
-      color:rgba(0,0,0,0.74);
-      font-size:16px;
-      max-width:95ch;
-    }
-
-    .bridgeRow{
-      padding:18px 0 0;
-    }
-
-    .bridgeBox{
-      background:rgba(255,255,255,0.45);
-      border:1px solid rgba(17,17,17,0.10);
-      border-radius:18px;
-      padding:18px 18px 16px;
-      box-shadow:var(--shadow-soft);
-    }
-
-    .bridgeText{
-      margin:0;
-      color:rgba(0,0,0,0.76);
-      font-size:18px;
-      max-width:90ch;
-    }
-
-    section{
-      padding:72px 0;
-    }
-
-    .sectionTitle{
-      font-family:var(--serif);
-      font-size:36px;
-      line-height:1.12;
-      margin:0 0 14px;
-      font-weight:750;
-    }
-
-    .kicker{
-      font-size:12px;
-      letter-spacing:0.22em;
-      text-transform:uppercase;
-      color:rgba(0,0,0,0.55);
-      margin-bottom:14px;
-    }
-
-    .lead{
-      font-size:18px;
-      color:rgba(0,0,0,0.76);
-      max-width:80ch;
-      margin:0;
-    }
-
-    .card{
-      background:rgba(255,255,255,0.55);
-      border:1px solid rgba(17,17,17,0.10);
-      border-radius:var(--radius);
-      padding:24px;
-      box-shadow:var(--shadow-soft);
-    }
-
-    .arch{
-      background:var(--field);
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-    }
-
-    .archIntro{ margin-bottom:26px; }
-
-    .archExplainer{
-      margin-top:10px;
-      font-size:16px;
-      color:rgba(0,0,0,0.72);
-      max-width:86ch;
-    }
-
-    .stack{
-      position:relative;
-      margin-top:26px;
-      padding-left:18px;
-    }
-
-    .stack:before{
-      content:"";
-      position:absolute;
-      left:6px;
-      top:10px;
-      bottom:10px;
-      width:2px;
-      background:linear-gradient(180deg, rgba(17,17,17,0.10), rgba(17,17,17,0.04), rgba(17,17,17,0.10));
-      border-radius:10px;
-    }
-
-    .layer{
-      position:relative;
-      margin:14px 0;
-      border-radius:18px;
-      padding:22px 22px 20px;
-      background:rgba(17,17,17,0.04);
-      border:1px solid rgba(17,17,17,0.10);
-      box-shadow:0 10px 18px rgba(0,0,0,0.06);
-    }
-
-    .layer:before{
-      content:"";
-      position:absolute;
-      left:-18px;
-      top:50%;
-      width:14px;
-      height:14px;
-      transform:translateY(-50%);
-      border-radius:999px;
-      background:rgba(17,17,17,0.18);
-      border:2px solid rgba(255,255,255,0.85);
-      box-shadow:0 6px 14px rgba(0,0,0,0.10);
-    }
-
-    .layerTop{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:16px;
-      flex-wrap:wrap;
-    }
-
-    .layerH{
-      font-family:var(--serif);
-      font-size:22px;
-      margin:0 0 6px;
-      font-weight:750;
-    }
-
-    .layerSub{
-      margin:0;
-      color:rgba(0,0,0,0.70);
-      font-size:15px;
-    }
-
-    .chip{
-      font-size:11px;
-      letter-spacing:0.18em;
-      text-transform:uppercase;
-      color:rgba(0,0,0,0.66);
-      border:1px solid rgba(17,17,17,0.14);
-      padding:8px 10px;
-      border-radius:999px;
-      background:rgba(255,255,255,0.55);
-      font-weight:800;
-      white-space:nowrap;
-    }
-
-    .artifactCard{
-      margin-top:14px;
-      display:block;
-      max-width:360px;
-      padding:14px 14px 12px;
-      background:rgba(255,255,255,0.62);
-      border:1px solid rgba(17,17,17,0.10);
-      border-radius:12px;
-      box-shadow:0 8px 16px rgba(0,0,0,0.05);
-      transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
-    }
-
-    .artifactCard:hover{
-      transform:translateY(-1px);
-      box-shadow:0 12px 20px rgba(0,0,0,0.08);
-      border-color:rgba(17,17,17,0.18);
-    }
-
-    .artifactEyebrow{
-      display:block;
-      font-size:11px;
-      letter-spacing:0.16em;
-      text-transform:uppercase;
-      color:rgba(0,0,0,0.55);
-      margin-bottom:6px;
-      font-weight:800;
-    }
-
-    .artifactTitle{
-      display:block;
-      font-family:var(--serif);
-      font-size:18px;
-      line-height:1.2;
-      color:rgba(0,0,0,0.90);
-      margin-bottom:6px;
-    }
-
-    .artifactCopy{
-      display:block;
-      font-size:14px;
-      line-height:1.5;
-      color:rgba(0,0,0,0.72);
-      margin-bottom:8px;
-    }
-
-    .artifactLink{
-      display:inline-block;
-      font-size:13px;
-      font-weight:800;
-      color:rgba(0,0,0,0.86);
-      border-bottom:1px solid rgba(0,0,0,0.30);
-      padding-bottom:2px;
-    }
-
-    .archFooterLine{
-      margin-top:22px;
-      font-size:18px;
-      color:rgba(0,0,0,0.76);
-      text-align:center;
-      max-width:88ch;
-      margin-left:auto;
-      margin-right:auto;
-    }
-
-    .briefGrid{
-      display:grid;
-      grid-template-columns:1.2fr 0.8fr;
-      gap:26px;
-      align-items:center;
-      margin-top:26px;
-    }
-
-    @media (max-width: 860px){
-      .briefGrid{ grid-template-columns:1fr; }
-    }
-
-    .briefTitle{
-      font-family:var(--serif);
-      font-size:28px;
-      margin:8px 0 10px;
-      font-weight:750;
-    }
-
-    .briefMeta{
-      font-size:12px;
-      letter-spacing:0.22em;
-      text-transform:uppercase;
-      color:rgba(0,0,0,0.55);
-      margin:0 0 10px;
-    }
-
-    .briefCopy{
-      margin:0 0 16px;
-      color:rgba(0,0,0,0.72);
-      font-size:16px;
-      max-width:72ch;
-    }
-
-    .linkRow{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-      margin-top:6px;
-    }
-
-    .textLink{
-      font-weight:850;
-      border-bottom:1px solid rgba(0,0,0,0.30);
-      padding-bottom:2px;
-    }
-
-    .thumb{
-      border-radius:14px;
-      overflow:hidden;
-      border:1px solid rgba(17,17,17,0.12);
-      background:#fff;
-      box-shadow:var(--shadow-soft);
-    }
-
-    .thumb img{
-      width:100%;
-      height:auto;
-      display:block;
-    }
-
-    .ctaStrip{
-      background:rgba(255,255,255,0.46);
-      border:1px solid rgba(17,17,17,0.10);
-      border-radius:18px;
-      padding:22px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:18px;
-      flex-wrap:wrap;
-      margin-top:26px;
-    }
-
-    .ctaStrip strong{
-      font-family:var(--serif);
-      font-size:20px;
-    }
-
-    .ctaStrip span{
-      color:rgba(0,0,0,0.70);
-      font-size:14px;
-      display:block;
-      margin-top:2px;
-      max-width:70ch;
-    }
-
-    .hero2{
-      padding:0 0 72px;
-    }
-
-    .hero2Frame{
-      border-radius:22px;
-      overflow:hidden;
-      background:#000;
-      box-shadow:var(--shadow);
-      position:relative;
-      border:1px solid rgba(17,17,17,0.10);
-    }
-
-    .hero2Frame img{
-      width:100%;
-      height:380px;
-      object-fit:cover;
-      opacity:0.96;
-    }
-
-    .hero2Overlay{
-      position:absolute;
-      inset:auto 0 0 0;
-      padding:18px 22px;
-      background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.52) 100%);
-    }
-
-    .hero2Text{
-      color:rgba(255,255,255,0.92);
-      max-width:78ch;
-      font-size:15px;
-    }
-
-    .hero2Text strong{
-      font-family:var(--serif);
-      font-size:18px;
-      font-weight:750;
-      display:block;
-      margin-bottom:6px;
-      color:#fff;
-    }
-
-    .contactGrid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:22px;
-      margin-top:26px;
-      align-items:start;
-    }
-
-    @media (max-width: 860px){
-      .contactGrid{ grid-template-columns:1fr; }
-    }
-
-    form{ display:grid; gap:10px; }
-
-    input, textarea{
-      width:100%;
-      padding:12px 12px;
-      border-radius:12px;
-      border:1px solid rgba(17,17,17,0.14);
-      background:rgba(255,255,255,0.75);
-      font-family:var(--sans);
-      font-size:14px;
-      color:#111;
-    }
-
-    textarea{
-      min-height:120px;
-      resize:vertical;
-    }
-
-    .smallNote{
-      font-size:12px;
-      color:rgba(0,0,0,0.60);
-      margin:0;
-    }
-
-    footer{
-      padding:34px 0 44px;
-      text-align:center;
-      color:rgba(0,0,0,0.55);
-      font-size:13px;
-      border-top:1px solid var(--line);
-      background:rgba(255,255,255,0.18);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desk and Margin Outfitters | Enterprise Culture & Alignment Consultancy</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
 </head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-amber-500 selection:text-white">
 
-<body>
-
-<header>
-  <div class="wrap head">
-    <a class="brand" href="index.html" aria-label="Desk & Margin Outfitters Home">
-      <div class="name">Desk &amp; Margin Outfitters</div>
-      <div class="sub">Culture built in the margins</div>
-    </a>
-
-    <nav aria-label="Primary navigation">
-      <a href="index.html">Home</a>
-      <a href="diagnostic.html">Diagnostic</a>
-      <a href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf" target="_blank" rel="noopener">Executive Brief</a>
-      <a class="btn primary" href="#intro">Request a Private Intro</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-
-  <section class="hero">
-    <div class="wrap">
-      <div class="heroFrame">
-        <img src="leader-meeting.png" alt="Leaders in a focused meeting" />
-        <div class="heroOverlay">
-          <div class="heroText">
-            <div class="heroPlate">
-              <div class="eyebrow">Culture is built in the margins.</div>
-              <h1 class="heroH1">It’s what keeps teams aligned across the organization.</h1>
-              <h2 class="heroH2">Not just in quarterly updates or survey results, but in what gets reinforced every day.</h2>
-              <div class="heroActions">
-                <a class="btn primary" href="diagnostic.html">Take the Diagnostic</a>
-                <a class="btn" href="#brief">Read the Executive Brief</a>
-                <a class="btn" href="#intro">Request a Private Intro</a>
-              </div>
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-md">
+        <div class="mx-auto flex max-w-7xl h-20 items-center justify-between px-6 lg:px-8">
+            <div class="flex items-center gap-3">
+                <span class="text-xl font-extrabold tracking-tight text-slate-950">DESK <span class="text-amber-600">&</span> MARGIN</span>
+                <span class="hidden sm:inline-block text-xs uppercase tracking-widest text-slate-400 font-semibold border-l border-slate-200 pl-3">Outfitters</span>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="valueRow">
-        <div class="valueBox">
-          <p class="valueTitle">Why leaders care</p>
-          <p class="valueText">
-            Reinforced culture keeps teams aligned when pressure increases. It reduces drift, sharpens decisions, and helps strategy hold across the organization.
-          </p>
-        </div>
-      </div>
-
-      <div class="bridgeRow">
-        <div class="bridgeBox">
-          <p class="bridgeText">
-            If you’re here, you’re likely navigating growth, change, or complexity. Alignment gets harder as organizations scale, especially under pressure.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="arch" id="framework">
-    <div class="wrap">
-      <div class="archIntro">
-        <div class="kicker">How we think about it</div>
-        <h2 class="sectionTitle">Reinforcement Architecture</h2>
-        <div class="archExplainer">
-          Culture becomes durable when leadership intent is reinforced through three layers of the organization.
-        </div>
-      </div>
-
-      <div class="stack">
-        <div class="layer">
-          <div class="layerTop">
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="#the-friction" class="hover:text-slate-950 transition-colors">The Challenge</a>
+                <a href="#capabilities" class="hover:text-slate-950 transition-colors">Capabilities</a>
+                <a href="#audit" class="hover:text-slate-950 transition-colors">Friction Audit</a>
+                <a href="#why-us" class="hover:text-slate-950 transition-colors">The Edge</a>
+            </nav>
             <div>
-              <h3 class="layerH">Field Signals</h3>
-              <p class="layerSub">Artifacts · Rituals · Leader Behavior</p>
-
-              <a class="artifactCard" href="ogwa-field-signal.html" target="_blank" rel="noopener">
-                <span class="artifactEyebrow">Example artifact</span>
-                <span class="artifactTitle">OGWA Weekly Signal</span>
-                <span class="artifactCopy">
-                  A visible reinforcement artifact showing how leadership highlights real employee behavior tied to quality, clarity, and execution discipline.
-                </span>
-                <span class="artifactLink">Open field signal artifact →</span>
-              </a>
+                <a href="#contact" class="inline-flex items-center justify-center rounded-lg bg-slate-950 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-slate-800 transition-all">Work With Us</a>
             </div>
-            <div class="chip">Layer 3 · Visible</div>
-          </div>
         </div>
+    </header>
 
-        <div class="layer">
-          <div class="layerTop">
-            <div>
-              <h3 class="layerH">Operating System</h3>
-              <p class="layerSub">Narrative · Operating Rhythm · Decision Signals</p>
-
-              <a class="artifactCard" href="ogwa-narrative-brief.html" target="_blank" rel="noopener">
-                <span class="artifactEyebrow">Example artifact</span>
-                <span class="artifactTitle">Leadership Narrative Brief</span>
-                <span class="artifactCopy">
-                  A one-page example showing how leadership priorities are made visible, consistent, and usable across OGWA.
-                </span>
-                <span class="artifactLink">Open OGWA artifact →</span>
-              </a>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden py-24 sm:py-32 bg-white">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="mx-auto max-w-3xl text-center">
+                    <span class="inline-flex items-center rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-800 ring-1 ring-inset ring-amber-600/20 mb-6">Built for Chief People Officers & CHROs</span>
+                    <h1 class="text-4xl font-extrabold tracking-tight text-slate-950 sm:text-6xl leading-[1.1]">
+                        Build a connected culture.<br/>
+                        <span class="text-amber-600">Execute without the friction.</span>
+                    </h1>
+                    <p class="mt-8 text-lg leading-8 text-slate-600 font-light">
+                        Desk and Margin Outfitters partners with HR leaders to design, deploy, and scale enterprise-wide culture programs. From navigating complex M&A integrations to revitalizing employee recognition, we provide the strategic bandwidth and corporate communications precision required to get your biggest people initiatives approved, launched, and embraced.
+                    </p>
+                    <div class="mt-10 flex items-center justify-center gap-x-6">
+                        <a href="#audit" class="rounded-lg bg-amber-600 px-6 py-3 text-sm font-semibold text-white shadow-md hover:bg-amber-700 transition-all">Take the 60-Sec Friction Audit</a>
+                        <a href="#capabilities" class="text-sm font-semibold leading-6 text-slate-900 group">Explore Capabilities <span class="inline-block transition-transform group-hover:translate-x-1" aria-hidden="true">→</span></a>
+                    </div>
+                </div>
             </div>
-            <div class="chip">Layer 2 · Reinforcement</div>
-          </div>
-        </div>
+        </section>
 
-        <div class="layer">
-          <div class="layerTop">
-            <div>
-              <h3 class="layerH">Core Conditions</h3>
-              <p class="layerSub">Trust · Clarity · Cohesion</p>
+        <!-- The Tactical Hook Section (The Operational Bottleneck) -->
+        <section id="the-friction" class="border-y border-slate-200 bg-slate-50 py-20 sm:py-28">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="mx-auto max-w-3xl lg:text-center">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-amber-600">The Execution Gap</h2>
+                    <p class="mt-2 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+                        Why brilliant HR strategy often stalls before reaching the enterprise
+                    </p>
+                    <p class="mt-6 text-lg leading-8 text-slate-600 font-light">
+                        Great culture initiatives—like rolling out a new hybrid-work model, revitalizing DEI, or launching an employee recognition framework—live or die by how they are introduced. Too often, critical HR programs get bottlenecked because navigating the internal corporate communications pipeline feels like a second full-time job. 
+                    </p>
+                </div>
+                
+                <div class="mx-auto mt-16 max-w-3xl rounded-2xl bg-white border border-slate-200 p-8 sm:p-10 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-2 h-full bg-amber-500"></div>
+                    <h3 class="text-xl font-bold text-slate-950">We speak both languages. Fluently.</h3>
+                    <p class="mt-4 text-slate-600 leading-relaxed">
+                        As successful corporate communications veterans, we recognize the political and operational challenges between HR and Corp Comms. You own the high-stakes substance (like Open Enrollment or policy changes), but Comms owns the channels. 
+                    </p>
+                    <p class="mt-3 text-slate-600 leading-relaxed">
+                        We act as the ultimate bridge. We wrap your heavy-lifting cultural initiatives in flawless, executive-ready asset packages designed to meet strict corporate communications standards right out of the gate. We eliminate cross-department bottlenecks so your initiatives launch on time, exactly as you intended.
+                    </p>
+                </div>
             </div>
-            <div class="chip">Layer 1 · Foundation</div>
-          </div>
-        </div>
-      </div>
+        </section>
 
-      <div class="archFooterLine">
-        Most organizations work on expression. High-performing organizations reinforce the system.
-        The difference becomes visible under strain.
-      </div>
-    </div>
-  </section>
+        <!-- Core Capabilities Section -->
+        <section id="capabilities" class="py-24 sm:py-32 bg-white">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="mx-auto max-w-2xl text-center mb-20">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-amber-600">Consulting & Execution</h2>
+                    <p class="mt-2 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">Our Service Framework</p>
+                    <p class="mt-4 text-slate-600">We don't just hand over advice; we give your team the bandwidth and tools to design, deploy, and monitor sustainable change.</p>
+                </div>
 
-  <section id="brief">
-    <div class="wrap">
-      <div class="kicker">Executive brief</div>
-      <h2 class="sectionTitle">Alignment Under Strain</h2>
-      <p class="lead">
-        A focused examination of how enterprise cohesion weakens under structural pressure and how reinforcement architecture stabilizes it.
-      </p>
+                <div class="mx-auto grid max-w-5xl grid-cols-1 gap-y-12 lg:grid-cols-3 lg:gap-x-12">
+                    <!-- Pillar 1 -->
+                    <div class="flex flex-col justify-between rounded-2xl border border-slate-200 p-8 shadow-sm bg-slate-50/50">
+                        <div>
+                            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-950 text-white font-bold text-sm mb-6">01</div>
+                            <h3 class="text-xl font-bold text-slate-950">Navigate Complex Milestones</h3>
+                            <p class="mt-4 text-sm leading-6 text-slate-600">
+                                When organizations face seismic shifts—M&As, IPOs, structural rebrands, or changing hybrid mandates—culture is at risk. We design non-disruptive, highly stable integration strategies that align leadership, protect employee morale, and reduce systemic attrition through critical pivots.
+                            </p>
+                        </div>
+                        <ul class="mt-6 space-y-2 border-t border-slate-200 pt-6 text-xs font-medium text-slate-500">
+                            <li class="flex items-center gap-2">✔ M&A Cultural Integration</li>
+                            <li class="flex items-center gap-2">✔ IPO & Rebrand Readiness</li>
+                            <li class="flex items-center gap-2">✔ Work Model Transitions</li>
+                        </ul>
+                    </div>
 
-      <div class="briefGrid">
-        <div class="card">
-          <div class="briefMeta">Executive Brief</div>
-          <div class="briefTitle">Alignment Under Strain</div>
-          <p class="briefCopy">
-            Culture rarely reveals its weaknesses during stability. Its integrity becomes visible when pressure is uneven and time is short. This brief outlines the drift problem and what changes when leaders treat alignment as infrastructure.
-          </p>
+                    <!-- Pillar 2 -->
+                    <div class="flex flex-col justify-between rounded-2xl border border-slate-200 p-8 shadow-sm bg-slate-50/50">
+                        <div>
+                            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500 text-white font-bold text-sm mb-6">02</div>
+                            <h3 class="text-xl font-bold text-slate-950">Deploy Culture & Recognition</h3>
+                            <p class="mt-4 text-sm leading-6 text-slate-600">
+                                Culture isn't accidental; it must be intentionally engineered. We architect end-to-end culture-building programs, build realistic, non-forced employee recognition frameworks, and help craft genuine DEI strategies that embed permanently into daily habits.
+                            </p>
+                        </div>
+                        <ul class="mt-6 space-y-2 border-t border-slate-200 pt-6 text-xs font-medium text-slate-500">
+                            <li class="flex items-center gap-2">✔ Culture-Building Initiatives</li>
+                            <li class="flex items-center gap-2">✔ Recognition Frameworks</li>
+                            <li class="flex items-center gap-2">✔ Internal Engagement Rituals</li>
+                        </ul>
+                    </div>
 
-          <div class="linkRow">
-            <a class="textLink" href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf" target="_blank" rel="noopener">
-              Download the Executive Brief →
-            </a>
-            <a class="textLink" href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf" target="_blank" rel="noopener">
-              Open PDF →
-            </a>
-          </div>
-
-          <div class="ctaStrip">
-            <div>
-              <strong>See where alignment is breaking down. Take the diagnostic.</strong>
-              <span>Get a fast readout with reinforcement levers tailored to your organization’s conditions.</span>
+                    <!-- Pillar 3 -->
+                    <div class="flex flex-col justify-between rounded-2xl border border-slate-200 p-8 shadow-sm bg-slate-50/50">
+                        <div>
+                            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-950 text-white font-bold text-sm mb-6">03</div>
+                            <h3 class="text-xl font-bold text-slate-950">Align the Communications Ecosystem</h3>
+                            <p class="mt-4 text-sm leading-6 text-slate-600">
+                                We clean up internal touchpoints to drive maximum brand engagement. From restructuring messy team meeting cadences and building flawless all-hands presentations to authoring comprehensive leader messaging toolkits for sensitive deployments.
+                            </p>
+                        </div>
+                        <ul class="mt-6 space-y-2 border-t border-slate-200 pt-6 text-xs font-medium text-slate-500">
+                            <li class="flex items-center gap-2">✔ High-Impact All-Hands Decks</li>
+                            <li class="flex items-center gap-2">✔ Meeting Cadence Optimization</li>
+                            <li class="flex items-center gap-2">✔ Broad Leader Communications</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <a class="btn primary" href="diagnostic.html">Take the Diagnostic →</a>
-          </div>
-        </div>
+        </section>
 
-        <a class="thumb" href="Alignment_Under_Strain_Executive_Brief_Serif_Tight.pdf" target="_blank" rel="noopener" aria-label="Open Alignment Under Strain PDF">
-          <img src="alignment-under-strain-cover.png" alt="Alignment Under Strain executive brief cover thumbnail" />
-        </a>
-      </div>
-    </div>
-  </section>
+        <!-- NEW INTERACTIVE DIAGNOSTIC PIECE -->
+        <section id="audit" class="bg-slate-900 text-white py-20 sm:py-28 border-y border-slate-800">
+            <div class="mx-auto max-w-4xl px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-amber-500">Interactive Diagnostic Tool</h2>
+                    <p class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">The Enterprise Culture Friction Audit</p>
+                    <p class="mt-3 text-slate-400 text-sm font-light">Identify where execution drag, internal misalignment, or pipeline blocks are stalling your cultural programs.</p>
+                </div>
 
-  <section class="hero2">
-    <div class="wrap">
-      <div class="hero2Frame">
-        <img src="virtual-meeting.png" alt="Remote work scene with laptop and video meeting" />
-        <div class="hero2Overlay">
-          <div class="hero2Text">
-            <strong>Distributed work raises the cost of reinforcement.</strong>
-            Teams stay aligned when priorities show up the same way in communication, decisions, and day-to-day work.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+                <!-- Audit Container -->
+                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 sm:p-10 shadow-xl">
+                    <div id="quiz-box">
+                        <!-- Progress Indicator -->
+                        <div class="w-full bg-slate-800 h-1.5 rounded-full mb-8">
+                            <div id="progress-bar" class="bg-amber-500 h-1.5 rounded-full transition-all duration-300" style="width: 25%"></div>
+                        </div>
 
-  <section id="intro">
-    <div class="wrap">
-      <div class="kicker">Request a private intro</div>
-      <h2 class="sectionTitle">Start with a conversation</h2>
-      <p class="lead">
-        If you’re navigating integration, growth, operating-model shifts, or leadership transition, we can help you stabilize alignment without turning culture into theater.
-      </p>
+                        <!-- Question Dynamic Block -->
+                        <div id="question-container">
+                            <span id="question-number" class="text-xs font-semibold text-amber-500 uppercase tracking-wider block mb-2">Question 1 of 4</span>
+                            <h3 id="question-text" class="text-xl font-bold text-white mb-6">When launching a major HR communication (like Open Enrollment or policy updates), what does the pipeline look like?</h3>
+                            
+                            <div id="options-space" class="space-y-3">
+                                <!-- Script inserts options here -->
+                            </div>
+                        </div>
+                    </div>
 
-      <div class="contactGrid">
-        <div class="card">
-          <h3 style="font-family:var(--serif); margin:0 0 10px; font-size:22px;">What we do</h3>
-          <p style="margin:0; color:rgba(0,0,0,0.72);">
-            We help leadership teams strengthen the core, align the reinforcement, and make the expression consistent so culture doesn’t depend on personality or memory.
-          </p>
-          <p class="smallNote" style="margin-top:14px;">
-            Email works too: <a class="textLink" href="mailto:hello@deskandmarginoutfitters.com">hello@deskandmarginoutfitters.com</a>
-          </p>
-        </div>
+                    <!-- Results Dynamic Block (Hidden Initially) -->
+                    <div id="results-box" class="hidden text-center py-4">
+                        <div class="inline-flex items-center justify-center h-20 w-20 rounded-full bg-amber-500/10 text-amber-500 mb-6 border border-amber-500/30">
+                            <span id="score-display" class="text-2xl font-extrabold">00</span>
+                        </div>
+                        <h3 id="result-title" class="text-2xl font-bold mb-4">Diagnostic Assessment Complete</h3>
+                        <p id="result-text" class="text-slate-400 max-w-xl mx-auto text-sm leading-relaxed mb-8">
+                            Analyzing choices...
+                        </p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <button onclick="restartAudit()" class="text-xs font-semibold uppercase tracking-wider text-slate-400 hover:text-white transition-colors">Retake Audit</button>
+                            <a href="#contact" class="inline-flex items-center justify-center rounded-lg bg-amber-500 px-5 py-3 text-sm font-semibold text-slate-950 shadow-sm hover:bg-amber-400 transition-all">Request Your Custom Kit Breakdown</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <div class="card">
-          <form action="#" method="post">
-            <input type="text" name="name" placeholder="Name" autocomplete="name" />
-            <input type="email" name="email" placeholder="Email" autocomplete="email" />
-            <input type="text" name="organization" placeholder="Organization" />
-            <textarea name="message" placeholder="What are you navigating right now?"></textarea>
-            <button class="btn primary" type="submit">Send →</button>
-          </form>
-          <p class="smallNote" style="margin-top:10px;">
-            This form is a placeholder until you connect it to a form service.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+        <!-- Why Desk & Margin (The Edge) -->
+        <section id="why-us" class="bg-slate-950 text-white py-24 sm:py-32 relative overflow-hidden">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-x-16 items-center">
+                    <div>
+                        <h2 class="text-xs font-bold uppercase tracking-widest text-amber-500">The Modular Advantage</h2>
+                        <p class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">We treat culture as an asset class.</p>
+                        <p class="mt-6 text-slate-400 font-light leading-relaxed">
+                            We developed the <strong>Modular Change Kit</strong> to act as an immediate capacity extension for under-resourced HR leadership. Instead of locked-in multi-year retainers that offer theoretical advice, we deploy tactical modules that integrate cleanly into your existing workflows without interrupting productivity. 
+                        </p>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-8 space-y-6">
+                        <div>
+                            <h4 class="text-amber-500 font-semibold text-sm uppercase tracking-wide">Capacity Relief</h4>
+                            <p class="text-slate-300 text-sm mt-1">We reduce burnout on internal teams by executing complex collateral, layouts, and scripting.</p>
+                        </div>
+                        <div class="border-t border-white/10 pt-6">
+                            <h4 class="text-amber-500 font-semibold text-sm uppercase tracking-wide">Frictionless Sign-offs</h4>
+                            <p class="text-slate-300 text-sm mt-1">Our deliverables fit Corporate Communications rules perfectly from the first draft.</p>
+                        </div>
+                        <div class="border-t border-white/10 pt-6">
+                            <h4 class="text-amber-500 font-semibold text-sm uppercase tracking-wide">Data-Backed Monitoring</h4>
+                            <p class="text-slate-300 text-sm mt-1">We track sentiment, brand engagement, and alignment metrics long after rollout day.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-</main>
+        <!-- CTA / Contact Footer Section -->
+        <section id="contact" class="py-24 sm:py-32 bg-white">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="mx-auto max-w-2xl text-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">Protect your margin. Ignite your culture.</h2>
+                    <p class="mt-4 text-lg leading-8 text-slate-600 font-light">
+                        Let’s talk about your upcoming corporate milestones or internal communications goals. We’ll show you how we can lift the execution weight off your HR team.
+                    </p>
+                    <div class="mt-10">
+                        <a href="mailto:your-email@domain.com" class="inline-block rounded-lg bg-slate-950 px-8 py-4 text-base font-semibold text-white shadow-md hover:bg-slate-800 transition-all">
+                            Connect with an Outfitters Consultant
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-<footer>
-  <div class="wrap">
-    © <span id="y"></span> Desk &amp; Margin Outfitters · Culture built with intention.
-  </div>
-</footer>
+    <footer class="border-t border-slate-200 bg-slate-50 py-8 text-center text-xs text-slate-400">
+        <p>&copy; 2026 Desk and Margin Outfitters. All rights reserved.</p>
+    </footer>
 
-<script>
-  document.getElementById("y").textContent = new Date().getFullYear();
-</script>
+    <!-- INTERACTIVE AUDIT JAVASCRIPT ENGINE -->
+    <script>
+        const auditData = [
+            {
+                question: "When launching an HR-driven message (like Open Enrollment), what does the corporate pipeline look like?",
+                options: [
+                    { text: "Seamless. Corp Comms fast-tracks our material directly to enterprise channels.", score: 10 },
+                    { text: "Slow. Messages queue behind broad commercial or PR announcements, throwing off our internal deadlines.", score: 25 },
+                    { text: "Frictional. We end up formatting and building asset decks ourselves, fighting for pipeline access.", score: 40 }
+                ]
+            },
+            {
+                question: "How are your organization's current core cultural rituals and recognition programs received?",
+                options: [
+                    { text: "Highly engaged. Teams organically lean into them and brand engagement is demonstrably high.", score: 10 },
+                    { text: "Fragmented. Remote or hybrid teams feel completely disconnected from central corporate efforts.", score: 25 },
+                    { text: "Forced. It feels like compliance box-checking; employees find them artificial.", score: 40 }
+                ]
+            },
+            {
+                question: "During major enterprise transitions (M&As, rebrands, IPOs), how handles cultural alignment?",
+                options: [
+                    { text: "We have clean, specialized execution playbooks deployed alongside the strategic deal.", score: 10 },
+                    { text: "Leadership expects it to happen, but HR carries the execution burden with zero extra bandwidth.", score: 35 },
+                    { text: "It falls through the cracks entirely, resulting in visible attrition and cultural fracturing.", score: 50 }
+                ]
+            },
+            {
+                question: "What is the biggest operational roadblock constraining your current HR leadership team?",
+                options: [
+                    { text: "Budget allocation for new strategic human resource initiatives.", score: 15 },
+                    { text: "Bandwidth. We have excellent strategic ideas but zero execution capacity to build the underlying collateral.", score: 40 },
+                    { text: "Internal silos. Getting cross-department consensus blocks programmatic rollout.", score: 35 }
+                ]
+            }
+        ];
 
+        let currentStep = 0;
+        let cumulativeScore = 0;
+
+        function loadQuestion() {
+            if (currentStep >= auditData.length) {
+                showAuditResults();
+                return;
+            }
+
+            // Update Progress Bar
+            const progressPct = ((currentStep + 1) / auditData.length) * 100;
+            document.getElementById('progress-bar').style.width = `${progressPct}%`;
+
+            const step = auditData[currentStep];
+            document.getElementById('question-number').innerText = `Question ${currentStep + 1} of ${auditData.length}`;
+            document.getElementById('question-text').innerText = step.question;
+
+            const optionsBox = document.getElementById('options-space');
+            optionsBox.innerHTML = '';
+
+            step.options.forEach((opt) => {
+                const button = document.createElement('button');
+                button.className = "w-full text-left p-4 rounded-xl border border-slate-800 bg-slate-900/60 hover:bg-slate-800 hover:border-amber-500/50 transition-all text-sm text-slate-300 hover:text-white font-medium focus:outline-none focus:ring-1 focus:ring-amber-500";
+                button.innerText = opt.text;
+                button.onclick = () => selectOption(opt.score);
+                optionsBox.appendChild(button);
+            });
+        }
+
+        function selectOption(score) {
+            cumulativeScore += score;
+            currentStep++;
+            loadQuestion();
+        }
+
+        function showAuditResults() {
+            document.getElementById('quiz-box').classList.add('hidden');
+            const resultsBox = document.getElementById('results-box');
+            resultsBox.classList.remove('hidden');
+
+            const finalScore = Math.min(Math.round((cumulativeScore / 170) * 100), 100);
+            document.getElementById('score-display').innerText = `${finalScore}%`;
+
+            let analysis = "";
+            if (finalScore < 40) {
+                analysis = "Low Operational Friction: Your enterprise pipelines are reasonably healthy, but there are underlying strategic gaps where your internal cultural programs are decoupling from daily rituals. Focus on scaling your recognition architecture.";
+            } else if (finalScore < 75) {
+                analysis = "Moderate Friction Drag: Your HR initiatives face noticeable bottlenecks, particularly in the HR-to-Corporate Communications pipeline. You are spending valuable cycles formatting materials and chasing airtime rather than driving core culture.";
+            } else {
+                analysis = "Severe Pipeline Saturation: Your people initiatives are facing significant systemic resistance. Bandwidth constraints and structural misalignment mean major transformations (like M&As or policy updates) are losing impact before they reach employees.";
+            }
+
+            document.getElementById('result-text').innerText = `${analysis} Your profile suggests your HR team could reclaim immediate operational runway using components of our Modular Change Kit.`;
+        }
+
+        function restartAudit() {
+            currentStep = 0;
+            cumulativeScore = 0;
+            document.getElementById('results-box').classList.add('hidden');
+            document.getElementById('quiz-box').classList.remove('hidden');
+            loadQuestion();
+        }
+
+        // Initialize on load
+        window.onload = loadQuestion;
+    </script>
 </body>
 </html>
