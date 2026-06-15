@@ -179,4 +179,124 @@
                     </p>
                 </div>
 
-                <div class="bg-
+                <div class="bg-white text-slate-900 rounded-2xl border border-slate-200 shadow-2xl p-6 sm:p-8">
+    <form id="frictionForm" class="space-y-8">
+        <div>
+            <label class="block text-sm font-bold mb-3">1. How often do major people initiatives stall after approval?</label>
+            <select class="w-full rounded-lg border border-slate-300 p-3" name="q1">
+                <option value="1">Rarely</option>
+                <option value="2">Sometimes</option>
+                <option value="3">Often</option>
+                <option value="4">Almost always</option>
+            </select>
+        </div>
+
+        <div>
+            <label class="block text-sm font-bold mb-3">2. How much internal coordination is required before launch?</label>
+            <select class="w-full rounded-lg border border-slate-300 p-3" name="q2">
+                <option value="1">Minimal</option>
+                <option value="2">Manageable</option>
+                <option value="3">Heavy</option>
+                <option value="4">Excessive</option>
+            </select>
+        </div>
+
+        <div>
+            <label class="block text-sm font-bold mb-3">3. How clear is ownership between HR, Communications, and leadership?</label>
+            <select class="w-full rounded-lg border border-slate-300 p-3" name="q3">
+                <option value="1">Very clear</option>
+                <option value="2">Mostly clear</option>
+                <option value="3">Somewhat unclear</option>
+                <option value="4">Very unclear</option>
+            </select>
+        </div>
+
+        <div>
+            <label class="block text-sm font-bold mb-3">4. How consistently do employees understand the “why” behind initiatives?</label>
+            <select class="w-full rounded-lg border border-slate-300 p-3" name="q4">
+                <option value="1">Consistently</option>
+                <option value="2">Usually</option>
+                <option value="3">Inconsistently</option>
+                <option value="4">Rarely</option>
+            </select>
+        </div>
+
+        <button type="submit" class="w-full rounded-lg bg-amber-600 px-6 py-3 text-sm font-bold text-white hover:bg-amber-700 transition-all">
+            Generate Score
+        </button>
+    </form>
+
+    <div id="result" class="hidden mt-8 rounded-xl bg-slate-50 border border-slate-200 p-6">
+        <p class="text-xs uppercase tracking-widest font-bold text-amber-600">Your Friction Index Score</p>
+        <p id="scoreText" class="mt-2 text-4xl font-extrabold text-slate-950"></p>
+        <p id="scoreSummary" class="mt-3 text-sm leading-6 text-slate-600"></p>
+    </div>
+</div>
+</div>
+</section>
+
+<section id="why-us" class="bg-white py-24 sm:py-32">
+    <div class="mx-auto max-w-5xl px-6 lg:px-8 text-center">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-amber-600">The Edge</h2>
+        <p class="mt-2 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+            We turn leadership intent into systems people can actually use.
+        </p>
+        <p class="mt-6 text-lg leading-8 text-slate-600 font-light">
+            Desk and Margin Outfitters is built for the space between strategy and adoption — the place where good ideas either become shared behavior or disappear into the enterprise noise.
+        </p>
+    </div>
+</section>
+
+<section id="contact" class="bg-slate-950 text-white py-20">
+    <div class="mx-auto max-w-3xl px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Ready to reduce the drag?</h2>
+        <p class="mt-4 text-slate-300">
+            Let’s talk about the people initiative your organization needs to move from approved to adopted.
+        </p>
+        <a href="mailto:hello@deskandmargin.com" class="mt-8 inline-flex rounded-lg bg-amber-600 px-6 py-3 text-sm font-semibold text-white hover:bg-amber-700 transition-all">
+            Start a Conversation
+        </a>
+    </div>
+</section>
+
+</main>
+
+<footer class="bg-white border-t border-slate-200 py-8">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col sm:flex-row justify-between gap-4 text-sm text-slate-500">
+        <p>© 2026 Desk and Margin Outfitters. All rights reserved.</p>
+        <p>Enterprise culture, alignment, and reinforcement systems.</p>
+    </div>
+</footer>
+
+<script>
+document.getElementById('frictionForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    let total = 0;
+
+    for (const value of formData.values()) {
+        total += Number(value);
+    }
+
+    const score = Math.round((total / 16) * 100);
+
+    document.getElementById('result').classList.remove('hidden');
+    document.getElementById('scoreText').textContent = score + '/100';
+
+    let summary = '';
+
+    if (score <= 35) {
+        summary = 'Your organization appears to have relatively low execution friction. The opportunity is to preserve clarity as initiatives scale.';
+    } else if (score <= 65) {
+        summary = 'Your organization is likely experiencing moderate execution drag. Initiatives may be strong, but ownership, timing, or communication systems are creating avoidable slowdown.';
+    } else {
+        summary = 'Your organization is likely experiencing high execution friction. People initiatives may be losing momentum between approval, communication, manager adoption, and employee understanding.';
+    }
+
+    document.getElementById('scoreSummary').textContent = summary;
+});
+</script>
+
+</body>
+</html>
