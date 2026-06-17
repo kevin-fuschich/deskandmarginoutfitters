@@ -1,241 +1,304 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Perspectives | Desk and Margin Outfitters</title>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+  <title>Perspectives | Desk & Margin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Libre+Baskerville:wght@400;700&display=swap');
     body { font-family: 'Inter', sans-serif; }
-    h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
-    html { scroll-behavior: smooth; }
+    h1, h2, h3, .serif { font-family: 'Libre Baskerville', serif; }
   </style>
 </head>
 
-<body class="bg-slate-50 text-slate-900 antialiased selection:bg-amber-500 selection:text-white">
+<body class="bg-[#F5F2ED] text-[#2D2A26]">
 
-<header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-md">
-  <div class="mx-auto flex max-w-7xl h-20 items-center justify-between px-6 lg:px-8">
-    <a href="../index.html" class="flex items-center gap-3 no-underline">
-      <span class="text-xl font-extrabold tracking-tight text-slate-950">DESK <span class="text-amber-600">&</span> MARGIN</span>
-      <span class="hidden sm:inline-block text-xs uppercase tracking-widest text-slate-400 font-semibold border-l border-slate-200 pl-3">Outfitters</span>
-    </a>
+  <header class="sticky top-0 z-50 bg-[#F5F2ED]/90 backdrop-blur border-b border-[#D7D0C8]">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="../index.html" class="serif text-xl font-bold tracking-tight text-[#2D2A26]">
+        Desk <span class="text-[#8B5A3C]">&amp;</span> Margin
+      </a>
 
-    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-      <a href="../index.html" class="hover:text-slate-950 transition-colors">Home</a>
-      <a href="../about.html" class="hover:text-slate-950 transition-colors">About</a>
-      <a href="perspectives.html" class="text-slate-950 font-semibold">Perspectives</a>
-    </nav>
-  </div>
-</header>
+      <nav class="hidden md:flex gap-8 text-sm font-medium text-[#5A5652]">
+        <a href="../about.html" class="hover:text-[#2D2A26]">About</a>
+        <a href="../index.html#focus" class="hover:text-[#2D2A26]">Focus Areas</a>
+        <a href="../index.html#diagnostic" class="hover:text-[#2D2A26]">Diagnostic</a>
+      </nav>
 
-<main>
-
-<section class="bg-white py-20 sm:py-28">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    <div class="max-w-4xl">
-      <p class="text-xs font-bold uppercase tracking-widest text-amber-600">Case Study</p>
-      <h1 class="mt-4 text-4xl font-extrabold tracking-tight text-slate-950 sm:text-6xl leading-[1.05]">
-        Perspectives
-      </h1>
-      <p class="mt-6 text-2xl font-light leading-9 text-slate-700">
-        How a simple leadership listening system helped a large organization strengthen connection, trust, and information flow during a period of significant change.
-      </p>
-      <p class="mt-8 max-w-3xl text-lg leading-8 text-slate-600">
-        Perspectives was a monthly open forum designed to connect a small group of employees directly with the company president. Conversations were recorded, lightly produced, and distributed across the organization, allowing thousands of employees to benefit from discussions that began with just a handful of participants.
-      </p>
+      <a href="../index.html#contact" class="bg-[#2D2A26] text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-black">
+        Work With Us
+      </a>
     </div>
-  </div>
-</section>
+  </header>
 
-<section class="border-y border-slate-200 bg-slate-50 py-20">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    <div class="grid grid-cols-1 gap-12 lg:grid-cols-12">
-      <div class="lg:col-span-5">
-        <p class="text-xs font-bold uppercase tracking-widest text-amber-600">The Environment</p>
-        <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+  <main>
+
+    <!-- HERO -->
+    <section class="py-24 bg-[#F5F2ED]">
+      <div class="max-w-7xl mx-auto px-6">
+        <p class="uppercase tracking-[0.22em] text-xs font-semibold text-[#8B5A3C] mb-6">
+          Case Study
+        </p>
+
+        <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-8 leading-tight text-[#2D2A26]">
+          Perspectives
+        </h1>
+
+        <p class="max-w-4xl text-xl text-[#5A5652] font-light mb-8 leading-relaxed">
+          How a simple leadership listening system helped a large organization strengthen connection,
+          trust, and information flow during a period of significant change.
+        </p>
+
+        <p class="max-w-4xl text-lg text-[#5A5652] leading-relaxed">
+          Perspectives was a monthly open forum designed to connect a small group of employees directly
+          with the company president. Conversations were recorded, lightly produced, and distributed
+          across the organization, allowing thousands of employees to benefit from discussions that began
+          with just a handful of participants.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTEXT -->
+    <section class="py-20 bg-white border-y border-[#D7D0C8]">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="serif text-3xl md:text-4xl mb-8 text-[#2D2A26]">
           The organization was not standing still.
         </h2>
-      </div>
-      <div class="lg:col-span-7">
-        <p class="text-lg leading-8 text-slate-600 font-light">
-          Perspectives emerged during a period of extraordinary organizational transformation involving more than 15 acquisitions, a reverse merger, major technology change, organizational redesign, and a largely remote workforce.
-        </p>
-        <p class="mt-6 text-lg leading-8 text-slate-600 font-light">
-          The organization did not have an information problem. It had a connection problem. Employees wanted visibility into leadership thinking. Leadership wanted visibility into employee experiences.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="bg-white py-24">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    <div class="max-w-3xl">
-      <p class="text-xs font-bold uppercase tracking-widest text-amber-600">The Insight</p>
-      <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-        Make the conversation the program.
-      </h2>
-      <p class="mt-6 text-lg leading-8 text-slate-600 font-light">
-        The idea began with a simple observation: employees consistently valued the live Q&A portion of town halls more than the presentation itself. Perspectives asked what would happen if the conversation became the entire program — and then scaled.
-      </p>
-    </div>
-  </div>
-</section>
+        <div class="space-y-6 text-lg leading-relaxed text-[#5A5652]">
+          <p>
+            Perspectives emerged during a period of extraordinary organizational transformation involving
+            more than 15 acquisitions, a reverse merger, major technology change, organizational redesign,
+            and a largely remote workforce.
+          </p>
 
-<section class="bg-slate-950 text-white py-24">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    <div class="max-w-3xl">
-      <p class="text-xs font-bold uppercase tracking-widest text-amber-400">The Anatomy of the System</p>
-      <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-        Small Conversation. Large Reach.
-      </h2>
-      <p class="mt-6 text-lg leading-8 text-slate-300 font-light">
-        The innovation was not simply giving employees access to the president. The innovation was designing a system that allowed thousands of employees to benefit from conversations that began with only a few people in the room.
-      </p>
-    </div>
+          <p>
+            The organization did not have an information problem. It had a connection problem.
+            Employees wanted visibility into leadership thinking. Leadership wanted visibility into
+            employee experiences.
+          </p>
 
-    <div class="mt-14 grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-6">
-      <div class="rounded-2xl border border-slate-700 bg-slate-900 p-5">
-        <p class="text-amber-400 font-bold">01</p>
-        <h3 class="mt-3 font-bold">4–6 Employees</h3>
-        <p class="mt-2 text-sm text-slate-400">Small group invited into a candid conversation.</p>
-      </div>
-
-      <div class="rounded-2xl border border-slate-700 bg-slate-900 p-5">
-        <p class="text-amber-400 font-bold">02</p>
-        <h3 class="mt-3 font-bold">President</h3>
-        <p class="mt-2 text-sm text-slate-400">Direct access to senior leadership thinking.</p>
-      </div>
-
-      <div class="rounded-2xl border border-slate-700 bg-slate-900 p-5">
-        <p class="text-amber-400 font-bold">03</p>
-        <h3 class="mt-3 font-bold">Virtual Session</h3>
-        <p class="mt-2 text-sm text-slate-400">45–60 minutes, unscripted and conversational.</p>
-      </div>
-
-      <div class="rounded-2xl border border-slate-700 bg-slate-900 p-5">
-        <p class="text-amber-400 font-bold">04</p>
-        <h3 class="mt-3 font-bold">Recording</h3>
-        <p class="mt-2 text-sm text-slate-400">Captured in Teams for broader access.</p>
-      </div>
-
-      <div class="rounded-2xl border border-slate-700 bg-slate-900 p-5">
-        <p class="text-amber-400 font-bold">05</p>
-        <h3 class="mt-3 font-bold">Production</h3>
-        <p class="mt-2 text-sm text-slate-400">Lightly produced into an internal podcast.</p>
-      </div>
-
-      <div class="rounded-2xl border border-slate-700 bg-slate-900 p-5">
-        <p class="text-amber-400 font-bold">06</p>
-        <h3 class="mt-3 font-bold">Distribution</h3>
-        <p class="mt-2 text-sm text-slate-400">Shared across the enterprise for broad access.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="bg-white py-24">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    <div class="max-w-3xl">
-      <p class="text-xs font-bold uppercase tracking-widest text-amber-600">Evidence</p>
-      <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-        A small-room format with enterprise reach.
-      </h2>
-    </div>
-
-    <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-8">
-        <p class="text-4xl font-extrabold text-slate-950">10</p>
-        <p class="mt-2 text-sm font-semibold text-slate-600">Sessions</p>
-      </div>
-
-      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-8">
-        <p class="text-4xl font-extrabold text-slate-950">~50</p>
-        <p class="mt-2 text-sm font-semibold text-slate-600">Employee participants</p>
-      </div>
-
-      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-8">
-        <p class="text-4xl font-extrabold text-slate-950">14,000</p>
-        <p class="mt-2 text-sm font-semibold text-slate-600">Employees with access</p>
-      </div>
-
-      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-8">
-        <p class="text-4xl font-extrabold text-slate-950">80%</p>
-        <p class="mt-2 text-sm font-semibold text-slate-600">Average completion rate</p>
-      </div>
-    </div>
-
-    <div class="mt-6 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
-      <p class="text-lg leading-8 text-slate-600 font-light">
-        Episodes averaged approximately 3,500 views, and multiple operational and process improvements were identified and addressed through the program.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="bg-slate-50 border-y border-slate-200 py-24">
-  <div class="mx-auto max-w-5xl px-6 lg:px-8 text-center">
-    <p class="text-xs font-bold uppercase tracking-widest text-amber-600">Why It Worked</p>
-    <blockquote class="mt-6 text-3xl font-bold tracking-tight text-slate-950 sm:text-5xl leading-tight">
-      “The authenticity already existed. Perspectives simply created a mechanism for it to travel.”
-    </blockquote>
-  </div>
-</section>
-
-<section class="bg-white py-24">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    <div class="grid grid-cols-1 gap-12 lg:grid-cols-12">
-      <div class="lg:col-span-5">
-        <p class="text-xs font-bold uppercase tracking-widest text-amber-600">Desk & Margin Lesson</p>
-        <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-          The lesson is not that every organization needs this exact program.
-        </h2>
-      </div>
-
-      <div class="lg:col-span-7">
-        <p class="text-lg leading-8 text-slate-600 font-light">
-          The lesson is that meaningful interactions can create enterprise-wide value when they are designed to travel beyond the people who originally experienced them.
-        </p>
-        <p class="mt-6 text-lg leading-8 text-slate-600 font-light">
-          Perspectives worked because it combined intimacy with scale. It created a trusted space for candid dialogue, then extended the value of that dialogue across the organization.
-        </p>
-
-        <div class="mt-8 rounded-2xl bg-slate-950 p-8 text-white">
-          <p class="text-2xl font-bold leading-9">
-            The most effective culture systems do not manufacture authenticity. They create conditions where authenticity can travel.
+          <p class="serif text-2xl text-[#2D2A26]">
+            The challenge was not simply to say more. It was to create a better way for people to hear,
+            ask, understand, and trust.
           </p>
         </div>
       </div>
+    </section>
+
+    <!-- INSIGHT -->
+    <section class="py-24 bg-[#F5F2ED]">
+      <div class="max-w-5xl mx-auto px-6">
+        <p class="uppercase tracking-[0.22em] text-xs font-semibold text-[#8B5A3C] mb-4">
+          The Insight
+        </p>
+
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-[#2D2A26]">
+          Make the conversation the program.
+        </h2>
+
+        <p class="text-lg leading-relaxed text-[#5A5652] max-w-4xl">
+          Perspectives began from a simple observation: employees consistently valued the live Q&amp;A
+          portion of town halls more than the presentation itself. The idea was simple: make the
+          conversation the entire program, then scale it.
+        </p>
+      </div>
+    </section>
+
+    <!-- SYSTEM -->
+    <section class="py-24 bg-[#2D2A26] text-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-4xl mb-12">
+          <p class="uppercase tracking-[0.22em] text-xs font-semibold text-[#C99A6B] mb-4">
+            The Anatomy of the System
+          </p>
+
+          <h2 class="serif text-3xl md:text-5xl mb-6">
+            Small Conversation. Large Reach.
+          </h2>
+
+          <p class="text-lg leading-relaxed text-[#D7D0C8]">
+            The innovation was not simply giving employees access to the president. The innovation was
+            designing a system that allowed thousands of employees to benefit from conversations that
+            began with only a few people in the room.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div class="bg-[#3A3631] border border-[#5A5652] rounded-2xl p-5">
+            <p class="text-[#C99A6B] font-bold mb-3">01</p>
+            <h3 class="font-bold mb-2">4–6 Employees</h3>
+            <p class="text-sm text-[#D7D0C8] leading-relaxed">A small group invited into candid conversation.</p>
+          </div>
+
+          <div class="bg-[#3A3631] border border-[#5A5652] rounded-2xl p-5">
+            <p class="text-[#C99A6B] font-bold mb-3">02</p>
+            <h3 class="font-bold mb-2">President</h3>
+            <p class="text-sm text-[#D7D0C8] leading-relaxed">Direct access to senior leadership thinking.</p>
+          </div>
+
+          <div class="bg-[#3A3631] border border-[#5A5652] rounded-2xl p-5">
+            <p class="text-[#C99A6B] font-bold mb-3">03</p>
+            <h3 class="font-bold mb-2">Virtual Session</h3>
+            <p class="text-sm text-[#D7D0C8] leading-relaxed">45–60 minutes, unscripted and conversational.</p>
+          </div>
+
+          <div class="bg-[#3A3631] border border-[#5A5652] rounded-2xl p-5">
+            <p class="text-[#C99A6B] font-bold mb-3">04</p>
+            <h3 class="font-bold mb-2">Recording</h3>
+            <p class="text-sm text-[#D7D0C8] leading-relaxed">Captured in Teams for broader access.</p>
+          </div>
+
+          <div class="bg-[#3A3631] border border-[#5A5652] rounded-2xl p-5">
+            <p class="text-[#C99A6B] font-bold mb-3">05</p>
+            <h3 class="font-bold mb-2">Production</h3>
+            <p class="text-sm text-[#D7D0C8] leading-relaxed">Lightly produced into an internal podcast.</p>
+          </div>
+
+          <div class="bg-[#3A3631] border border-[#5A5652] rounded-2xl p-5">
+            <p class="text-[#C99A6B] font-bold mb-3">06</p>
+            <h3 class="font-bold mb-2">Distribution</h3>
+            <p class="text-sm text-[#D7D0C8] leading-relaxed">Shared across the enterprise for broad access.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVIDENCE -->
+    <section class="py-24 bg-[#F5F2ED]">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl mb-12">
+          <p class="uppercase tracking-[0.22em] text-xs font-semibold text-[#8B5A3C] mb-4">
+            Evidence
+          </p>
+
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-5 text-[#2D2A26]">
+            A small-room format with enterprise reach.
+          </h2>
+
+          <p class="text-[#5A5652] text-lg leading-relaxed">
+            The program remained intentionally small at the point of conversation, then scaled through
+            recording, production, and internal distribution.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-6">
+          <div class="bg-white p-8 rounded-2xl border border-[#D7D0C8] shadow-sm">
+            <p class="serif text-4xl font-bold text-[#2D2A26]">10</p>
+            <p class="mt-2 text-sm font-semibold text-[#5A5652]">Sessions</p>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl border border-[#D7D0C8] shadow-sm">
+            <p class="serif text-4xl font-bold text-[#2D2A26]">~50</p>
+            <p class="mt-2 text-sm font-semibold text-[#5A5652]">Employee participants</p>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl border border-[#D7D0C8] shadow-sm">
+            <p class="serif text-4xl font-bold text-[#2D2A26]">14,000</p>
+            <p class="mt-2 text-sm font-semibold text-[#5A5652]">Employees with access</p>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl border border-[#D7D0C8] shadow-sm">
+            <p class="serif text-4xl font-bold text-[#2D2A26]">80%</p>
+            <p class="mt-2 text-sm font-semibold text-[#5A5652]">Average completion rate</p>
+          </div>
+        </div>
+
+        <div class="mt-8 bg-white border border-[#D7D0C8] rounded-2xl p-8 shadow-sm">
+          <p class="text-lg leading-relaxed text-[#5A5652]">
+            Episodes averaged approximately 3,500 views, and multiple operational and process
+            improvements were identified and addressed through the program.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY IT WORKED -->
+    <section class="py-20 bg-[#ECE7E0] border-y border-[#D7D0C8]">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <p class="uppercase tracking-[0.22em] text-xs font-semibold text-[#8B5A3C] mb-6">
+          Why It Worked
+        </p>
+
+        <p class="serif text-2xl md:text-3xl leading-relaxed text-[#2D2A26]">
+          The authenticity already existed. Perspectives simply created a mechanism for it to travel.
+        </p>
+      </div>
+    </section>
+
+    <!-- LESSON -->
+    <section class="py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-12 gap-12">
+        <div class="md:col-span-5">
+          <p class="uppercase tracking-[0.22em] text-xs font-semibold text-[#8B5A3C] mb-4">
+            Desk &amp; Margin Lesson
+          </p>
+
+          <h2 class="serif text-3xl md:text-4xl leading-tight text-[#2D2A26]">
+            The lesson is not that every organization needs this exact program.
+          </h2>
+        </div>
+
+        <div class="md:col-span-7 space-y-6 text-lg leading-relaxed text-[#5A5652]">
+          <p>
+            The lesson is that meaningful interactions can create enterprise-wide value when they are
+            designed to travel beyond the people who originally experienced them.
+          </p>
+
+          <p>
+            Perspectives worked because it combined intimacy with scale. It created a trusted space for
+            candid dialogue, then extended the value of that dialogue across the organization.
+          </p>
+
+          <div class="bg-[#2D2A26] text-white rounded-2xl p-8 mt-8">
+            <p class="serif text-2xl leading-relaxed">
+              The most effective culture systems do not manufacture authenticity.
+              They create conditions where authenticity can travel.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-[#F5F2ED]">
+      <div class="max-w-3xl mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-5 text-[#2D2A26]">
+          Culture strengthens when connection becomes repeatable.
+        </h2>
+
+        <p class="text-[#5A5652] leading-relaxed mb-8">
+          Perspectives is a real example of the Desk &amp; Margin belief that organizations do not build
+          alignment through messaging alone. They build it through systems that help trust, context,
+          and leadership intent move.
+        </p>
+
+        <a href="../index.html#contact" class="bg-[#2D2A26] text-white px-8 py-4 rounded-lg font-bold hover:bg-black">
+          Work With Desk &amp; Margin
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-[#2D2A26] text-[#D7D0C8] py-10">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-6 text-sm">
+      <div>
+        <div class="serif text-xl text-white mb-2">
+          Desk <span class="text-[#8B5A3C]">&amp;</span> Margin
+        </div>
+        <p>Culture is built in the margins.</p>
+      </div>
+
+      <div class="flex gap-6">
+        <a href="../about.html" class="hover:text-white">About</a>
+        <a href="../index.html#focus" class="hover:text-white">Focus Areas</a>
+        <a href="../index.html#diagnostic" class="hover:text-white">Diagnostic</a>
+        <a href="../index.html#contact" class="hover:text-white">Contact</a>
+      </div>
     </div>
-  </div>
-</section>
-
-<section class="bg-slate-950 text-white py-20">
-  <div class="mx-auto max-w-4xl px-6 lg:px-8 text-center">
-    <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
-      Culture strengthens when connection becomes repeatable.
-    </h2>
-    <p class="mt-6 text-lg leading-8 text-slate-300 font-light">
-      Perspectives is a real example of the Desk & Margin belief that organizations do not build alignment through messaging alone. They build it through systems that help trust, context, and leadership intent move.
-    </p>
-    <a href="../index.html#contact" class="mt-10 inline-flex rounded-lg bg-amber-600 px-6 py-3 text-sm font-semibold text-white hover:bg-amber-700 transition-all">
-      Work With Desk & Margin
-    </a>
-  </div>
-</section>
-
-</main>
-
-<footer class="bg-white border-t border-slate-200 py-8">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col sm:flex-row justify-between gap-4 text-sm text-slate-500">
-    <p>© 2026 Desk and Margin Outfitters. All rights reserved.</p>
-    <p>Enterprise culture, alignment, and reinforcement systems.</p>
-  </div>
-</footer>
+  </footer>
 
 </body>
 </html>
