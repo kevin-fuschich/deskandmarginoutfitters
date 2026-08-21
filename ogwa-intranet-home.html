@@ -3,107 +3,845 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | Desk & Margin</title>
+
+  <title>Employee Intranet | Desk & Margin</title>
+
+  <meta
+    name="description"
+    content="A Desk & Margin example showing how a modern employee intranet can reinforce organizational priorities, leadership access, connection, and everyday employee needs."
+  />
+
   <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Libre+Baskerville:wght@400;700&display=swap');
-    body { font-family: 'Inter', sans-serif; }
-    h1, h2, h3, .serif { font-family: 'Libre Baskerville', serif; }
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    h1, h2, h3, .serif {
+      font-family: 'Playfair Display', serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .ogwa-sans {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .soft-shadow {
+      box-shadow: 0 18px 50px rgba(45,42,38,.10);
+    }
   </style>
 </head>
 
-<body class="bg-[#F5F2ED] text-[#2D2A26]">
+<body class="bg-[#FAF9F6] text-[#2D2A26]">
 
-  <header class="sticky top-0 z-50 bg-[#F5F2ED]/90 backdrop-blur border-b border-[#D7D0C8]">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="index.html" class="serif text-xl font-bold tracking-tight text-[#2D2A26]">
-        Desk <span class="text-[#8B5A3C]">&amp;</span> Margin
+  <!-- =====================================================
+       DESK & MARGIN NAV
+  ====================================================== -->
+
+  <header class="border-b border-[#E3DDD5] bg-[#FAF9F6]">
+    <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row md:justify-between md:items-center gap-5">
+
+      <a href="index.html" class="leading-none">
+        <div class="text-xl md:text-2xl font-bold tracking-tighter">
+          DESK AND MARGIN
+        </div>
       </a>
 
-      <nav class="hidden md:flex gap-8 text-sm font-medium text-[#5A5652]">
-        <a href="about.html" class="text-[#2D2A26]">About</a>
-        <a href="index.html#focus" class="hover:text-[#2D2A26]">Focus Areas</a>
-        <a href="index.html#diagnostic" class="hover:text-[#2D2A26]">Diagnostic</a>
+      <nav class="flex flex-wrap gap-x-6 gap-y-3 text-xs md:text-sm font-medium items-center">
+        <a href="about.html" class="hover:text-[#8B5A3C] transition">
+          About
+        </a>
+
+        <a href="index.html#how-we-help" class="hover:text-[#8B5A3C] transition">
+          How We Help
+        </a>
+
+        <a href="index.html#case-studies" class="hover:text-[#8B5A3C] transition">
+          Case Studies
+        </a>
+
+        <a href="diagnostic.html" class="hover:text-[#8B5A3C] transition">
+          Diagnostic
+        </a>
+
+        <a
+          href="index.html#contact"
+          class="px-5 py-2 border border-[#2D2A26] rounded hover:bg-[#2D2A26] hover:text-white transition"
+        >
+          Get in Touch
+        </a>
       </nav>
 
-      <a href="index.html#contact" class="bg-[#2D2A26] text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-black">
-        Work With Us
-      </a>
     </div>
   </header>
 
-  <main class="py-24">
-    <div class="max-w-4xl mx-auto px-6">
-      
-      <p class="uppercase tracking-[0.22em] text-xs font-semibold text-[#8B5A3C] mb-6">
-        Our Perspective
-      </p>
 
-      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-12 leading-tight text-[#2D2A26]">
-        We don’t manage culture.<br>We architect it.
-      </h1>
+  <main>
 
-      <div class="space-y-10 text-lg text-[#5A5652] leading-relaxed">
-        <p>
-          Desk & Margin is an advisory firm built to sharpen organizational focus. 
-          We believe that companies rarely suffer from a lack of vision; they suffer from a lack 
-          of infrastructure—the logic, language, and rituals that translate strategy into daily reality.
+    <!-- =====================================================
+         D&M INTRO
+    ====================================================== -->
+
+    <section class="py-20 md:py-28">
+      <div class="max-w-5xl mx-auto px-6">
+
+        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-[#8B5A3C] mb-6">
+          Example Artifact · Employee Experience
         </p>
 
-        <section>
-          <h2 class="serif text-2xl mb-6 text-[#2D2A26]">Operating Principles</h2>
-          <ul class="space-y-6">
-            <li>
-              <strong class="text-[#2D2A26]">Precision over Volume.</strong> Complexity is the enemy of alignment. We pare down communication until only the signal remains.
-            </li>
-            <li>
-              <strong class="text-[#2D2A26]">Systems over Symptoms.</strong> You don’t need more meetings; you need a rhythm. You don’t need a platform overhaul; you need a content architecture. We treat the system, not the symptom.
-            </li>
-            <li>
-              <strong class="text-[#2D2A26]">The Margin is the Message.</strong> The most powerful culture signals aren't in the town hall; they are in the follow-up, the meeting agenda, and the way information is surfaced.
-            </li>
-          </ul>
-        </section>
+        <h1 class="serif text-5xl md:text-6xl leading-[1.08] mb-8 max-w-4xl">
+          A better front door to the organization.
+        </h1>
 
-        <section>
-          <h2 class="serif text-2xl mb-6 text-[#2D2A26]">Perspectives</h2>
-          <p>
-            We regularly publish insights on the structural elements of organizational health. 
-            Our work explores the intersection of enterprise alignment, communication design, 
-            and the subtle rituals that define how work actually gets done.
-          </p>
-          <a href="case-studies/perspectives.html" class="inline-block mt-4 text-[#8B5A3C] font-semibold hover:underline">Read our latest insights &rarr;</a>
-        </section>
+        <p class="text-xl md:text-2xl leading-relaxed text-[#4E4944] max-w-4xl mb-6">
+          An intranet shouldn't be a repository employees have to navigate.
+          It should help people understand what matters now, find what they need,
+          and see the organization moving in the same direction.
+        </p>
 
-        <section>
-          <h2 class="serif text-2xl mb-6 text-[#2D2A26]">Our Approach</h2>
-          <p>
-            We bridge the gap between people-first strategy and the operational reality of execution. 
-            We work with executive leaders who know that the "soft stuff"—how we talk, how we meet, 
-            and how we share information—is actually the hardest and most important work in the enterprise.
-          </p>
-        </section>
+        <p class="text-base md:text-lg leading-relaxed text-[#6D6761] max-w-3xl">
+          This concept illustrates the principles behind a Desk &amp; Margin-led
+          enterprise intranet overhaul: clearer information architecture,
+          stronger editorial discipline, and a homepage organized around
+          employee needs and organizational priorities.
+        </p>
+
       </div>
-    </div>
+    </section>
+
+
+    <!-- =====================================================
+         OGWA INTRANET FRAME
+    ====================================================== -->
+
+    <section class="pb-24">
+      <div class="max-w-7xl mx-auto px-4 md:px-6">
+
+        <div class="bg-white rounded-2xl overflow-hidden border border-[#D7D0C8] soft-shadow">
+
+          <!-- OGWA TOP BAR -->
+          <div class="ogwa-sans bg-[#102A2A] text-white">
+
+            <div class="px-6 md:px-10 py-6 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+
+              <div class="flex items-center gap-4">
+
+                <div class="w-11 h-11 rounded-full border border-[#B7D3C8] flex items-center justify-center font-bold tracking-tight text-sm">
+                  OGWA
+                </div>
+
+                <div>
+                  <div class="font-semibold text-lg tracking-wide">
+                    OGWA
+                  </div>
+                  <div class="text-xs text-[#B7C8C4]">
+                    Employee Hub
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-[#DCE7E4]">
+                <a href="#" class="text-white font-semibold">Home</a>
+                <a href="#">News</a>
+                <a href="#">Teams</a>
+                <a href="#">Resources</a>
+                <a href="#">Benefits</a>
+                <a href="#">Leadership</a>
+              </div>
+
+            </div>
+
+            <!-- SEARCH -->
+            <div class="px-6 md:px-10 pb-8">
+              <div class="max-w-3xl bg-white rounded-lg flex items-center px-5 py-4 text-[#52605D]">
+                <span class="mr-3 text-lg">⌕</span>
+                <span class="text-sm">
+                  What can we help you find?
+                </span>
+              </div>
+            </div>
+
+          </div>
+
+
+          <!-- EMPLOYEE HOME -->
+          <div class="ogwa-sans bg-[#F4F7F5]">
+
+            <!-- GREETING -->
+            <div class="px-6 md:px-10 pt-10 pb-8">
+
+              <p class="text-sm text-[#66736F] mb-2">
+                Monday, August 24
+              </p>
+
+              <h2 class="font-sans font-semibold text-3xl md:text-4xl tracking-tight text-[#173532] mb-2">
+                Good morning.
+              </h2>
+
+              <p class="text-lg text-[#5E6C68]">
+                Here's what matters at OGWA this week.
+              </p>
+
+            </div>
+
+
+            <!-- WEEKLY SIGNAL HERO -->
+            <div class="px-6 md:px-10 pb-8">
+
+              <a
+                href="ogwa-field-signal.html"
+                class="block group bg-[#DCEAE4] border border-[#C3D8CF] rounded-xl overflow-hidden hover:shadow-md transition"
+              >
+
+                <div class="grid lg:grid-cols-[1.35fr_.65fr]">
+
+                  <div class="p-7 md:p-10">
+
+                    <div class="text-xs uppercase tracking-[0.18em] font-bold text-[#52736A] mb-5">
+                      The Weekly Signal
+                    </div>
+
+                    <h3 class="font-sans text-3xl md:text-4xl font-semibold tracking-tight text-[#173532] mb-5">
+                      What we're solving for this quarter
+                    </h3>
+
+                    <p class="text-[#536863] text-base md:text-lg leading-relaxed max-w-3xl mb-7">
+                      Growth is changing how work moves across OGWA. This week:
+                      three decisions we're making to keep speed without creating
+                      unnecessary complexity.
+                    </p>
+
+                    <span class="text-sm font-bold text-[#315F54] group-hover:underline">
+                      3 min read &rarr;
+                    </span>
+
+                  </div>
+
+
+                  <div class="bg-[#C6DCD3] min-h-[220px] flex items-center justify-center p-8">
+
+                    <div class="w-full max-w-[240px] bg-[#173532] text-white rounded-lg p-6 shadow-lg rotate-[-2deg]">
+
+                      <div class="text-[10px] uppercase tracking-[0.18em] text-[#A8C9BE] mb-8">
+                        OGWA · Weekly Signal
+                      </div>
+
+                      <div class="font-semibold text-xl leading-snug mb-8">
+                        Keep speed.<br>
+                        Reduce friction.
+                      </div>
+
+                      <div class="h-px bg-[#52736A] mb-4"></div>
+
+                      <div class="text-xs text-[#C6DCD3]">
+                        Week 34
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </a>
+
+            </div>
+
+
+            <!-- TODAY + QUICK LINKS -->
+            <div class="px-6 md:px-10 pb-10">
+
+              <div class="grid lg:grid-cols-[1.35fr_.65fr] gap-6">
+
+                <!-- TODAY -->
+                <div class="bg-white border border-[#D7E0DC] rounded-xl p-7 md:p-8">
+
+                  <div class="flex items-center justify-between mb-7">
+
+                    <h3 class="font-sans text-xl font-semibold text-[#173532]">
+                      Today at OGWA
+                    </h3>
+
+                    <span class="text-xs font-semibold text-[#52736A]">
+                      VIEW ALL
+                    </span>
+
+                  </div>
+
+
+                  <div class="divide-y divide-[#E2E8E5]">
+
+                    <div class="py-5 first:pt-0">
+
+                      <div class="text-[10px] uppercase tracking-[0.16em] font-bold text-[#7B8B86] mb-2">
+                        Benefits
+                      </div>
+
+                      <div class="font-semibold text-[#263F3B] mb-1">
+                        Open enrollment closes Friday
+                      </div>
+
+                      <p class="text-sm text-[#687873]">
+                        Review your 2027 benefit elections and submit changes by 5 p.m.
+                      </p>
+
+                    </div>
+
+
+                    <div class="py-5">
+
+                      <div class="text-[10px] uppercase tracking-[0.16em] font-bold text-[#7B8B86] mb-2">
+                        Operations
+                      </div>
+
+                      <div class="font-semibold text-[#263F3B] mb-1">
+                        New fulfillment workflow goes live September 8
+                      </div>
+
+                      <p class="text-sm text-[#687873]">
+                        Teams can review the updated process, timeline, and support resources.
+                      </p>
+
+                    </div>
+
+
+                    <div class="py-5 pb-0">
+
+                      <div class="text-[10px] uppercase tracking-[0.16em] font-bold text-[#7B8B86] mb-2">
+                        People
+                      </div>
+
+                      <div class="font-semibold text-[#263F3B] mb-1">
+                        Welcome to our newest OGWA teammates
+                      </div>
+
+                      <p class="text-sm text-[#687873]">
+                        Eighteen employees join teams across the company this week.
+                      </p>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <!-- MY OGWA -->
+                <div class="bg-[#173532] text-white rounded-xl p-7 md:p-8">
+
+                  <div class="text-xs uppercase tracking-[0.18em] text-[#A8C9BE] font-bold mb-3">
+                    My OGWA
+                  </div>
+
+                  <h3 class="font-sans text-xl font-semibold mb-6">
+                    Get somewhere fast.
+                  </h3>
+
+
+                  <div class="grid grid-cols-2 gap-3">
+
+                    <a href="#" class="bg-[#234841] rounded-lg p-4 text-sm hover:bg-[#2D574E] transition">
+                      Pay &amp;<br>Benefits
+                    </a>
+
+                    <a href="#" class="bg-[#234841] rounded-lg p-4 text-sm hover:bg-[#2D574E] transition">
+                      Time<br>Off
+                    </a>
+
+                    <a href="#" class="bg-[#234841] rounded-lg p-4 text-sm hover:bg-[#2D574E] transition">
+                      IT<br>Help
+                    </a>
+
+                    <a href="#" class="bg-[#234841] rounded-lg p-4 text-sm hover:bg-[#2D574E] transition">
+                      Policies
+                    </a>
+
+                    <a href="#" class="bg-[#234841] rounded-lg p-4 text-sm hover:bg-[#2D574E] transition">
+                      Learning
+                    </a>
+
+                    <a href="#" class="bg-[#234841] rounded-lg p-4 text-sm hover:bg-[#2D574E] transition">
+                      Org<br>Directory
+                    </a>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!-- PERSPECTIVES -->
+            <div class="px-6 md:px-10 pb-10">
+
+              <div class="bg-white border border-[#D7E0DC] rounded-xl overflow-hidden">
+
+                <div class="grid lg:grid-cols-[.85fr_1.15fr]">
+
+                  <!-- VISUAL -->
+                  <div class="bg-[#243B38] min-h-[300px] p-7 md:p-8 flex flex-col justify-between">
+
+                    <div>
+
+                      <div class="text-[10px] uppercase tracking-[0.18em] text-[#A8C9BE] font-bold mb-3">
+                        From Leadership
+                      </div>
+
+                      <div class="text-white text-sm">
+                        Perspectives
+                      </div>
+
+                    </div>
+
+
+                    <div>
+
+                      <div class="w-16 h-16 rounded-full bg-[#D8E5DF] text-[#173532] flex items-center justify-center text-xl font-bold mb-5">
+                        DM
+                      </div>
+
+                      <div class="text-white font-semibold text-xl">
+                        Daniel Mercer
+                      </div>
+
+                      <div class="text-[#AFC3BD] text-sm">
+                        President &amp; CEO
+                      </div>
+
+                    </div>
+
+                  </div>
+
+
+                  <!-- COPY -->
+                  <div class="p-7 md:p-10">
+
+                    <div class="text-xs uppercase tracking-[0.18em] font-bold text-[#52736A] mb-5">
+                      Perspectives with Daniel Mercer
+                    </div>
+
+                    <h3 class="font-sans text-2xl md:text-3xl font-semibold tracking-tight text-[#173532] mb-4">
+                      Growth, change &amp; the best pizza in town
+                    </h3>
+
+                    <p class="text-[#61716C] leading-relaxed mb-6">
+                      Employees ask Daniel about the new fulfillment model,
+                      what OGWA's growth means for teams, and the considerably
+                      less consequential question of what belongs on a pizza.
+                    </p>
+
+
+                    <div class="flex flex-wrap gap-2 mb-7">
+
+                      <span class="px-3 py-1.5 rounded-full bg-[#EEF4F1] text-[#52736A] text-xs font-semibold">
+                        Growth
+                      </span>
+
+                      <span class="px-3 py-1.5 rounded-full bg-[#EEF4F1] text-[#52736A] text-xs font-semibold">
+                        Fulfillment
+                      </span>
+
+                      <span class="px-3 py-1.5 rounded-full bg-[#EEF4F1] text-[#52736A] text-xs font-semibold">
+                        Pineapple?
+                      </span>
+
+                    </div>
+
+
+                    <div class="flex flex-wrap gap-5 items-center">
+
+                      <span class="inline-flex items-center gap-2 bg-[#173532] text-white px-5 py-3 rounded-lg text-sm font-semibold">
+                        ▶ Listen · 38 min
+                      </span>
+
+                      <a
+                        href="case-studies/perspectives.html"
+                        class="text-sm font-semibold text-[#315F54] hover:underline"
+                      >
+                        See how Perspectives was designed &rarr;
+                      </a>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!-- PRIORITIES -->
+            <div class="px-6 md:px-10 pb-10">
+
+              <div class="mb-6">
+
+                <div class="text-[10px] uppercase tracking-[0.18em] font-bold text-[#7B8B86] mb-2">
+                  Keep the strategy visible
+                </div>
+
+                <h3 class="font-sans text-xl font-semibold text-[#173532]">
+                  Our priorities
+                </h3>
+
+              </div>
+
+
+              <div class="grid md:grid-cols-3 gap-5">
+
+                <div class="bg-white border border-[#D7E0DC] rounded-xl p-6">
+
+                  <div class="text-xs font-bold text-[#52736A] mb-5">
+                    01
+                  </div>
+
+                  <div class="font-semibold text-[#263F3B] mb-2">
+                    Simplify how work moves
+                  </div>
+
+                  <p class="text-sm text-[#687873] leading-relaxed">
+                    Reduce unnecessary handoffs and make ownership clearer.
+                  </p>
+
+                </div>
+
+
+                <div class="bg-white border border-[#D7E0DC] rounded-xl p-6">
+
+                  <div class="text-xs font-bold text-[#52736A] mb-5">
+                    02
+                  </div>
+
+                  <div class="font-semibold text-[#263F3B] mb-2">
+                    Stay close to customers
+                  </div>
+
+                  <p class="text-sm text-[#687873] leading-relaxed">
+                    Keep customer experience visible as the organization grows.
+                  </p>
+
+                </div>
+
+
+                <div class="bg-white border border-[#D7E0DC] rounded-xl p-6">
+
+                  <div class="text-xs font-bold text-[#52736A] mb-5">
+                    03
+                  </div>
+
+                  <div class="font-semibold text-[#263F3B] mb-2">
+                    Grow without losing us
+                  </div>
+
+                  <p class="text-sm text-[#687873] leading-relaxed">
+                    Protect the behaviors and relationships that make OGWA work.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!-- ACROSS OGWA -->
+            <div class="px-6 md:px-10 pb-12">
+
+              <div class="flex items-end justify-between mb-6">
+
+                <div>
+
+                  <div class="text-[10px] uppercase tracking-[0.18em] font-bold text-[#7B8B86] mb-2">
+                    People &amp; Culture
+                  </div>
+
+                  <h3 class="font-sans text-xl font-semibold text-[#173532]">
+                    Across OGWA
+                  </h3>
+
+                </div>
+
+                <span class="text-xs font-semibold text-[#52736A]">
+                  VIEW ALL
+                </span>
+
+              </div>
+
+
+              <div class="grid md:grid-cols-3 gap-5">
+
+                <div class="bg-white border border-[#D7E0DC] rounded-xl overflow-hidden">
+
+                  <div class="h-36 bg-[#BDD3CA] flex items-end p-5">
+
+                    <div class="text-[#173532] text-xs uppercase tracking-widest font-bold">
+                      Atlanta
+                    </div>
+
+                  </div>
+
+                  <div class="p-6">
+
+                    <h4 class="font-semibold text-[#263F3B] mb-2">
+                      Inside the new customer experience lab
+                    </h4>
+
+                    <p class="text-sm text-[#687873]">
+                      A first look at the space and the teams building what's next.
+                    </p>
+
+                  </div>
+
+                </div>
+
+
+                <div class="bg-white border border-[#D7E0DC] rounded-xl overflow-hidden">
+
+                  <div class="h-36 bg-[#D9E4DF] flex items-end p-5">
+
+                    <div class="text-[#173532] text-xs uppercase tracking-widest font-bold">
+                      Five Questions
+                    </div>
+
+                  </div>
+
+                  <div class="p-6">
+
+                    <h4 class="font-semibold text-[#263F3B] mb-2">
+                      Meet Product Development
+                    </h4>
+
+                    <p class="text-sm text-[#687873]">
+                      What they're building, what they're learning, and their most-used Slack emoji.
+                    </p>
+
+                  </div>
+
+                </div>
+
+
+                <div class="bg-white border border-[#D7E0DC] rounded-xl overflow-hidden">
+
+                  <div class="h-36 bg-[#C9D9D2] flex items-end p-5">
+
+                    <div class="text-[#173532] text-xs uppercase tracking-widest font-bold">
+                      OGWA Gives
+                    </div>
+
+                  </div>
+
+                  <div class="p-6">
+
+                    <h4 class="font-semibold text-[#263F3B] mb-2">
+                      August community partner
+                    </h4>
+
+                    <p class="text-sm text-[#687873]">
+                      See this month's partner and how employees can participate.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!-- OGWA FOOT -->
+            <div class="bg-[#E6EEEA] border-t border-[#D1DDD8] px-6 md:px-10 py-6 flex flex-col md:flex-row justify-between gap-4 text-xs text-[#697873]">
+
+              <div>
+                OGWA Employee Hub
+              </div>
+
+              <div class="flex flex-wrap gap-5">
+                <span>Help</span>
+                <span>Directory</span>
+                <span>Accessibility</span>
+                <span>Feedback</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         D&M EXPLANATION
+    ====================================================== -->
+
+    <section class="py-24 bg-white border-y border-[#D7D0C8]">
+
+      <div class="max-w-6xl mx-auto px-6">
+
+        <div class="max-w-4xl mb-14">
+
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[#8B5A3C] mb-4">
+            The System Behind the Screen
+          </p>
+
+          <h2 class="serif text-3xl md:text-5xl leading-tight mb-6">
+            The design is only the visible layer.
+          </h2>
+
+          <p class="text-lg leading-relaxed text-[#5A5652]">
+            The larger work is deciding what deserves prominence, how information
+            should move, what employees need repeatedly, which signals leadership
+            should reinforce, and what should disappear from the homepage entirely.
+          </p>
+
+        </div>
+
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+          <div class="border-t-2 border-[#8B5A3C] pt-6">
+
+            <h3 class="serif text-2xl mb-3">
+              Findability
+            </h3>
+
+            <p class="text-[#5A5652] leading-relaxed">
+              Employees can get somewhere quickly. Everyday needs are treated
+              as essential infrastructure, not buried beneath corporate content.
+            </p>
+
+          </div>
+
+
+          <div class="border-t-2 border-[#8B5A3C] pt-6">
+
+            <h3 class="serif text-2xl mb-3">
+              Prioritization
+            </h3>
+
+            <p class="text-[#5A5652] leading-relaxed">
+              The homepage makes organizational priorities visible instead of
+              giving every announcement equal weight.
+            </p>
+
+          </div>
+
+
+          <div class="border-t-2 border-[#8B5A3C] pt-6">
+
+            <h3 class="serif text-2xl mb-3">
+              Reinforcement
+            </h3>
+
+            <p class="text-[#5A5652] leading-relaxed">
+              Leadership messages, operating updates, employee stories, and
+              recurring editorial rhythms support the same organizational narrative.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="mt-16 max-w-4xl border-l-2 border-[#8B5A3C] pl-7">
+
+          <p class="serif italic text-2xl md:text-3xl leading-relaxed text-[#2D2A26]">
+            The intranet becomes less of a place to publish things and more
+            of a system for helping the organization make sense of itself.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONNECTION TO PERSPECTIVES
+    ====================================================== -->
+
+    <section class="py-20 bg-[#F5F2ED]">
+
+      <div class="max-w-5xl mx-auto px-6">
+
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+
+          <div class="max-w-2xl">
+
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[#8B5A3C] mb-4">
+              See the mechanism
+            </p>
+
+            <h2 class="serif text-3xl mb-4">
+              Perspectives is one of those reinforcement systems.
+            </h2>
+
+            <p class="text-[#5A5652] leading-relaxed">
+              See how a small employee conversation with the president was
+              designed to create leadership access, candid dialogue, and
+              enterprise-wide reach.
+            </p>
+
+          </div>
+
+
+          <a
+            href="case-studies/perspectives.html"
+            class="shrink-0 inline-block px-7 py-4 bg-[#2D2A26] text-white font-semibold rounded hover:bg-black transition"
+          >
+            VIEW PERSPECTIVES →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
   </main>
 
-  <footer class="bg-[#2D2A26] text-[#D7D0C8] py-10">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-6 text-sm">
+
+  <!-- =====================================================
+       D&M FOOTER
+  ====================================================== -->
+
+  <footer class="py-10 bg-[#FAF9F6] border-t border-[#D7D0C8]">
+
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-4 text-xs text-[#77716B]">
+
       <div>
-        <div class="serif text-xl text-white mb-2">
-          Desk <span class="text-[#8B5A3C]">&amp;</span> Margin
-        </div>
-        <p>Culture is built in the margins.</p>
+        © <span id="year"></span> Desk and Margin
       </div>
 
-      <div class="flex gap-6">
-        <a href="about.html" class="hover:text-white">About</a>
-        <a href="index.html#focus" class="hover:text-white">Focus Areas</a>
-        <a href="index.html#diagnostic" class="hover:text-white">Diagnostic</a>
-        <a href="index.html#contact" class="hover:text-white">Contact</a>
+      <div>
+        Reinforcement systems for alignment, trust, and culture.
       </div>
+
     </div>
+
   </footer>
+
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
 
 </body>
 </html>
