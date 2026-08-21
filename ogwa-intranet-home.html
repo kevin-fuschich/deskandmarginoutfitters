@@ -1,174 +1,109 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-
-<title>OGWA Intranet</title>
-
-<style>
-:root{
-  --ink:#111;
-  --muted:#6f6a63;
-  --line:#e6e3de;
-  --bg:#f3f1ec;
-  --card:#ffffff;
-
-  --serif:Georgia,"Times New Roman",serif;
-  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-}
-
-body{
-  margin:0;
-  font-family:var(--sans);
-  background:var(--bg);
-  color:var(--ink);
-}
-
-.wrap{
-  max-width:1100px;
-  margin:0 auto;
-  padding:24px;
-}
-
-/* HEADER */
-.header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:28px;
-}
-
-.logo{
-  font-family:var(--serif);
-  font-size:20px;
-}
-
-.nav{
-  font-size:13px;
-  color:var(--muted);
-}
-
-/* HERO */
-.hero{
-  background:var(--card);
-  border:1px solid var(--line);
-  padding:24px;
-  margin-bottom:28px;
-}
-
-.hero h1{
-  font-family:var(--serif);
-  margin:0 0 8px;
-  font-size:28px;
-}
-
-.hero p{
-  margin:0;
-  color:var(--muted);
-}
-
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:2fr 1fr;
-  gap:24px;
-}
-
-/* ARTICLE CARD */
-.card{
-  background:var(--card);
-  border:1px solid var(--line);
-  padding:20px;
-}
-
-.card h2{
-  font-family:var(--serif);
-  margin:0 0 6px;
-  font-size:22px;
-}
-
-.meta{
-  font-size:12px;
-  color:var(--muted);
-  margin-bottom:10px;
-}
-
-.card p{
-  margin:0;
-  color:var(--muted);
-}
-
-.card a{
-  display:inline-block;
-  margin-top:12px;
-  font-weight:700;
-  border-bottom:1px solid rgba(0,0,0,0.3);
-}
-
-/* SIDEBAR */
-.side{
-  background:var(--card);
-  border:1px solid var(--line);
-  padding:20px;
-}
-
-.side h3{
-  margin:0 0 10px;
-  font-size:14px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  color:var(--muted);
-}
-
-.side p{
-  margin:0 0 8px;
-  font-size:14px;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Desk & Margin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Libre+Baskerville:wght@400;700&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3, .serif { font-family: 'Libre Baskerville', serif; }
+  </style>
 </head>
 
-<body>
+<body class="bg-[#F5F2ED] text-[#2D2A26]">
 
-<div class="wrap">
+  <header class="sticky top-0 z-50 bg-[#F5F2ED]/90 backdrop-blur border-b border-[#D7D0C8]">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="index.html" class="serif text-xl font-bold tracking-tight text-[#2D2A26]">
+        Desk <span class="text-[#8B5A3C]">&amp;</span> Margin
+      </a>
 
-  <div class="header">
-    <div class="logo">OGWA</div>
-    <div class="nav">Home · Teams · Operations · Signals</div>
-  </div>
+      <nav class="hidden md:flex gap-8 text-sm font-medium text-[#5A5652]">
+        <a href="about.html" class="text-[#2D2A26]">About</a>
+        <a href="index.html#focus" class="hover:text-[#2D2A26]">Focus Areas</a>
+        <a href="index.html#diagnostic" class="hover:text-[#2D2A26]">Diagnostic</a>
+      </nav>
 
-  <div class="hero">
-    <h1>What’s happening this week</h1>
-    <p>Key updates, signals, and decisions shaping how we operate.</p>
-  </div>
+      <a href="index.html#contact" class="bg-[#2D2A26] text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-black">
+        Work With Us
+      </a>
+    </div>
+  </header>
 
-  <div class="grid">
+  <main class="py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      
+      <p class="uppercase tracking-[0.22em] text-xs font-semibold text-[#8B5A3C] mb-6">
+        Our Perspective
+      </p>
 
-    <!-- MAIN -->
-    <div>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-12 leading-tight text-[#2D2A26]">
+        We don’t manage culture.<br>We architect it.
+      </h1>
 
-      <div class="card">
-        <div class="meta">Weekly Signal · Leadership</div>
-        <h2>Product integrity protected before speed</h2>
+      <div class="space-y-10 text-lg text-[#5A5652] leading-relaxed">
         <p>
-          A production issue was surfaced and resolved before release rather than pushed through to preserve timing.
+          Desk & Margin is an advisory firm built to sharpen organizational focus. 
+          We believe that companies rarely suffer from a lack of vision; they suffer from a lack 
+          of infrastructure—the logic, language, and rituals that translate strategy into daily reality.
         </p>
-        <a href="ogwa-weekly-signal.html">Read signal →</a>
+
+        <section>
+          <h2 class="serif text-2xl mb-6 text-[#2D2A26]">Operating Principles</h2>
+          <ul class="space-y-6">
+            <li>
+              <strong class="text-[#2D2A26]">Precision over Volume.</strong> Complexity is the enemy of alignment. We pare down communication until only the signal remains.
+            </li>
+            <li>
+              <strong class="text-[#2D2A26]">Systems over Symptoms.</strong> You don’t need more meetings; you need a rhythm. You don’t need a platform overhaul; you need a content architecture. We treat the system, not the symptom.
+            </li>
+            <li>
+              <strong class="text-[#2D2A26]">The Margin is the Message.</strong> The most powerful culture signals aren't in the town hall; they are in the follow-up, the meeting agenda, and the way information is surfaced.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="serif text-2xl mb-6 text-[#2D2A26]">Perspectives</h2>
+          <p>
+            We regularly publish insights on the structural elements of organizational health. 
+            Our work explores the intersection of enterprise alignment, communication design, 
+            and the subtle rituals that define how work actually gets done.
+          </p>
+          <a href="case-studies/perspectives.html" class="inline-block mt-4 text-[#8B5A3C] font-semibold hover:underline">Read our latest insights &rarr;</a>
+        </section>
+
+        <section>
+          <h2 class="serif text-2xl mb-6 text-[#2D2A26]">Our Approach</h2>
+          <p>
+            We bridge the gap between people-first strategy and the operational reality of execution. 
+            We work with executive leaders who know that the "soft stuff"—how we talk, how we meet, 
+            and how we share information—is actually the hardest and most important work in the enterprise.
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-[#2D2A26] text-[#D7D0C8] py-10">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-6 text-sm">
+      <div>
+        <div class="serif text-xl text-white mb-2">
+          Desk <span class="text-[#8B5A3C]">&amp;</span> Margin
+        </div>
+        <p>Culture is built in the margins.</p>
       </div>
 
+      <div class="flex gap-6">
+        <a href="about.html" class="hover:text-white">About</a>
+        <a href="index.html#focus" class="hover:text-white">Focus Areas</a>
+        <a href="index.html#diagnostic" class="hover:text-white">Diagnostic</a>
+        <a href="index.html#contact" class="hover:text-white">Contact</a>
+      </div>
     </div>
-
-    <!-- SIDEBAR -->
-    <div class="side">
-      <h3>Active priorities</h3>
-      <p>Product integrity</p>
-      <p>Cross-functional clarity</p>
-      <p>Execution discipline</p>
-    </div>
-
-  </div>
-
-</div>
+  </footer>
 
 </body>
 </html>
